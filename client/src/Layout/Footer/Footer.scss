@@ -1,0 +1,11 @@
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// @include MyFlex();
+footer{
+    background: red;
+    padding: 50px 100px;
+}

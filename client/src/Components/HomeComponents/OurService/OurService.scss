@@ -1,0 +1,303 @@
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// @include MyFlex();
+
+@font-face {
+    font-family: 'Gilroy-Bold';
+    src: url('../../../Font/Gilroy-Bold.otf');
+}
+
+@font-face {
+    font-family: 'Gilroy-Medium';
+    src: url('../../../Font/Gilroy-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Gilroy-Semibold';
+    src: url('../../../Font/Gilroy-Semibold.otf');
+}
+
+@font-face {
+    font-family: 'Gilroy-Light';
+    src: url('../../../Font/Gilroy-Light.otf');
+}
+
+@font-face {
+    font-family: 'Gilroy-UltraLight';
+    src: url('../../../Font/Gilroy-UltraLight.otf');
+}
+
+#ourService {
+    height: 160vh;
+    @include MyFlex();
+
+    .viewHiddenBtn {
+        display: none;
+    }
+
+    .leftBox {
+        width: 440px;
+        font-family: 'Gilroy-Bold';
+        color: white;
+        margin-top: 145px;
+
+        h1 {
+            font-size: 90px;
+            line-height: 1;
+
+        }
+
+        p {
+            margin-top: 20px;
+            font-family: 'Gilroy-Medium';
+            max-width: 70%;
+            line-height: 1.7;
+            color: rgb(218, 215, 215);
+
+        }
+
+        .viewAllBtn {
+            margin-top: 200px;
+            border-radius: 20px;
+            border: 2px solid white;
+            @include MyFlex();
+            height: 40px;
+            gap: 10px;
+            width: 150px;
+            cursor: pointer;
+            transition: all 0.7s;
+
+            p {
+                margin: 0;
+                color: white
+            }
+
+            .arrow {
+                @include MyFlex();
+
+                span {
+                    height: 2px;
+                    width: 20px;
+                    transition: all 0.7s;
+
+                    background: white;
+                }
+
+                .arrowHead {
+                    @include MyFlex();
+                    margin-left: -12px;
+                    font-size: 20px;
+
+                }
+            }
+
+            &:hover {
+                width: 180px;
+
+                .arrow {
+                    span {
+                        width: 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    .rightBox {
+        width: 58%;
+        display: flex;
+        flex-direction: column;
+        gap: 27.5px;
+
+        .cardHover {
+            -webkit-box-shadow: 0px 3px 3px 0px #02CEC8;
+            -moz-box-shadow: 0px 3px 3px 0px #02CEC8;
+            box-shadow: 0px 3px 3px 0px #02CEC8;
+            color: white;
+            border: 2px solid #02CEC8;
+            gap: 17px;
+            background-color: rgba(0, 0, 0, 0.345);
+            cursor: pointer;
+            position: relative;
+            padding: 30px 40px 0;
+            height: 210px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+
+            .arrowBox {
+                position: absolute;
+                top: 20px;
+                font-size: 50px;
+                right: 20px;
+                transition: all 0.7s;
+                color: #22FFF8;
+            }
+
+            h1 {
+                font-family: 'Gilroy-Light';
+                font-size: 23px;
+                width: 70%;
+            }
+
+            p {
+                font-family: 'Gilroy-UltraLight';
+                font-size: 14px;
+                line-height: 1.4;
+                color: rgb(206, 204, 204);
+
+            }
+
+            &:hover {
+                -webkit-box-shadow: 0px 5px 14px 0px rgba(2, 206, 200, 1) !important;
+                -moz-box-shadow: 0px 5px 14px 0px rgba(2, 206, 200, 1) !important;
+                box-shadow: 0px 5px 14px 0px rgba(2, 206, 200, 1) !important;
+
+                .arrowBox {
+                    right: 10px;
+
+                }
+            }
+        }
+
+        .upBox {
+            display: flex;
+            justify-content: space-between;
+
+            #cardBig {
+                width: 58%;
+            }
+
+            #cardSmall {
+                width: 39%;
+            }
+
+            #cardBig2 {
+                width: 42%;
+            }
+
+            #cardSmall2 {
+                width: 55%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1166px) {
+    #ourService {
+        flex-direction: column;
+        padding: 0px 100px;
+        align-items: start;
+
+        .leftBox {
+            width: 320px;
+            margin-top: 5px;
+
+            .viewAllBtn {
+                margin-top: 20px;
+            }
+        }
+
+        #thirdBox {
+            display: none;
+        }
+
+        .rightBox {
+            margin-top: 20px;
+            width: 100%;
+
+        }
+    }
+}
+
+@media only screen and (max-width: 854px) {
+    #ourService {
+        flex-direction: column;
+        padding: 0px 100px;
+        align-items: start;
+        position: relative;
+        height: 170vh;
+
+        .viewHiddenBtn {
+            display: block;
+            position: absolute;
+            right: 60px;
+            top: 14%;
+            width: 100px;
+
+            p {
+                text-decoration: underline;
+            }
+        }
+
+        .cardHover {
+            width: 100% !important;
+
+        }
+
+        .leftBox {
+
+            .viewAllBtn {
+                display: none;
+            }
+        }
+
+        .rightBox {
+            .upBox {
+                flex-direction: column;
+
+                #cardSmall {
+                    margin-top: 27.5px;
+                }
+
+                #cardSmall2 {
+                    display: none;
+                }
+            }
+
+        }
+    }
+}
+
+@media only screen and (max-width: 624px) {
+    #ourService {
+        padding: 20px 35px;
+        overflow: hidden;
+      
+      
+       
+
+        .viewHiddenBtn {
+            top: 11.5%;
+            right: -25px;
+            
+        }
+
+        .leftBox {
+            width: 300px;
+       
+    
+            h1 {
+                font-size: 50px;
+                max-width: 100px;
+
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+        .rightBox{
+            .cardHover {
+                padding: 30px 20px 0;
+                p{
+                    max-width: 90%;
+                }
+            }
+        }
+    }
+}

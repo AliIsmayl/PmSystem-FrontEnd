@@ -1,0 +1,159 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// @include MyFlex();
+@font-face {
+    font-family: 'Gilroy-Medium';
+    src: url('../../Font/Gilroy-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Gilroy-Semibold';
+    src: url('../../Font/Gilroy-Semibold.otf');
+}
+
+@font-face {
+    font-family: 'Gilroy-Light';
+    src: url('../../Font/Gilroy-Light.otf');
+
+
+}
+
+nav {
+    // background: rgb(0, 0, 0);
+    padding: 0px 100px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Gilroy-Light";
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    // background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.067) 100%);
+    background-color: black;
+    // display: none;
+    z-index: 4;
+
+    img {
+        max-width: 200px;
+    }
+
+    .textAndLangBox {
+        display: flex;
+        gap: 50px;
+        // margin-top: 30px;
+        color: white;
+        @include MyFlex();
+
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 56px;
+            font-size: 18px;
+            margin-right: 70px;
+
+            .link,
+            .active {
+                text-decoration: none;
+                height: 20px;
+                cursor: pointer;
+                color: white;
+
+                .line {
+                    margin-top: 3px;
+                    width: 0%;
+                    height: 3px;
+                    border-radius: 10px;
+                    transition: 0.4s;
+                    background-color: white;
+                }
+
+                &:hover {
+                    .line {
+                        width: 60%;
+                    }
+                }
+            }
+
+        }
+
+        .selectBox {
+            border: none;
+            font-size: 20px;
+            font-family: "Gilroy-Semibold";
+
+            .mainLang {
+                gap: 5px;
+                @include MyFlex();
+                cursor: pointer;
+                font-size: 25px;
+                position: relative;
+                width: 60px;
+            }
+
+            .allLangsBox {
+                position: absolute;
+                top: 70px;
+                width: 55px;
+                opacity: 0;
+                visibility: hidden;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                .langBox {
+                    cursor: pointer;
+
+                }
+            }
+        }
+    }
+
+    .menuBox {
+        display: none;
+    }
+}
+
+.opened {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.active {
+    font-weight: bold;
+
+    .line {
+        width: 60% !important;
+    }
+
+}
+
+@media only screen and (max-width: 1037px) {
+    nav {
+        padding: 10px 20px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.31985294117647056) 100%);
+
+        img {
+            max-width: 170px;
+        }
+
+        .textAndLangBox {
+            display: none;
+        }
+
+        .menuBox {
+            display: block;
+            font-size: 50px;
+            @include MyFlex();
+            color: white;
+        }
+    }
+}
