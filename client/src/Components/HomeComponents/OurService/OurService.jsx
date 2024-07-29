@@ -10,8 +10,8 @@ function OurService() {
             <div className="leftBox">
                 <h1>Our
                     Services</h1>
-                    <div className="viewHiddenBtn">
-                  <p>View All</p>
+                <div className="viewHiddenBtn">
+                    <p>View All</p>
                 </div>
                 <p>With over [X] years in the industry, our team of certified professionals brings a wealth of knowledge and experience to tackle any IT challenge</p>
                 <div className="viewAllBtn">
@@ -23,7 +23,7 @@ function OurService() {
                         </div>
                     </div>
                 </div>
-              
+
             </div>
             <div className="rightBox">
                 <div className="upBox">
@@ -74,7 +74,6 @@ function OurService() {
                         <p>With over [X] years in the industry, our team of certified professionals brings a wealth of knowledge </p>
                     </div>
                 </div>
-
             </div>
         </section>
     )

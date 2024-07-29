@@ -4,8 +4,186 @@
     align-items: center;
 }
 
+@font-face {
+    font-family: 'Gilroy-Regular';
+    src: url('../../Font/Gilroy-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Gilroy-Semibold';
+    src: url('../../Font/Gilroy-Semibold.otf');
+}
+
+@font-face {
+    font-family: 'Gilroy-Medium';
+    src: url('../../Font/Gilroy-Medium.ttf');
+}
+@font-face {
+    font-family: 'Gilroy-Light';
+    src: url('../../Font/Gilroy-Light.otf');
+}
+
 // @include MyFlex();
-footer{
-    background: red;
+footer {
+    background: rgb(0, 0, 0);
     padding: 50px 100px;
+
+    .upBox {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+
+        .socialBox,
+        .downBox {
+            display: flex;
+            margin-top: 50px;
+
+            .iconBox {
+                height: 50px;
+                width: 50px;
+                font-size: 30px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                transition: all 0.1s;
+
+                &:hover {
+                    color: #34a29f;
+                }
+            }
+        }
+
+        .leftBox {
+
+            img {
+                max-width: 250px;
+                margin-left: -10px;
+                margin-top: -35px;
+            }
+
+            p {
+                max-width: 400px;
+                font-family: 'Gilroy-Regular';
+
+            }
+
+
+        }
+
+        .rightBox {
+            display: flex;
+            gap: 15px;
+
+            .downBox {
+                display: none;
+            }
+
+            .oneBox {
+                display: flex;
+                flex-direction: column;
+                font-size: 20px;
+                width: 150px;
+                gap: 13px;
+
+                .link,
+                .littleLink {
+                    text-decoration: none;
+                    color: white;
+                  
+                }
+
+                .link {
+                    text-decoration: underline;
+                    margin-bottom: 20px;
+                    font-family: 'Gilroy-Semibold';
+                }
+
+                .littleLink {
+                    font-family: 'Gilroy-Medium';
+                    font-size: 18px;
+                    transition: all 0.1s;
+
+                    &:hover {
+                        color: #34a29f;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .lineBox {
+        margin-top: 20px;
+        border-top: 2px solid gray;
+        padding: 20px 0;
+        color: rgb(189, 189, 189);
+    font-family: 'Gilroy-Light';
+
+    }
+}
+
+@media only screen and (max-width: 904px) {
+    footer {
+        .upBox {
+            flex-direction: column;
+
+            .leftBox {
+                .socialBox {
+                    display: none;
+                }
+            }
+
+            .rightBox {
+                margin-top: 20px;
+                position: relative;
+
+                .downBox {
+                    position: absolute;
+                    display: flex;
+                    bottom: 30px;
+                    left: 150px;
+                }
+            }
+
+
+        }
+
+
+    }
+}
+
+@media only screen and (max-width: 625px) {
+    footer {
+        padding: 50px 30px;
+
+        .upBox {
+            .downBox {
+                .iconBox {
+                    height: 30px;
+                    width: 30px;
+                    font-size: 25px;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    transition: all 0.1s;
+
+                    &:hover {
+                        color: #02CEC8;
+                    }
+                }
+            }
+        }
+
+
+        .rightBox {
+            .oneBox {
+
+                .link,
+                .littleLink {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../Components/Header/Header'
 import WhyChooseUs from '../Components/HomeComponents/WhyChooseUs/WhyChooseUs'
 import OurService from '../Components/HomeComponents/OurService/OurService'
+import NextLevel from '../Components/HomeComponents/NextLevel/NextLevel'
 
 function Homepage() {
   return (
@@ -9,6 +10,7 @@ function Homepage() {
       <Header />
       <WhyChooseUs/>
       <OurService/>
+      <NextLevel/>
     </>
   )
 }

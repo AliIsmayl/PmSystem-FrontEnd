@@ -102,13 +102,13 @@ nav {
             .allLangsBox {
                 position: absolute;
                 top: 70px;
+                padding: 0 2px;
                 width: 55px;
                 opacity: 0;
                 visibility: hidden;
                 display: flex;
                 flex-direction: column;
                 gap: 5px;
-
                 .langBox {
                     cursor: pointer;
 

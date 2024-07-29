@@ -32,8 +32,11 @@
 }
 
 #ourService {
-    height: 160vh;
+    margin-top: -70px;
+    height: 170vh;
     @include MyFlex();
+    background-repeat: no-repeat;
+    background-size: cover;
 
     .viewHiddenBtn {
         display: none;
@@ -80,7 +83,8 @@
                 @include MyFlex();
 
                 span {
-                    height: 2px;
+                    height: 2.5px;
+                    border-radius: 20px;
                     width: 20px;
                     transition: all 0.7s;
 
@@ -128,6 +132,7 @@
             border-radius: 20px;
             display: flex;
             flex-direction: column;
+            transition: all 0.7s;
 
             .arrowBox {
                 position: absolute;
@@ -156,6 +161,7 @@
                 -webkit-box-shadow: 0px 5px 14px 0px rgba(2, 206, 200, 1) !important;
                 -moz-box-shadow: 0px 5px 14px 0px rgba(2, 206, 200, 1) !important;
                 box-shadow: 0px 5px 14px 0px rgba(2, 206, 200, 1) !important;
+                background: rgba(0, 0, 0, 0.575);
 
                 .arrowBox {
                     right: 10px;
@@ -186,7 +192,11 @@
         }
     }
 }
-
+@media only screen and (max-width: 843px){
+    #ourService{
+        margin-top: 0;
+    }
+}
 @media only screen and (max-width: 1166px) {
     #ourService {
         flex-direction: column;
@@ -220,7 +230,7 @@
         padding: 0px 100px;
         align-items: start;
         position: relative;
-        height: 170vh;
+        height: 190vh;
 
         .viewHiddenBtn {
             display: block;
@@ -267,20 +277,20 @@
     #ourService {
         padding: 20px 35px;
         overflow: hidden;
-      
-      
-       
+
+
+
 
         .viewHiddenBtn {
             top: 11.5%;
             right: -25px;
-            
+
         }
 
         .leftBox {
             width: 300px;
-       
-    
+
+
             h1 {
                 font-size: 50px;
                 max-width: 100px;
@@ -291,10 +301,12 @@
                 font-size: 14px;
             }
         }
-        .rightBox{
+
+        .rightBox {
             .cardHover {
                 padding: 30px 20px 0;
-                p{
+
+                p {
                     max-width: 90%;
                 }
             }

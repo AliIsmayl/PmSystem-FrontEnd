@@ -1,0 +1,193 @@
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// @include MyFlex();
+@font-face {
+    font-family: 'Gilroy-Bold';
+    src: url('../../../Font/Gilroy-Bold.otf');
+}
+
+@font-face {
+    font-family: 'Gilroy-Light';
+    src: url('../../../Font/Gilroy-Light.otf');
+}
+
+#nextLevel {
+    // background: #121113;
+    padding: 50px 100px;
+    margin-top: -180px;
+
+    .upBox {
+        font-family: 'Gilroy-Bold';
+        font-size: 40px;
+        gap: 10px;
+        position: relative;
+        color: white;
+        height: 440px;
+        width: 100%;
+
+        h1 {
+            max-width: 475px;
+
+        }
+
+        h5 {
+            font-size: 60px;
+            top: 150px;
+            left: 180px;
+            display: table-cell;
+            font-weight: bold;
+            vertical-align: baseline;
+            color: transparent;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: gray;
+        }
+
+        .normalBox {
+            @include MyFlex();
+            height: 120px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+            span {
+                height: 2px;
+                width: 120px;
+                background-color: gray;
+                margin-top: -20px;
+            }
+
+            .counBox {
+                height: 100px;
+                @include MyFlex();
+                flex-direction: column;
+                gap: 4px;
+
+
+
+                p {
+                    font-size: 50px;
+                    font-family: 'Gilroy-Bold';
+                    color: #02CEC8;
+
+                }
+
+                h6 {
+                    font-size: 22px;
+                    color: white;
+                    font-family: 'Gilroy-Light';
+
+                }
+            }
+        }
+
+    }
+
+    .downBox {
+        margin-top:110px;
+        display: flex;
+        align-items: end;
+        padding: 20px 0;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        .link {
+            height: 100px;
+            width: 300px;
+            @include MyFlex();
+
+            img {
+                max-width: 250px;
+            }
+        }
+
+
+    }
+}
+@media only screen and (max-width: 1166px){
+    #nextLevel{
+        margin-top: 0;
+    }
+}
+@media only screen and (max-width: 923px) {
+    #nextLevel {
+        padding: 50px;
+
+        .upBox {
+            .normalBox {
+                gap: 30px;
+
+                span {
+
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 645px) {
+    #nextLevel {
+
+        .upBox {
+            font-size: 30px;
+            height: 450px;
+
+            h1 {
+                max-width: 335px;
+
+            }
+
+            h5 {
+                font-size: 45px;
+                top: 110px;
+                left: 136px;
+            }
+
+            .normalBox {
+                gap: 30px;
+
+                .counBox {
+                    text-align: center;
+
+                    p {
+                        font-size: 40px;
+
+                    }
+
+                    h6 {
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 645px) {
+    #nextLevel {
+        padding: 20px;
+
+        .upBox {
+            .normalBox {
+                gap: 10px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 403px) {
+    #nextLevel {
+        padding: 20px;
+
+        .upBox {
+            h5 {
+                top: 160px;
+                left: 0px;
+            }
+        }
+    }
+}

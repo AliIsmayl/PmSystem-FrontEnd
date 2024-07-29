@@ -12,11 +12,11 @@ function Footer() {
             <div className="upBox">
                 <div className="leftBox">
                     <img src={Logo} alt="" />
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ut a tempore totam non enim vitae ad! Debitis, tempora neque?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam mauris sed ma</p>
                     <div className="socialBox">
                         <div className="iconBox"><FaFacebook /></div>
                         <div className="iconBox"><FaWhatsapp /></div>
-                        <div className="iconBox"></div>
+                        <div className="iconBox"><FaLinkedin /></div>
                     </div>
                 </div>
                 <div className="rightBox">
@@ -33,15 +33,16 @@ function Footer() {
                         <Link className='littleLink'>Contact Us</Link>
                         <Link className='littleLink'>Address</Link>
                     </div>
+                    <div className="downBox">
+                        <div className="iconBox"><FaFacebook /></div>
+                        <div className="iconBox"><FaWhatsapp /></div>
+                        <div className="iconBox"><FaLinkedin /></div>
+                    </div>
                 </div>
             </div>
-            <div className="downBox">
-                <div className="iconBox"><FaFacebook /></div>
-                <div className="iconBox"><FaWhatsapp /></div>
-                <div className="iconBox"><FaLinkedin /></div>
-            </div>
+
             <div className="lineBox">
-                <p>© 2024 Created by Pm System</p>
+                <p>© 2024 Created by PM Systems</p>
             </div>
         </footer>
     )

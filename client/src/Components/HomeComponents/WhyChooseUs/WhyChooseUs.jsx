@@ -15,7 +15,7 @@ function WhyChooseUs() {
             <div className="downTextBox">
                 <div className="chooseCardBox">
                     <div className="imgBox">
-                        <img src={Choose1image} style={{ maxWidth: "200px" }} alt="" />
+                        <img src={Choose1image}  alt="" />
                     </div>
                     <h1>Expertise</h1>
                     <p>With over [X] years in the industry, our team of certified professionals brings a wealth of knowledge and experience to tackle any IT challenge</p>

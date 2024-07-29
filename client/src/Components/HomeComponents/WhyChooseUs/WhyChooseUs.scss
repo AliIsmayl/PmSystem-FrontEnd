@@ -32,10 +32,8 @@
 
 // @include MyFlex();
 #whyChooseUs {
-    min-height: 100vh;
     background-color: #121113;
     color: white;
-
     .upTextBox {
         padding: 0 100px;
 
@@ -48,6 +46,7 @@
     }
 
     .downTextBox {
+
         padding: 50px 100px;
         display: flex;
         flex-wrap: wrap;
