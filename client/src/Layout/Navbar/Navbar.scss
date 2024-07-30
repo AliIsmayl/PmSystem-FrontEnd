@@ -27,6 +27,17 @@
 
 
 }
+.navbar {
+    transition: top 0.3s;
+}
+
+.navbar.hidden {
+    top: -100px; // Adjust this value to hide the navbar completely
+}
+
+.navbar.visible {
+    top: 0;
+}
 
 nav {
     // background: rgb(0, 0, 0);

@@ -27,30 +27,32 @@ function OurService() {
             </div>
             <div className="rightBox">
                 <div className="upBox">
-                    <div id="cardBig" className='cardHover'>
+                    <div data-aos="fade-left" data-aos-duration="1000" id="cardBig" className='cardHover'>
                         <div className="arrowBox">
                             <IoIosArrowRoundForward />
                         </div>
                         <h1>Web Development</h1>
                         <p>With over [X] years in the industry, our team of certified professionals brings a wealth of knowledge </p>
                     </div>
-                    <div id="cardSmall" className='cardHover'>
+
+                    <div data-aos="fade-left" data-aos-duration="1000" id="cardSmall" className='cardHover'>
                         <div className="arrowBox">
                             <IoIosArrowRoundForward />
                         </div>
                         <h1>Web Development</h1>
                         <p>With over [X] years in the industry, our team of certified professionals brings a wealth of knowledge </p>
                     </div>
+
                 </div>
                 <div className="upBox" >
-                    <div id="cardBig2" className='cardHover'>
+                    <div id="cardBig2" data-aos="fade-left" data-aos-duration="1000" className='cardHover'>
                         <div className="arrowBox">
                             <IoIosArrowRoundForward />
                         </div>
                         <h1 style={{ maxWidth: "70%" }}>Web Development</h1>
                         <p>With over [X] years in the industry, our team of certified professionals brings a wealth of knowledge </p>
                     </div>
-                    <div id="cardSmall2" className='cardHover'>
+                    <div id="cardSmall2" data-aos="fade-left" data-aos-duration="1000" className='cardHover'>
                         <div className="arrowBox">
                             <IoIosArrowRoundForward />
                         </div>
@@ -59,14 +61,14 @@ function OurService() {
                     </div>
                 </div>
                 <div className="upBox" id='thirdBox'>
-                    <div id="cardBig" className='cardHover'>
+                    <div id="cardBig" data-aos="fade-left" data-aos-duration="1000" className='cardHover'>
                         <div className="arrowBox">
                             <IoIosArrowRoundForward />
                         </div>
                         <h1>Web Development</h1>
                         <p>With over [X] years in the industry, our team of certified professionals brings a wealth of knowledge </p>
                     </div>
-                    <div id="cardSmall" className='cardHover'>
+                    <div id="cardSmall" data-aos="fade-left" data-aos-duration="1000" className='cardHover'>
                         <div className="arrowBox">
                             <IoIosArrowRoundForward />
                         </div>

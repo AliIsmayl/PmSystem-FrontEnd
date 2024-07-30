@@ -6,9 +6,16 @@ import ServicePage from './Pages/ServicePage';
 import ContactPage from './Pages/ContactPage';
 import ServiceDetail from './Components/ServiceDetail/ServiceDetail';
 import MainLayout from './Layout/MainLayout';
+// import 'animate.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
 
 function App() {
-
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <>
       <BrowserRouter>
