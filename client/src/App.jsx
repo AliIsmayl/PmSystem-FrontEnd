@@ -16,12 +16,13 @@ function App() {
     AOS.init();
     AOS.refresh();
   }, []);
+
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />} >
-            <Route path="/" element={<Homepage />} />
+            <Route index element={<Homepage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/service" element={<ServicePage />} />
             <Route path="/contact" element={<ContactPage />} />

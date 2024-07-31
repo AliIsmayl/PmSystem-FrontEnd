@@ -9,8 +9,9 @@
     justify-content: center;
     align-items: center;
 }
-
 // @include MyFlex();
+
+
 @font-face {
     font-family: 'Gilroy-Medium';
     src: url('../../Font/Gilroy-Medium.ttf');
@@ -24,11 +25,10 @@
 @font-face {
     font-family: 'Gilroy-Light';
     src: url('../../Font/Gilroy-Light.otf');
-
-
 }
+
 .navbar {
-    transition: top 0.3s;
+    transition: top 0.3s, background-color 0.3s;
 }
 
 .navbar.hidden {
@@ -39,8 +39,73 @@
     top: 0;
 }
 
+.navbar.scrolled {
+    background-color: black;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 56px;
+    font-size: 18px;
+    margin-right: 70px;
+
+    .link,
+    .active {
+        text-decoration: none;
+        height: 20px;
+        cursor: pointer;
+        color: white;
+
+        .line {
+            margin-top: 3px;
+            width: 0%;
+            height: 3px;
+            border-radius: 10px;
+            transition: 0.4s;
+            background-color: white;
+        }
+
+        &:hover {
+            .line {
+                width: 60%;
+            }
+        }
+    }
+}
+
+.selectBox {
+    border: none;
+    font-size: 20px;
+    font-family: "Gilroy-Semibold";
+
+    .mainLang {
+        gap: 5px;
+        @include MyFlex();
+        cursor: pointer;
+        font-size: 25px;
+        position: relative;
+        width: 60px;
+    }
+
+    .allLangsBox {
+        position: absolute;
+        top: 70px;
+        padding: 0 2px;
+        width: 55px;
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .langBox {
+            cursor: pointer;
+        }
+    }
+}
+
 nav {
-    // background: rgb(0, 0, 0);
     padding: 0px 100px;
     display: flex;
     justify-content: space-between;
@@ -48,9 +113,6 @@ nav {
     position: fixed;
     width: 100%;
     height: 100px;
-    // background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.067) 100%);
-    background-color: black;
-    // display: none;
     z-index: 4;
 
     img {
@@ -60,75 +122,15 @@ nav {
     .textAndLangBox {
         display: flex;
         gap: 50px;
-        // margin-top: 30px;
         color: white;
         @include MyFlex();
-
-        ul {
-            display: flex;
-            list-style: none;
-            gap: 56px;
-            font-size: 18px;
-            margin-right: 70px;
-
-            .link,
-            .active {
-                text-decoration: none;
-                height: 20px;
-                cursor: pointer;
-                color: white;
-
-                .line {
-                    margin-top: 3px;
-                    width: 0%;
-                    height: 3px;
-                    border-radius: 10px;
-                    transition: 0.4s;
-                    background-color: white;
-                }
-
-                &:hover {
-                    .line {
-                        width: 60%;
-                    }
-                }
-            }
-
-        }
-
-        .selectBox {
-            border: none;
-            font-size: 20px;
-            font-family: "Gilroy-Semibold";
-
-            .mainLang {
-                gap: 5px;
-                @include MyFlex();
-                cursor: pointer;
-                font-size: 25px;
-                position: relative;
-                width: 60px;
-            }
-
-            .allLangsBox {
-                position: absolute;
-                top: 70px;
-                padding: 0 2px;
-                width: 55px;
-                opacity: 0;
-                visibility: hidden;
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-                .langBox {
-                    cursor: pointer;
-
-                }
-            }
-        }
     }
 
     .menuBox {
+        display: none;
+    }
+
+    .respNavbar {
         display: none;
     }
 }
@@ -144,14 +146,16 @@ nav {
     .line {
         width: 60% !important;
     }
+}
 
+.openedNavbar {
+    transform: translateX(100%);
 }
 
 @media only screen and (max-width: 1037px) {
     nav {
         padding: 10px 20px;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.31985294117647056) 100%);
-
+        background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.681) 100%);
         img {
             max-width: 170px;
         }
@@ -165,6 +169,42 @@ nav {
             font-size: 50px;
             @include MyFlex();
             color: white;
+        }
+
+        .respNavbar {
+            display: flex;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.844) 100%);
+            height: 100vh;
+            width: 50%;
+            position: absolute;
+            top: 100px;
+            right: 0;
+            z-index: 2;
+            transition: all 1s;
+            padding: 50px;
+            ul {
+                list-style: none;
+                flex-direction: column;
+            }
+
+            .selectBox {
+                color: white;
+                position: absolute;
+                top: 350px;
+
+                .allLangsBox {
+                    top: 30px;
+
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 582px) {
+    nav {
+        .respNavbar {
+            width: 100%;
         }
     }
 }

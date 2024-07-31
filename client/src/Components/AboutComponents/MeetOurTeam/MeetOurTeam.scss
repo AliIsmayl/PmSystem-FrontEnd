@@ -1,0 +1,192 @@
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// @include MyFlex();
+@font-face {
+    font-family: 'Gilroy-Bold';
+    src: url('../../../Font/Gilroy-Bold.otf');
+}
+
+@font-face {
+    font-family: 'Gilroy-Semibold';
+    src: url('../../../Font/Gilroy-Semibold.otf');
+}
+
+#meetOurTeam {
+    padding: 50px 0px 50px 100px;
+    display: flex;
+    color: white;
+    width: 100%;
+
+    h1 {
+        font-family: 'Gilroy-Bold';
+        font-size: 65px;
+        max-width: 300px;
+    }
+
+    .ourTeamBox {
+        gap: 50px;
+        display: flex;
+        padding: 0 50px 50px 50px;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Firefox için */
+        -ms-overflow-style: none;
+        /* Internet Explorer 10+ */
+        scrollbar-width: none;
+        /* Firefox */
+
+
+        .card {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 450px;
+            width: 120px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            cursor: pointer;
+            transition: all 0.7s;
+            position: relative;
+            flex-shrink: 0;
+
+            .imgBox {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                @include MyFlex();
+                overflow: hidden;
+                border-radius: 20px;
+
+                img {
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: 0.2s;
+                    margin-bottom: -110px;
+                    aspect-ratio: 1/1.4;
+                    width: 320px;
+                    object-fit: cover;
+                }
+            }
+
+            .textBox {
+                position: absolute;
+                bottom: 40px;
+                left: 30px;
+            }
+
+
+
+            p {
+                font-family: 'Gilroy-Semibold';
+                transform: rotate(270deg);
+                color: rgb(40, 38, 38);
+                color: white;
+                font-size: 25px;
+                transition: 0.7s;
+                width: 250px;
+                position: absolute;
+                bottom: 130px;
+                left: -80px;
+            }
+
+            h5 {
+                font-family: 'Gilroy-Semibold';
+                font-size: 16px;
+                color: gray;
+                color: white;
+                visibility: hidden;
+                font-size: 30px;
+                transition: 0.2s;
+                margin-bottom: 30px;
+                opacity: 0;
+            }
+
+            span {
+                font-family: 'Gilroy-Semibold';
+                font-size: 16px;
+                color: gray;
+                visibility: hidden;
+                transition: 0.2s;
+                opacity: 0;
+                color: white;
+
+            }
+
+            &:hover {
+                width: 320px;
+
+                p {
+                    transition: 0.5s;
+                    font-size: 20px;
+                    transform: rotate(360deg);
+                    bottom: 23px;
+                    left: 0px;
+                    color: rgba(255, 255, 255, 0.849);
+
+                }
+
+                img {
+                    visibility: visible;
+                    transition: 2.5s;
+                    opacity: 1;
+                }
+
+                h5 {
+                    visibility: visible;
+                    transition: 2.5s;
+                    opacity: 1;
+
+                }
+
+                span {
+                    visibility: visible;
+                    transition: 2.5s;
+                    opacity: 1;
+                }
+
+            }
+
+        }
+
+
+    }
+
+}
+
+@media only screen and (max-width: 967px) {
+    #meetOurTeam {
+        flex-direction: column;
+
+        .ourTeamBox {
+            padding: 50px 50px 50px 0px;
+        }
+    }
+}
+
+@media only screen and (max-width: 625px) {
+    #meetOurTeam {
+        flex-direction: column;
+        padding: 50px 20px;
+        h1 {
+            font-size: 45px;
+        }
+        .ourTeamBox {
+            padding: 50px 50px 50px 0px;
+        }
+    }
+}
+

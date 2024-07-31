@@ -34,6 +34,7 @@
 #whyChooseUs {
     background-color: #121113;
     color: white;
+
     .upTextBox {
         padding: 0 100px;
 
@@ -53,7 +54,7 @@
 
         .chooseCardBox {
             height: 400px;
-            width: 280px;
+            width: 275px;
             overflow: hidden;
 
             .imgBox {
@@ -104,6 +105,7 @@
         .downTextBox {
             padding: 50px 30px;
             @include MyFlex();
+
             .chooseCardBox {
                 text-align: center;
                 height: 350px;

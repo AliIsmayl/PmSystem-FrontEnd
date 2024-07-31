@@ -93,12 +93,12 @@
         padding: 20px 0;
         flex-wrap: wrap;
         gap: 30px;
+        @include MyFlex();
 
         .link {
             height: 100px;
-            width: 300px;
+            width: 290px;
             @include MyFlex();
-
             img {
                 max-width: 250px;
             }

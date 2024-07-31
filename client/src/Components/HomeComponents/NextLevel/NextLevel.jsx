@@ -25,7 +25,7 @@ function NextLevel() {
     }
 
     return () => {
-      if (observer && observer.unobserve) {
+      if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };

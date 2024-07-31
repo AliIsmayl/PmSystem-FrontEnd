@@ -31,13 +31,14 @@
     src: url('../../../Font/Gilroy-UltraLight.otf');
 }
 
-#ourService {
-    margin-top: -70px;
-    height: 170vh;
+#whatWeOffer {
+    padding: 0 0 50px;
+    margin-top: -320px;
     @include MyFlex();
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+    // background-color: #09090c;
     .viewHiddenBtn {
         display: none;
     }
@@ -46,10 +47,10 @@
         width: 440px;
         font-family: 'Gilroy-Bold';
         color: white;
-        margin-top: 145px;
+        margin-top: -480px;
 
         h1 {
-            font-size: 90px;
+            font-size: 70px;
             line-height: 1;
 
         }
@@ -64,7 +65,7 @@
         }
 
         .viewAllBtn {
-            margin-top: 200px;
+            margin-top: 30px;
             border-radius: 20px;
             border: 2px solid white;
             @include MyFlex();
@@ -177,6 +178,9 @@
             #cardBig {
                 width: 58%;
             }
+            #cardBig3{
+                width: 100%;
+            }
 
             #cardSmall {
                 width: 39%;
@@ -192,13 +196,9 @@
         }
     }
 }
-@media only screen and (max-width: 843px){
-    #ourService{
-        margin-top: 0;
-    }
-}
+
 @media only screen and (max-width: 1166px) {
-    #ourService {
+    #whatWeOffer {
         flex-direction: column;
         padding: 0px 100px;
         align-items: start;
@@ -225,7 +225,7 @@
 }
 
 @media only screen and (max-width: 854px) {
-    #ourService {
+    #whatWeOffer {
         flex-direction: column;
         padding: 0px 100px;
         align-items: start;
@@ -236,7 +236,7 @@
             display: block;
             position: absolute;
             right: 60px;
-            top: 14%;
+            top: 23%;
             width: 100px;
 
             p {
@@ -274,16 +274,15 @@
 }
 
 @media only screen and (max-width: 624px) {
-    #ourService {
+    #whatWeOffer {
         padding: 20px 35px;
         overflow: hidden;
 
 
 
-
         .viewHiddenBtn {
-            top: 11.5%;
-            right: -25px;
+            top: 22%;
+            right: -14px;
 
         }
 
@@ -293,7 +292,6 @@
 
             h1 {
                 font-size: 50px;
-                max-width: 100px;
 
             }
 

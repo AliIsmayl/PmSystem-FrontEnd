@@ -1,0 +1,104 @@
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// @include MyFlex();
+@font-face {
+    font-family: 'Gilroy-Bold';
+    src: url('../../../Font/Gilroy-Bold.otf');
+}
+
+@font-face {
+    font-family: 'Gilroy-Regular';
+    src: url('../../../Font/Gilroy-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Gilroy-Medium';
+    src: url('../../../Font/Gilroy-Medium.ttf');
+}
+
+#whoWeAre {
+    height: 160vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 50px 110px;
+
+    h1 {
+        font-family: 'Gilroy-Bold';
+        font-size: 80px;
+
+    }
+
+    .textBox {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        height: 40%;
+
+        span {
+            font-family: 'Gilroy-Regular';
+            line-height: 1.5;
+            font-size: 18px;
+            max-width: 300px;
+            height: 100px;
+            position: absolute;
+        }
+
+        p {
+            margin-top: 130px;
+
+            font-family: 'Gilroy-Medium';
+            font-size: 19px;
+            line-height: 1.5;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            max-width: 500px;
+        }
+    }
+}
+
+@media only screen and (max-width: 704px) {
+    #whoWeAre {
+        padding: 50px 20px;
+
+        h1 {
+            font-size: 50px;
+max-width: 200px;
+        }
+
+        .textBox {
+            span {
+                font-size: 16px;
+            }
+
+            p {
+
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 361px) {
+    #whoWeAre {
+        .textBox {
+            height: 50%;
+
+            span {
+                font-size: 16px;
+            }
+
+            p {
+
+                font-size: 16px;
+            }
+        }
+    }
+}

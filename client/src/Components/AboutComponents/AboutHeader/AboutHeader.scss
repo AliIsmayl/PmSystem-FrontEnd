@@ -5,6 +5,13 @@
 }
 
 // @include MyFlex();
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// @include MyFlex();
 @font-face {
     font-family: 'Gilroy-Bold';
     src: url('../../Font/Gilroy-Bold.otf');
@@ -31,7 +38,7 @@
 
 }
 
-header {
+#aboutHeader {
     padding: 50px 0;
     min-height: 100vh;
     @include MyFlex();
@@ -98,7 +105,7 @@ header {
 }
 
 @media only screen and (max-width: 1245px) {
-    header {
+    #aboutHeader {
         p {
             font-size: 50px;
 
@@ -107,7 +114,7 @@ header {
 }
 
 @media only screen and (max-width: 724px) {
-    header {
+    #aboutHeader {
 
         p {
             font-size: 40px;
