@@ -1,0 +1,127 @@
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// @include MyFlex();
+@font-face {
+    font-family: 'Gilroy-Bold';
+    src: url('../../Font/Gilroy-Bold.otf');
+
+}
+
+@font-face {
+    font-family: 'Gilroy-Medium';
+    src: url('../../Font/Gilroy-Medium.ttf');
+
+
+}
+
+@font-face {
+    font-family: 'Gilroy-Light';
+    src: url('../../Font/Gilroy-Light.otf');
+
+
+}
+
+@font-face {
+    font-family: 'Gilroy-Semibold';
+    src: url('../../Font/Gilroy-Semibold.otf');
+
+}
+
+#serviceHeader {
+    padding: 50px 0;
+    min-height: 100vh;
+    @include MyFlex();
+    flex-direction: column;
+    color: white;
+    background-position: center;
+    background-size: cover;
+
+    p {
+        margin-top: 90px;
+        font-size: 65px;
+        text-align: center;
+        font-family: "Gilroy";
+        font-weight: bolder;
+        max-width: 80%;
+        line-height: 1.5;
+
+    }
+
+    span {
+        margin: 20px 0px 50px;
+        font-family: 'Gilroy-Light';
+        font-size: 20px;
+        text-align: center;
+        max-width: 60%;
+        line-height: 1.5;
+    }
+
+    .exploreBtn {
+        height: 55px;
+        width: 170px;
+        border-radius: 40px;
+        display: flex;
+        @include MyFlex();
+        position: relative;
+        cursor: pointer;
+        border: 2px solid #3aaca8;
+        transition: all 0.7s;
+
+        span {
+            position: absolute;
+            left: -10px;
+            font-family: 'Gilroy-Medium';
+            margin: 50px;
+
+        }
+
+        .arrow {
+            @include MyFlex();
+            position: absolute;
+            right: 20px;
+            font-size: 30px;
+            transition: 0.4s;
+        }
+
+        &:hover {
+            background-color: #3aaca8;
+            .arrow {
+                right: 12px;
+
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1245px) {
+    #serviceHeader {
+        p {
+            font-size: 50px;
+
+        }
+    }
+}
+
+@media only screen and (max-width: 724px) {
+    #serviceHeader {
+
+        p {
+            font-size: 40px;
+            max-width: 90%;
+            line-height: 1.3;
+
+        }
+
+        span {
+            margin-top: 20px;
+            max-width: 90%;
+
+        }
+
+
+    }
+}

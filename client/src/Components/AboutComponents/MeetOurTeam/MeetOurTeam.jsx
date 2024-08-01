@@ -2,6 +2,7 @@ import React from 'react';
 import './MeetOurTeam.scss';
 import cardBackground from '../../../Image/BackgroundCard.png';
 import oglan from '../../../Image/oglan.png';
+import { Link } from "react-router-dom";
 
 function MeetOurTeam() {
     return (
@@ -15,7 +16,7 @@ function MeetOurTeam() {
                     <div className="textBox">
                         <h5>Ali İsmayıl</h5>
                         <p>Front End Developer</p>
-                        <span>ali.ismayil.681@gmail.com</span>
+                        <span><Link to={'mailto:ali.ismayil.681@gmail.com'} className='link'>ali.ismayil.681@gmail.com</Link></span>
                     </div>
                 </div>
                 <div className="card" style={{ backgroundImage: `url(${cardBackground})` }}>
