@@ -1,3 +1,6 @@
 {
-    "Hello":"hello"
+  "Home": "Home",
+  "About": "About",
+  "Service": "Service",
+  "Contact": "Contact"
 }

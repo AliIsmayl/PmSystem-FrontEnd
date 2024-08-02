@@ -13,7 +13,7 @@ function OurService() {
                 <div className="viewHiddenBtn">
                     <p>View All</p>
                 </div>
-                <p>With over [X] years in the industry, our team of certified professionals brings a wealth of knowledge and experience to tackle any IT challenge</p>
+                <p>PM System delivers tailored, high-quality, and reliable solutions to our clients. With our experienced team and cutting-edge technology, we ensure the success of your projects and provide strong support for your business growth.</p>
                 <div className="viewAllBtn">
                     <p>View All</p>
                     <div className="arrow">

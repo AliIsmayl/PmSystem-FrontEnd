@@ -63,14 +63,14 @@ function NextLevel() {
         <h1 data-aos="fade-right" data-aos-duration="1000">Ready to take your business to the </h1>
         <h5 data-aos="fade-right" data-aos-duration="1000">next level?</h5>
         <div className="normalBox">
-          <div className="counBox">
+          <div className="counBox" style={{width:"130px"}}>
             <p>{projectsCount}+</p>
-            <h6>Successful Projects</h6>
+            <h6> All Projects </h6>
           </div>
           <span></span>
           <div className="counBox">
             <p>{loremCount}+</p>
-            <h6>Lorem Ipsum</h6>
+            <h6>General Service</h6>
           </div>
           <span></span>
           <div className="counBox">

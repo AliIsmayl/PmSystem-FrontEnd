@@ -79,7 +79,6 @@
                     font-size: 22px;
                     color: white;
                     font-family: 'Gilroy-Light';
-
                 }
             }
         }
@@ -87,7 +86,7 @@
     }
 
     .downBox {
-        margin-top:110px;
+        margin-top: 110px;
         display: flex;
         align-items: end;
         padding: 20px 0;
@@ -99,6 +98,7 @@
             height: 100px;
             width: 290px;
             @include MyFlex();
+
             img {
                 max-width: 250px;
             }
@@ -107,11 +107,13 @@
 
     }
 }
-@media only screen and (max-width: 1166px){
-    #nextLevel{
+
+@media only screen and (max-width: 1166px) {
+    #nextLevel {
         margin-top: 0;
     }
 }
+
 @media only screen and (max-width: 923px) {
     #nextLevel {
         padding: 50px;
@@ -152,6 +154,7 @@
 
                 .counBox {
                     text-align: center;
+                    justify-content: start;
 
                     p {
                         font-size: 40px;
@@ -181,7 +184,7 @@
 
 @media only screen and (max-width: 403px) {
     #nextLevel {
-        padding: 20px;
+        padding: 10px;
 
         .upBox {
             h5 {

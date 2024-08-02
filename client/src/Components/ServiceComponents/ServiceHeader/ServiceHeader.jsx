@@ -6,7 +6,7 @@ function ServiceHeader() {
   return (
     <header id='serviceHeader' style={{ backgroundImage: `url(${Image})` }}>
       <p>Our services</p>
-      <span>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</span>
+      <span>We work closely with SAP to offer a wide range of services for both SAP and non-SAP platforms. Our services include development, consulting, audit, quality assurance, automation, and artificial intelligence solutions to enhance your business operations. By partnering with us, you leverage cutting-edge technologies to increase your company's efficiency and competitiveness.</span>
 
     </header>
   )

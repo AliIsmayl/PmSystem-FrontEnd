@@ -11,18 +11,19 @@ import i18n from '../../i18n';
 function Navbar() {
     const [openRespNavbar, setOpenRespNavbar] = useState(true);
     const [openLangBox, setOpenLangBox] = useState(false);
-    const [whichLang, setWhichLang] = useState('AZ');
+    const defaultLang = localStorage.getItem('language') || 'AZ';
+    const [whichLang, setWhichLang] = useState(defaultLang);
     const languages = ["AZ", "EN", "RU"];
     const filteredLanguages = languages.filter(lang => lang !== whichLang);
     const { t } = useTranslation();
-    // const { t } = useTranslation();
 
     const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
     const [visible, setVisible] = useState(true);
     const [isScrolled, setIsScrolled] = useState(false);
 
     function changeLang(lang) {
-        i18n.changeLanguage(lang)
+        i18n.changeLanguage(lang);
+        localStorage.setItem('language', lang.toUpperCase());
     }
 
     const handleScroll = () => {
@@ -56,19 +57,19 @@ function Navbar() {
             <div className="textAndLangBox">
                 <ul>
                     <NavLink to={"/"} className={({ isActive }) => isActive ? "active" : "link"}>
-                        <li>Home</li>
+                        <li>{t("Home")}</li>
                         <div className="line"></div>
                     </NavLink>
                     <NavLink to={"/about"} className={({ isActive }) => isActive ? "active" : "link"}>
-                        <li>About Us</li>
+                        <li>{t("About")}</li>
                         <div className="line"></div>
                     </NavLink>
                     <NavLink to={"/service"} className={({ isActive }) => isActive ? "active" : "link"}>
-                        <li>Service</li>
+                        <li>{t("Service")}</li>
                         <div className="line"></div>
                     </NavLink>
                     <NavLink to={"/contact"} className={({ isActive }) => isActive ? "active" : "link"}>
-                        <li>Contact</li>
+                        <li>{t("Contact")}</li>
                         <div className="line"></div>
                     </NavLink>
                 </ul>
@@ -77,10 +78,6 @@ function Navbar() {
                         <p style={{ fontSize: "20px" }}>{whichLang}</p>
                         <IoIosArrowDown />
                     </div>
-                    <button onClick={() => changeLang("az")}>az</button>
-                    <button onClick={() => changeLang("en")}>en</button>
-                    <button onClick={() => changeLang("ru")}>ru</button>
-                    <p>{t("Hello")}</p>
                     <div className={`allLangsBox ${openLangBox ? "opened" : ""}`}>
                         {filteredLanguages.map(lang => (
                             <div
@@ -89,6 +86,7 @@ function Navbar() {
                                 onClick={() => {
                                     setWhichLang(lang);
                                     setOpenLangBox(false);
+                                    changeLang(`${lang.toLowerCase()}`);
                                 }}>
                                 {lang}
                             </div>
@@ -102,19 +100,19 @@ function Navbar() {
             <div className={`respNavbar ${openRespNavbar ? "openedNavbar" : ""}`}>
                 <ul>
                     <NavLink to={"/"} className={({ isActive }) => isActive ? "active" : "link"}>
-                        <li>Home</li>
+                        <li>{t("Home")}</li>
                         <div className="line"></div>
                     </NavLink>
                     <NavLink to={"/about"} className={({ isActive }) => isActive ? "active" : "link"}>
-                        <li>About Us</li>
+                        <li>{t("About")}</li>
                         <div className="line"></div>
                     </NavLink>
                     <NavLink to={"/service"} className={({ isActive }) => isActive ? "active" : "link"}>
-                        <li>Service</li>
+                        <li>{t("Service")}</li>
                         <div className="line"></div>
                     </NavLink>
                     <NavLink to={"/contact"} className={({ isActive }) => isActive ? "active" : "link"}>
-                        <li>Contact</li>
+                        <li>{t("Contact")}</li>
                         <div className="line"></div>
                     </NavLink>
                 </ul>
@@ -131,6 +129,7 @@ function Navbar() {
                                 onClick={() => {
                                     setWhichLang(lang);
                                     setOpenLangBox(false);
+                                    changeLang(`${lang.toLowerCase()}`);
                                 }}>
                                 {lang}
                             </div>

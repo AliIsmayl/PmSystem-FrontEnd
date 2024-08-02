@@ -50,10 +50,10 @@
         padding: 50px 100px;
         display: flex;
         flex-wrap: wrap;
-        gap: 60px;
+        gap: 70px;
 
         .chooseCardBox {
-            height: 400px;
+            // height: 400px;
             width: 275px;
             overflow: hidden;
 
@@ -70,8 +70,8 @@
             }
 
             h1 {
-                margin-top: 50px;
-                font-size: 27px;
+                margin-top: 40px;
+                font-size: 25px;
                 font-family: 'Gilroy-Semibold';
 
             }
@@ -82,7 +82,6 @@
                 font-size: 16px;
                 color: rgb(205, 202, 202);
                 line-height: 1.5;
-                width: 90%;
             }
         }
 
@@ -108,7 +107,6 @@
 
             .chooseCardBox {
                 text-align: center;
-                height: 350px;
 
                 .imgBox {
                     img {

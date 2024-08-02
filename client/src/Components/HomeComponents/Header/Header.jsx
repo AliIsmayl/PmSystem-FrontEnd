@@ -2,18 +2,19 @@ import React from 'react'
 import './Header.scss'
 import Image from '../../../Image/Header.png'
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { Link } from 'react-router-dom';
 
 function Header() {
     return (
-        <header id='homeHeader'  style={{ backgroundImage: `url(${Image})` }}>
+        <header id='homeHeader' style={{ backgroundImage: `url(${Image})` }}>
             <p>BEST IT SOLUTION & COMPANY IN GLOBAL COMMUNITY</p>
-            <span>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</span>
-            <div className="exploreBtn">
+            <span>Together with SAP, we make your business processes more efficient and competitive by providing innovative and reliable solutions. Our goal is to contribute to your company's success and ensure your continuous growth.</span>
+            <Link to={'https://partnerfinder.sap.com/'} className="exploreBtn">
                 <span>Explore</span>
                 <div className="arrow">
                     <IoIosArrowRoundForward />
                 </div>
-            </div>
+            </Link>
         </header>
     )
 }

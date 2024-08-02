@@ -70,6 +70,7 @@
         cursor: pointer;
         border: 2px solid #3aaca8;
         transition: all 0.7s;
+        color: white;
 
         span {
             position: absolute;
@@ -89,6 +90,7 @@
 
         &:hover {
             background-color: #3aaca8;
+
             .arrow {
                 right: 12px;
 
