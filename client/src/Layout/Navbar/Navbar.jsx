@@ -5,6 +5,8 @@ import Logo from '../../Image/whiteLogo.png';
 import { IoIosArrowDown } from "react-icons/io";
 import { HiMenu } from "react-icons/hi";
 import { CgClose } from "react-icons/cg";
+import { useTranslation } from 'react-i18next';
+import i18n from '../../i18n';
 
 function Navbar() {
     const [openRespNavbar, setOpenRespNavbar] = useState(true);
@@ -12,10 +14,16 @@ function Navbar() {
     const [whichLang, setWhichLang] = useState('AZ');
     const languages = ["AZ", "EN", "RU"];
     const filteredLanguages = languages.filter(lang => lang !== whichLang);
+    const { t } = useTranslation();
+    // const { t } = useTranslation();
 
     const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
     const [visible, setVisible] = useState(true);
     const [isScrolled, setIsScrolled] = useState(false);
+
+    function changeLang(lang) {
+        i18n.changeLanguage(lang)
+    }
 
     const handleScroll = () => {
         const currentScrollPos = window.pageYOffset;
@@ -69,6 +77,10 @@ function Navbar() {
                         <p style={{ fontSize: "20px" }}>{whichLang}</p>
                         <IoIosArrowDown />
                     </div>
+                    <button onClick={() => changeLang("az")}>az</button>
+                    <button onClick={() => changeLang("en")}>en</button>
+                    <button onClick={() => changeLang("ru")}>ru</button>
+                    <p>{t("Hello")}</p>
                     <div className={`allLangsBox ${openLangBox ? "opened" : ""}`}>
                         {filteredLanguages.map(lang => (
                             <div

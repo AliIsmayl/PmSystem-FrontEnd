@@ -10,6 +10,7 @@ import "aos/dist/aos.css";
 import { useEffect } from 'react';
 import { useLocation } from "react-router-dom";
 import ServiceDetail from './Pages/ServiceDetail/ServiceDetail';
+import './i18n';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
