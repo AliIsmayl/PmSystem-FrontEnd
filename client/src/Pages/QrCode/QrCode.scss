@@ -1,0 +1,40 @@
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// @include MyFlex();
+@font-face {
+    font-family: 'Gilroy-Light';
+    src: url('../../Font/Gilroy-Medium.ttf');
+}
+
+#qrCode {
+    background-color: #121113;
+    min-height: 100vh;
+    @include MyFlex();
+    flex-direction: column;
+    gap: 10px;
+
+    img {
+        max-width: 260px;
+    }
+
+    .link {
+        text-decoration: none;
+        color: #02cec8;
+        border: 1px solid #02cec8;
+        height: 60px;
+        width: 310px;
+        @include MyFlex();
+        font-family: 'Gilroy-Light';
+        border-radius: 10px;
+        font-size: 20px;
+
+        &:hover {
+            background-color: #02cec8;
+            color: white;
+        }
+    }
+}

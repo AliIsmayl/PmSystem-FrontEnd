@@ -214,7 +214,12 @@
                     border: 1px solid #22FFF8;
                     background-color: transparent;
                     font-family: 'Gilroy-Regular';
+                    transition: all 0.3s;
 
+                    &:hover {
+                        background-color: #22FFF8;
+                        color: black;
+                    }
                 }
             }
         }

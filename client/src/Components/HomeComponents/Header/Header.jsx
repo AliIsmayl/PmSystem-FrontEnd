@@ -7,6 +7,11 @@ import { Link } from 'react-router-dom';
 function Header() {
     return (
         <header id='homeHeader' style={{ backgroundImage: `url(${Image})` }}>
+            {/* <p>Coming soon...</p>
+            <h5>+994 55 343 21 43</h5>
+            <h5>office@pmsystems.az</h5>
+            <h5>46 Ashiq Molla Juma, Baku</h5> */}
+
             <p>BEST IT SOLUTION & COMPANY IN GLOBAL COMMUNITY</p>
             <span>Together with SAP, we make your business processes more efficient and competitive by providing innovative and reliable solutions. Our goal is to contribute to your company's success and ensure your continuous growth.</span>
             <Link to={'https://partnerfinder.sap.com/'} className="exploreBtn">

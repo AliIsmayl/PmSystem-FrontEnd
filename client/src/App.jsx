@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 import { useLocation } from "react-router-dom";
 import ServiceDetail from './Pages/ServiceDetail/ServiceDetail';
 import './i18n';
+import QrCode from './Pages/QrCode/QrCode';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -40,6 +41,7 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/serviceDetail" element={<ServiceDetail />} />
           </Route>
+            <Route path="/qrCode" element={<QrCode />} />
         </Routes>
       </BrowserRouter>
     </>
