@@ -68,8 +68,8 @@
 
     .exploreBtn {
         height: 55px;
-        width: 170px;
         border-radius: 40px;
+        padding: 0 20px 0 0;
         display: flex;
         @include MyFlex();
         position: relative;
@@ -77,9 +77,9 @@
         border: 2px solid #3aaca8;
         transition: all 0.7s;
         color: white;
+        text-decoration: none;
 
         span {
-            position: absolute;
             left: -10px;
             font-family: 'Gilroy-Medium';
             margin: 50px;

@@ -38,6 +38,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+
     .viewHiddenBtn {
         display: none;
     }
@@ -49,9 +50,8 @@
         margin-top: 145px;
 
         h1 {
-            font-size: 90px;
+            font-size: 60px;
             line-height: 1;
-
         }
 
         p {
@@ -70,13 +70,14 @@
             @include MyFlex();
             height: 40px;
             gap: 10px;
-            width: 150px;
+            width: 200px;
             cursor: pointer;
             transition: all 0.7s;
 
             p {
                 margin: 0;
-                color: white
+                color: white;
+
             }
 
             .arrow {
@@ -87,8 +88,8 @@
                     border-radius: 20px;
                     width: 20px;
                     transition: all 0.7s;
-
                     background: white;
+                    
                 }
 
                 .arrowHead {
@@ -100,7 +101,7 @@
             }
 
             &:hover {
-                width: 180px;
+                width: 220px;
 
                 .arrow {
                     span {
@@ -147,6 +148,7 @@
                 font-family: 'Gilroy-Light';
                 font-size: 23px;
                 width: 70%;
+                
             }
 
             p {
@@ -192,11 +194,13 @@
         }
     }
 }
-@media only screen and (max-width: 843px){
-    #ourService{
+
+@media only screen and (max-width: 843px) {
+    #ourService {
         margin-top: 0;
     }
 }
+
 @media only screen and (max-width: 1166px) {
     #ourService {
         flex-direction: column;
@@ -235,9 +239,9 @@
         .viewHiddenBtn {
             display: block;
             position: absolute;
-            right: 60px;
+            right: 20px;
             top: 14%;
-            width: 100px;
+            width: 200px;
 
             p {
                 text-decoration: underline;

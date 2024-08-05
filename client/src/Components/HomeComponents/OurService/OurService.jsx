@@ -3,19 +3,21 @@ import './OurService.scss'
 import BackroundImage from '../../../Image/Background.png'
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { useTranslation } from 'react-i18next';
 
 function OurService() {
+    const { t } = useTranslation();
+
     return (
         <section id='ourService' style={{ backgroundImage: `url(${BackroundImage})` }} >
             <div className="leftBox">
-                <h1>Our
-                    Services</h1>
+                <h1>{t("OurService")}</h1>
                 <div className="viewHiddenBtn">
-                    <p>View All</p>
+                    <p>{t("ViewAll")}</p>
                 </div>
-                <p>PM System delivers tailored, high-quality, and reliable solutions to our clients. With our experienced team and cutting-edge technology, we ensure the success of your projects and provide strong support for your business growth.</p>
+                <p>{t("OurServiceAnswer")}</p>
                 <div className="viewAllBtn">
-                    <p>View All</p>
+                    <p>{t("ViewAll")}</p>
                     <div className="arrow">
                         <span></span>
                         <div className="arrowHead">

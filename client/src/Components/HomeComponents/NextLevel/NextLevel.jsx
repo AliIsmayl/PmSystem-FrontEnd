@@ -1,6 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './NextLevel.scss';
 import { Link } from 'react-router-dom';
+import sap1 from '../../../Image/sap1.png'
+import sap2 from '../../../Image/sap2.png'
+import sap3 from '../../../Image/sap3.png'
+import sap4 from '../../../Image/sap4.png'
 
 function NextLevel() {
   const [projectsCount, setProjectsCount] = useState(300);
@@ -63,7 +67,7 @@ function NextLevel() {
         <h1 data-aos="fade-right" data-aos-duration="1000">Ready to take your business to the </h1>
         <h5 data-aos="fade-right" data-aos-duration="1000">next level?</h5>
         <div className="normalBox">
-          <div className="counBox" style={{width:"130px"}}>
+          <div className="counBox" style={{ width: "130px" }}>
             <p>{projectsCount}+</p>
             <h6> All Projects </h6>
           </div>
@@ -81,16 +85,16 @@ function NextLevel() {
       </div>
       <div className="downBox">
         <Link className='link'>
-          <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="" />
+          <img src={sap1} alt="" />
         </Link>
         <Link className='link'>
-          <img src="https://logos-world.net/wp-content/uploads/2020/04/Instagram-Logo-2015-2016.png" alt="" />
+          <img src={sap2} alt="" />
         </Link>
         <Link className='link'>
-          <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="" />
+          <img src={sap3} alt="" />
         </Link>
         <Link className='link'>
-          <img src="https://logos-world.net/wp-content/uploads/2020/04/Instagram-Logo-2015-2016.png" alt="" />
+          <img src={sap4} alt="" />
         </Link>
       </div>
     </section>

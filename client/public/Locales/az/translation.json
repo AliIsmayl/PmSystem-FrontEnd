@@ -1,7 +1,21 @@
 {
-    "Home":"Ana Səhifə",
-    "About":"Haqqında",
-    "Service":"Xidmət",
-    "Contact":"Əlaqə"
-    
+  "Home": "Ana Səhifə",
+  "About": "Haqqında",
+  "Service": "Xidmət",
+  "Contact": "Əlaqə",
+  "BstIt": "QLOBAL İCMADA ƏN YAXŞI İT HƏLLİ VƏ ŞİRKƏTİ",
+  "TogetherWith": "SAP ilə birlikdə, innovativ və etibarlı həllər təqdim edərək biznes proseslərinizi daha səmərəli və rəqabətqabiliyyətli edirik. Məqsədimiz şirkətinizin uğuruna töhfə vermək və davamlı inkişafınızı təmin etməkdir.",
+  "Explore": "Araşdır",
+  "WhyChooseUs": "Nə üçün bizi seçirlər?",
+  "WhyChoose1": "Sürətli uğur üçün uyğunlaşma",
+  "WhyChoose2": "Sarsılmaz etibarlılıq",
+  "WhyChoose3": "Hər detala mükəmməllik",
+  "WhyChoose4": "Beynəlxalq standartlara uyğunluq",
+  "WhyChooseAnswer1": "Çevik yanaşmamız sürətli uyğunlaşmanı təmin edir, bu da layihələrin tez və effektiv şəkildə tamamlanmasına imkan yaradır. Biz dinamik biznes mühitində fərdi tələblərinizə uyğunlaşdırılmış çevik həllər təklif edərək mükəmməlliyə nail oluruq.",
+  "WhyChooseAnswer2": "Biz sizin təhlükəsizliyinizə üstünlük veririk, məlumatları və layihə detallarını yüksək səviyyəli təhlükəsizlik tədbirləri ilə qoruyuruq. Etibarlılığa sarsılmaz sadiqliyimiz layihənizin hər mərhələsində təhlükəsiz və etibarlı xidmət təmin edir.",
+  "WhyChooseAnswer3": "Biz ən yüksək keyfiyyət standartlarına riayət edirik, hər bir layihəni dəqiqlik və mükəmməlliklə həyata keçiririk. Sərt keyfiyyət nəzarətimiz sizə mükəmməl nəticələr və tam məmnuniyyət təmin edir.",
+  "WhyChooseAnswer4": "Həllərimiz beynəlxalq standartlara tam uyğun şəkildə həyata keçirilir, bu da sizin tələblərinizə dəqiq uyğunluq təmin edir. Müasir standartları inteqrasiya edərək, biznes əməliyyatlarınız üçün yüksək keyfiyyət və etibarlılıq təmin edirik.",
+  "OurService": "Xidmətlərimiz",
+  "OurServiceAnswer": "PM System müştərilərimizə xüsusi, yüksək keyfiyyətli və etibarlı həllər təqdim edir. Təcrübəli komandamız və qabaqcıl texnologiyamızla layihələrinizin uğurunu təmin edirik və biznesinizin inkişafı üçün güclü dəstək veririk.",
+  "ViewAll": "Hamısına bax"
 }
