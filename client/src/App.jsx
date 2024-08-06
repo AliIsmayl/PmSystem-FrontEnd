@@ -35,13 +35,13 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<MainLayout />} >
-            <Route index element={<Homepage />} />
+            <Route path="/" element={<Homepage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/service" element={<ServicePage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/serviceDetail" element={<ServiceDetail />} />
           </Route>
-            <Route path="/qrCode" element={<QrCode />} />
+          <Route path="/qrCode" element={<QrCode />} />
         </Routes>
       </BrowserRouter>
     </>

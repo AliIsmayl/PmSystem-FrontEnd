@@ -89,7 +89,7 @@
                     width: 20px;
                     transition: all 0.7s;
                     background: white;
-                    
+
                 }
 
                 .arrowHead {
@@ -148,7 +148,7 @@
                 font-family: 'Gilroy-Light';
                 font-size: 23px;
                 width: 70%;
-                
+
             }
 
             p {
@@ -238,7 +238,7 @@
 
         .viewHiddenBtn {
             display: block;
-            position: absolute;
+            // position: absolute;
             right: 20px;
             top: 14%;
             width: 200px;
@@ -314,6 +314,20 @@
                     max-width: 90%;
                 }
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 547px) {
+    #ourService {
+
+        .leftBox {
+
+            h1 {
+                font-size: 35px;
+                max-width: 100%;
+            }
+
         }
     }
 }
