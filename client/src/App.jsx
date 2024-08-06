@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes } from "react-router-dom";
 import Homepage from './Pages/Homepage';
 import AboutPage from './Pages/AboutPage';
 import ServicePage from './Pages/ServicePage';
@@ -12,6 +12,7 @@ import { useLocation } from "react-router-dom";
 import ServiceDetail from './Pages/ServiceDetail/ServiceDetail';
 import './i18n';
 import QrCode from './Pages/QrCode/QrCode';
+import { ROUTE } from './Router/Route';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -29,22 +30,25 @@ function App() {
     AOS.refresh();
   }, []);
 
+  const router = createBrowserRouter(ROUTE)
+
   return (
-    <>
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<MainLayout />} >
-            <Route path="/" element={<Homepage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/service" element={<ServicePage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/serviceDetail" element={<ServiceDetail />} />
-          </Route>
-          <Route path="/qrCode" element={<QrCode />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <RouterProvider router={router} />
+    // <>
+    //   <BrowserRouter>
+    //     <ScrollToTop />
+    //     <Routes>
+    //       <Route path="/" element={<MainLayout />} >
+    //         <Route path="/" element={<Homepage />} />
+    //         <Route path="/about" element={<AboutPage />} />
+    //         <Route path="/service" element={<ServicePage />} />
+    //         <Route path="/contact" element={<ContactPage />} />
+    //         <Route path="/serviceDetail" element={<ServiceDetail />} />
+    //       </Route>
+    //       <Route path="/qrCode" element={<QrCode />} />
+    //     </Routes>
+    //   </BrowserRouter>
+    // </>
   );
 }
 
