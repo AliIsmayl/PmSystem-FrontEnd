@@ -31,10 +31,12 @@ export const ROUTE = [
                 path: "/serviceDetail",
                 element: <ServiceDetail />
             },
-            {
-                path: "/qrCode",
-                element: <QrCode />
-            },
+
         ]
+
+    },
+    {
+        path: "/qrCode",
+        element: <QrCode />
     }
 ]
