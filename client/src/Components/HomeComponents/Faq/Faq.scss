@@ -10,6 +10,7 @@
     font-family: 'Gilroy-Bold';
     src: url('../../../Font/Gilroy-Bold.otf');
 }
+
 @font-face {
     font-family: 'Gilroy-Semibold';
     src: url('../../../Font/Gilroy-Semibold.otf');
@@ -29,7 +30,7 @@
     display: flex;
     justify-content: space-between;
     align-items: start;
-    
+
     .leftBox {
         color: white;
         display: flex;
@@ -49,7 +50,7 @@
             @include MyFlex();
             height: 40px;
             gap: 10px;
-            width: 150px;
+            width: 170px;
             cursor: pointer;
             transition: all 0.7s;
             margin-bottom: 10px;
@@ -79,7 +80,7 @@
             }
 
             &:hover {
-                width: 180px;
+                width: 200px;
 
                 .arrow {
                     span {
@@ -92,6 +93,23 @@
 
     .rightBox {
         margin-top: 20px;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 20px;
+
+            li {
+                font-family: 'Gilroy-Semibold';
+
+               
+                &:not(:first-of-type){
+                    margin-top: -20px;
+
+                }
+            }
+        }
 
         .faqBox {
             width: 750px;
@@ -139,7 +157,7 @@
                 }
 
                 .textBox.opened {
-                    max-height: 500px;
+                    max-height: 170vh;
                     opacity: 1;
 
                     p {

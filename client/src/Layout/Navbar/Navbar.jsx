@@ -11,7 +11,7 @@ import i18n from '../../i18n';
 function Navbar() {
     const [openRespNavbar, setOpenRespNavbar] = useState(true);
     const [openLangBox, setOpenLangBox] = useState(false);
-    const defaultLang = localStorage.getItem('language') || 'AZ';
+    const defaultLang = localStorage.getItem('language') || 'EN';
     const [whichLang, setWhichLang] = useState(defaultLang);
     const languages = ["AZ", "EN", "RU"];
     const filteredLanguages = languages.filter(lang => lang !== whichLang);
@@ -99,19 +99,19 @@ function Navbar() {
             </div>
             <div className={`respNavbar ${openRespNavbar ? "openedNavbar" : ""}`}>
                 <ul>
-                    <NavLink to={"/"} className={({ isActive }) => isActive ? "active" : "link"}>
+                    <NavLink onClick={handleOpenNavbar} to={"/"} className={({ isActive }) => isActive ? "active" : "link"}>
                         <li>{t("Home")}</li>
                         <div className="line"></div>
                     </NavLink>
-                    <NavLink to={"/about"} className={({ isActive }) => isActive ? "active" : "link"}>
+                    <NavLink onClick={handleOpenNavbar} to={"/about"} className={({ isActive }) => isActive ? "active" : "link"}>
                         <li>{t("About")}</li>
                         <div className="line"></div>
                     </NavLink>
-                    <NavLink to={"/service"} className={({ isActive }) => isActive ? "active" : "link"}>
+                    <NavLink onClick={handleOpenNavbar} to={"/service"} className={({ isActive }) => isActive ? "active" : "link"}>
                         <li>{t("Service")}</li>
                         <div className="line"></div>
                     </NavLink>
-                    <NavLink to={"/contact"} className={({ isActive }) => isActive ? "active" : "link"}>
+                    <NavLink onClick={handleOpenNavbar} to={"/contact"} className={({ isActive }) => isActive ? "active" : "link"}>
                         <li>{t("Contact")}</li>
                         <div className="line"></div>
                     </NavLink>

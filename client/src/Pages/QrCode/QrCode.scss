@@ -16,6 +16,9 @@
     @include MyFlex();
     flex-direction: column;
     gap: 10px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     img {
         max-width: 260px;

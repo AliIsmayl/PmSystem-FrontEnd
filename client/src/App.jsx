@@ -14,15 +14,7 @@ import './i18n';
 import QrCode from './Pages/QrCode/QrCode';
 import { ROUTE } from './Router/Route';
 
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-};
 
 function App() {
   useEffect(() => {

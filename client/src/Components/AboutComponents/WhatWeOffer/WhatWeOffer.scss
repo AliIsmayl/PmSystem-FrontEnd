@@ -33,11 +33,12 @@
 
 #whatWeOffer {
     padding: 0 0 50px;
-    margin-top: -320px;
+    margin-top: -200px;
     @include MyFlex();
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+
     // background-color: #09090c;
     .viewHiddenBtn {
         display: none;
@@ -50,7 +51,7 @@
         margin-top: -480px;
 
         h1 {
-            font-size: 70px;
+            font-size: 65px;
             line-height: 1;
 
         }
@@ -71,7 +72,7 @@
             @include MyFlex();
             height: 40px;
             gap: 10px;
-            width: 150px;
+            width: 200px;
             cursor: pointer;
             transition: all 0.7s;
 
@@ -88,7 +89,6 @@
                     border-radius: 20px;
                     width: 20px;
                     transition: all 0.7s;
-
                     background: white;
                 }
 
@@ -101,7 +101,7 @@
             }
 
             &:hover {
-                width: 180px;
+                width: 220px;
 
                 .arrow {
                     span {
@@ -178,7 +178,8 @@
             #cardBig {
                 width: 58%;
             }
-            #cardBig3{
+
+            #cardBig3 {
                 width: 100%;
             }
 
@@ -234,10 +235,9 @@
 
         .viewHiddenBtn {
             display: block;
-            position: absolute;
             right: 60px;
             top: 23%;
-            width: 100px;
+            width: 100%;
 
             p {
                 text-decoration: underline;
@@ -275,9 +275,9 @@
 
 @media only screen and (max-width: 624px) {
     #whatWeOffer {
-        padding: 20px 35px;
+        padding: 20px 15px;
         overflow: hidden;
-
+        margin-top: 0px;
 
 
         .viewHiddenBtn {

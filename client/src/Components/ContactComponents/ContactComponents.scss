@@ -216,6 +216,11 @@
                     background-color: transparent;
                     font-family: 'Gilroy-Regular';
                     transition: all 0.3s;
+                    height: 40px;
+width: 160px;
+                    img {
+                        max-width: 15px;
+                    }
 
                     &:hover {
                         background-color: #22FFF8;

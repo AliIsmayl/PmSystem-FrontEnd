@@ -1,0 +1,130 @@
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// @include MyFlex();
+
+
+@font-face {
+    font-family: 'Gilroy-Bold';
+    src: url('../../Font/Gilroy-Bold.otf');
+}
+
+@font-face {
+    font-family: 'Gilroy-Medium';
+    src: url('../../Font/Gilroy-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Gilroy-Light';
+    src: url('../../Font/Gilroy-Light.otf');
+}
+
+@font-face {
+    font-family: 'Gilroy-Regular';
+    src: url('../../Font/Gilroy-Regular.otf');
+}
+
+.subscribe {
+    background: #06A7A2;
+    padding: 50px 100px;
+    @include MyFlex();
+    justify-content: space-between;
+    color: white;
+    gap: 30px;
+
+    .text {
+        span {
+            font-size: 50px;
+            font-family: 'Gilroy-Bold';
+        }
+
+        p {
+            margin-top: 20px;
+            max-width: 550px;
+            font-size: 18px;
+            font-family: 'Gilroy-Regular';
+            line-height: 1.5;
+
+        }
+    }
+
+    form {
+        background: green;
+        @include MyFlex();
+        width: 550px;
+        border-radius: 15px;
+        overflow: hidden;
+        background-color: #ffffff7d;
+
+        input {
+            height: 60px;
+            width: 75%;
+            padding: 10px 30px;
+            border: none;
+            outline: none;
+            font-family: 'Gilroy-Medium';
+            background-color: transparent;
+
+            &::placeholder {
+                color: white;
+            }
+        }
+
+        button {
+            background: olivedrab;
+            height: 60px;
+            width: 200px;
+            border: none;
+            font-family: 'Gilroy-Regular';
+            font-size: 20px;
+            cursor: pointer;
+            background-color: white;
+
+            img {
+                max-width: 30px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1015px) {
+    .subscribe {
+        flex-direction: column;
+
+        .text {
+            width: 100%;
+
+        }
+
+        form {
+            width: 100%;
+
+        }
+    }
+}
+
+@media only screen and (max-width: 625px) {
+    .subscribe {
+        padding: 50px 20px;
+
+        .text {
+            span {
+                font-size: 35px;
+            }
+
+            p {
+                font-size: 17px;
+            }
+        }
+
+        form {
+            button {
+                font-size: 16px;
+                width: 50%;
+            }
+        }
+    }
+}

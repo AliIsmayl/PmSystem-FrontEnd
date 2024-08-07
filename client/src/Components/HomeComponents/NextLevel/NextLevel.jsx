@@ -5,8 +5,10 @@ import sap1 from '../../../Image/sap1.png'
 import sap2 from '../../../Image/sap2.png'
 import sap3 from '../../../Image/sap3.png'
 import sap4 from '../../../Image/sap4.png'
+import { useTranslation } from 'react-i18next';
 
 function NextLevel() {
+  const { t } = useTranslation();
   const [projectsCount, setProjectsCount] = useState(300);
   const [loremCount, setLoremCount] = useState(50);
   const [clientsCount, setClientsCount] = useState(0);
@@ -64,22 +66,22 @@ function NextLevel() {
   return (
     <section id='nextLevel' ref={sectionRef}>
       <div className="upBox">
-        <h1 data-aos="fade-right" data-aos-duration="1000">Ready to take your business to the </h1>
-        <h5 data-aos="fade-right" data-aos-duration="1000">next level?</h5>
+        <h1 data-aos="fade-right" data-aos-duration="1000">{t("ReadyTo")}</h1>
+        <h5 data-aos="fade-right" data-aos-duration="1000">{t("NextLevel")}</h5>
         <div className="normalBox">
           <div className="counBox" style={{ width: "130px" }}>
             <p>{projectsCount}+</p>
-            <h6> All Projects </h6>
+            <h6> {t("AllProjects")} </h6>
           </div>
           <span></span>
           <div className="counBox">
             <p>{loremCount}+</p>
-            <h6>General Service</h6>
+            <h6>{t("GeneralService")}</h6>
           </div>
           <span></span>
           <div className="counBox">
             <p>{clientsCount}%</p>
-            <h6>Satisfied Clients</h6>
+            <h6>{t("SatisfiedClients")}</h6>
           </div>
         </div>
       </div>

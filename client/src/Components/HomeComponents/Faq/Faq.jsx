@@ -4,28 +4,119 @@ import Background from '../../../Image/Background2.png';
 import { IoIosArrowForward } from "react-icons/io";
 import { LuMinus } from "react-icons/lu";
 import { FiPlus } from "react-icons/fi";
+import { useTranslation } from 'react-i18next';
 
 function Faq() {
     const [openIndex, setOpenIndex] = useState(null);
+    const { t } = useTranslation();
 
     function handleOpen(index) {
         setOpenIndex(openIndex === index ? null : index);
     }
 
     const faqData = [
-        { question: "What is Webflow and why is it the best website builder?", answer: "Vitae congue eu consequat ac felis placerat vestibulum lectus mauris ultrices. Cursus sit amet dictum sit amet justo donec enim diam porttitor lacus luctus accumsan tortor posuere." },
-        { question: "What is Webflow and why is it the best website builder?", answer: "Vitae congue eu consequat ac felis placerat vestibulum lectus mauris ultrices. Cursus sit amet dictum sit amet justo donec enim diam porttitor lacus luctus accumsan tortor posuere." },
-        { question: "What is Webflow and why is it the best website builder?", answer: "Vitae congue eu consequat ac felis placerat vestibulum lectus mauris ultrices. Cursus sit amet dictum sit amet justo donec enim diam porttitor lacus luctus accumsan tortor posuere." },
-        { question: "What is Webflow and why is it the best website builder?", answer: "Vitae congue eu consequat ac felis placerat vestibulum lectus mauris ultrices. Cursus sit amet dictum sit amet justo donec enim diam porttitor lacus luctus accumsan tortor posuere." },
-        { question: "What is Webflow and why is it the best website builder?", answer: "Vitae congue eu consequat ac felis placerat vestibulum lectus mauris ultrices. Cursus sit amet dictum sit amet justo donec enim diam porttitor lacus luctus accumsan tortor posuere." },
+        { question: `${t("faqQuestion1")}`, answer: `${t("faqAnswer1")}` },
+        {
+            question: `${t("faqQuestion2")}`, answer: [
+                {
+                    headAnswer: `${t("faqAns1Hd1")}`,
+                    textAnswer: `${t("faqAns1Txt1")}`
+                },
+                {
+                    headAnswer: `${t("faqAns1Hd2")}`,
+                    textAnswer: `${t("faqAns1Txt2")}`
+                },
+                {
+                    headAnswer: `${t("faqAns1Hd3")}`,
+                    textAnswer: `${t("faqAns1Txt3")}`
+                },
+                {
+                    headAnswer: `${t("faqAns1Hd4")}`,
+                    textAnswer: `${t("faqAns1Txt4")}`
+                },
+                {
+                    headAnswer: `${t("faqAns1Hd5")}`,
+                    textAnswer: `${t("faqAns1Txt5")}`
+                },
+                {
+                    headAnswer: `${t("faqAns1Hd6")}`,
+                    textAnswer: `${t("faqAns1Txt6")}`
+                },
+            ]
+        },
+        {
+            question: `${t("faqQuestion3")}`, answer: [
+                {
+                    headAnswer: `${t("faqAns2Hd1")}`,
+                    textAnswer: `${t("faqAns2Txt1")}`
+                },
+                {
+                    headAnswer: `${t("faqAns2Hd2")}`,
+                    textAnswer: `${t("faqAns2Txt2")}`
+                },
+                {
+                    headAnswer: `${t("faqAns2Hd3")}`,
+                    textAnswer: `${t("faqAns2Txt3")}`
+                },
+                {
+                    headAnswer: `${t("faqAns2Hd4")}`,
+                    textAnswer: `${t("faqAns2Txt4")}`
+                }
+            ]
+        },
+        {
+            question: `${t("faqQuestion4")}`, answer: [
+                {
+                    headAnswer: `${t("faqAns3Hd1")}`,
+                    textAnswer: `${t("faqAns3Txt1")}`
+                },
+                {
+                    headAnswer: `${t("faqAns3Hd2")}`,
+                    textAnswer: `${t("faqAns3Txt2")}`
+                },
+                {
+                    headAnswer: `${t("faqAns3Hd3")}`,
+                    textAnswer: `${t("faqAns3Txt3")}`
+                }
+            ]
+        },
+        {
+            question: `${t("faqQuestion5")}`, answer: [
+                {
+                    headAnswer: `${t("faqAns4Hd1")}`,
+                    textAnswer: `${t("faqAns4Txt1")}`
+                },
+                {
+                    headAnswer: `${t("faqAns4Hd2")}`,
+                    textAnswer: `${t("faqAns4Txt2")}`
+                },
+                {
+                    headAnswer: `${t("faqAns4Hd3")}`,
+                    textAnswer: `${t("faqAns4Txt3")}`
+                },
+                {
+                    headAnswer: `${t("faqAns4Hd4")}`,
+                    textAnswer: `${t("faqAns4Txt4")}`
+                },
+                {
+                    headAnswer: `${t("faqAns4Hd5")}`,
+                    textAnswer: `${t("faqAns4Txt5")}`
+                },
+                {
+                    headAnswer: `${t("faqAns4Hd6")}`,
+                    textAnswer: `${t("faqAns4Txt6")}`
+                },
+            ]
+        },
+
     ];
 
     return (
         <section id='faq' style={{ backgroundImage: `url(${Background})` }}>
             <div className="leftBox">
-                <h1 data-aos="fade-right" data-aos-duration="1000">Got any question?</h1>
+                <h1 data-aos="fade-right" data-aos-duration="1000">{t("GotAnyGuestion")}</h1>
                 <div className="viewAllBtn">
-                    <p>Explore</p>
+                    <p>{t("Explore")}</p>
                     <div className="arrow">
                         <span></span>
                         <div className="arrowHead">
@@ -45,7 +136,17 @@ function Faq() {
                                 <p>{faq.question}</p>
                             </div>
                             <div className={`textBox ${openIndex === index ? "opened" : ""}`}>
-                                <p>{faq.answer}</p>
+                                {Array.isArray(faq.answer) ? (
+                                    <ul>
+                                        {faq.answer.map((ans, i) => (
+                                            <li key={i}>
+                                                <strong>{ans.headAnswer} :</strong> {ans.textAnswer}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                ) : (
+                                    <p>{faq.answer}</p>
+                                )}
                             </div>
                         </div>
                     ))}

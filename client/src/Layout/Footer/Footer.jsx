@@ -5,14 +5,17 @@ import Logo from '../../Image/whiteLogo.png'
 import { FaFacebook } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { useTranslation } from 'react-i18next';
 
 function Footer() {
+    const { t } = useTranslation();
+
     return (
         <footer>
             <div className="upBox">
                 <div className="leftBox">
                     <img src={Logo} alt="" />
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam mauris sed ma</p>
+                    <p>{t("FooterHeadText")}</p>
                     <div className="socialBox">
                         <div className="iconBox"><FaFacebook /></div>
                         <div className="iconBox"><FaWhatsapp /></div>
@@ -21,17 +24,17 @@ function Footer() {
                 </div>
                 <div className="rightBox">
                     <div className="oneBox">
-                        <Link className='link'>About Us</Link>
-                        <Link className='littleLink'>Who we are?</Link>
-                        <Link className='littleLink'>Services</Link>
-                        <Link className='littleLink'>Partners</Link>
-                        <Link className='littleLink'>Our Team</Link>
-                        <Link className='littleLink'>FAQ</Link>
+                        <Link className='link'>{t("AboutUSLittle")}</Link>
+                        <Link className='littleLink'>{t("WhoWeAre")}</Link>
+                        <Link className='littleLink'>{t("Services")}</Link>
+                        <Link className='littleLink'>{t("Partners")}</Link>
+                        <Link className='littleLink'>{t("OurTeam")}</Link>
+                        <Link className='littleLink'>{t("FAQ")}</Link>
                     </div>
                     <div className="oneBox">
-                        <Link className='link'>Contact</Link>
-                        <Link className='littleLink'>Contact Us</Link>
-                        <Link className='littleLink'>Address</Link>
+                        <Link className='link'>{t("Contact")}</Link>
+                        <Link className='littleLink'>{t("ContactUs")}</Link>
+                        <Link className='littleLink'>{t("Address")}</Link>
                     </div>
                     <div className="downBox">
                         <div className="iconBox"><FaFacebook /></div>
@@ -42,7 +45,7 @@ function Footer() {
             </div>
 
             <div className="lineBox">
-                <p>© 2024 Created by PM Systems</p>
+                <p>{t("Created")}</p>
             </div>
         </footer>
     )

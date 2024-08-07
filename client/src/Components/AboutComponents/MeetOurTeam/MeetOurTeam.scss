@@ -23,7 +23,7 @@
 
     h1 {
         font-family: 'Gilroy-Bold';
-        font-size: 65px;
+        font-size: 50px;
         max-width: 300px;
     }
 
@@ -34,18 +34,17 @@
         width: 100%;
         overflow-x: auto;
         white-space: nowrap;
-
+    
         ::-webkit-scrollbar {
             display: none;
         }
-
+    
         /* Firefox için */
         -ms-overflow-style: none;
         /* Internet Explorer 10+ */
         scrollbar-width: none;
         /* Firefox */
-
-
+    
         .card {
             background-position: center;
             background-repeat: no-repeat;
@@ -60,7 +59,7 @@
             transition: all 0.7s;
             position: relative;
             flex-shrink: 0;
-
+    
             .imgBox {
                 width: 100%;
                 height: 100%;
@@ -70,7 +69,7 @@
                 @include MyFlex();
                 overflow: hidden;
                 border-radius: 20px;
-
+    
                 img {
                     visibility: hidden;
                     opacity: 0;
@@ -81,15 +80,13 @@
                     object-fit: cover;
                 }
             }
-
+    
             .textBox {
                 position: absolute;
                 bottom: 40px;
                 left: 30px;
             }
-
-
-
+    
             p {
                 font-family: 'Gilroy-Semibold';
                 transform: rotate(270deg);
@@ -102,7 +99,7 @@
                 bottom: 130px;
                 left: -80px;
             }
-
+    
             h5 {
                 font-family: 'Gilroy-Semibold';
                 font-size: 16px;
@@ -114,7 +111,7 @@
                 margin-bottom: 30px;
                 opacity: 0;
             }
-
+    
             span {
                 font-family: 'Gilroy-Semibold';
                 font-size: 16px;
@@ -122,15 +119,14 @@
                 transition: 0.2s;
                 opacity: 0;
                 .link {
-                color: white;
-                text-decoration: none;
-
+                    color: white;
+                    text-decoration: none;
                 }
             }
-
+    
             &:hover {
                 width: 320px;
-
+    
                 p {
                     transition: 0.5s;
                     font-size: 20px;
@@ -138,34 +134,29 @@
                     bottom: 23px;
                     left: 0px;
                     color: rgba(255, 255, 255, 0.849);
-
                 }
-
+    
                 img {
                     visibility: visible;
                     transition: 2.5s;
                     opacity: 1;
                 }
-
+    
                 h5 {
                     visibility: visible;
                     transition: 2.5s;
                     opacity: 1;
-
                 }
-
+    
                 span {
                     visibility: visible;
                     transition: 2.5s;
                     opacity: 1;
                 }
-
             }
-
         }
-
-
     }
+    
 
 }
 

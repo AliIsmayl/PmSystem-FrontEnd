@@ -2,18 +2,20 @@ import React from 'react'
 import './WhatWeOffer.scss'
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { useTranslation } from 'react-i18next';
 
 function WhatWeOffer() {
+    const { t } = useTranslation();
+
   return (
     <section id='whatWeOffer'>
                 <div className="leftBox">
-                <h1>What we 
-                offer?</h1>
+                <h1>{t("WhatWeOffer")}</h1>
                 <div className="viewHiddenBtn">
-                    <p>View All</p>
+                    <p>{t("ViewAll")}</p>
                 </div>
                 <div className="viewAllBtn">
-                    <p>View All</p>
+                    <p>{t("ViewAll")}</p>
                     <div className="arrow">
                         <span></span>
                         <div className="arrowHead">

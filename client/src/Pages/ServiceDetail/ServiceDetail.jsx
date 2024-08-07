@@ -2,13 +2,16 @@ import React from 'react'
 import './ServiceDetail.scss'
 import Image from '../../Image/ServiceHeader.png'
 import { IoIosArrowForward } from "react-icons/io";
+import { useTranslation } from 'react-i18next';
 
 function ServiceDetail() {
+    const { t } = useTranslation();
+
     return (
         <section id='serviceDetail'>
             <header id='serviceDetailHeader' style={{ backgroundImage: `url(${Image})` }}>
                 <div className="goLink">
-                    <span>Services</span>
+                    <span>{t("Services")}</span>
                     <IoIosArrowForward />
                     <span>SAP System</span>
                 </div>

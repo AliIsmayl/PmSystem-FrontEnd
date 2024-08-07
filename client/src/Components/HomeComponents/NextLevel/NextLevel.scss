@@ -58,6 +58,7 @@
                 width: 120px;
                 background-color: gray;
                 margin-top: -20px;
+
             }
 
             .counBox {
@@ -76,9 +77,10 @@
                 }
 
                 h6 {
-                    font-size: 22px;
+                    font-size: 20px;
                     color: white;
                     font-family: 'Gilroy-Light';
+                    text-align: center;
                 }
             }
         }
@@ -188,6 +190,20 @@
             h5 {
                 top: 160px;
                 left: 0px;
+            }
+
+            .normalBox {
+                gap: 0px;
+
+                .counBox {
+                    p {
+                        font-size: 25px;
+                    }
+
+                    h6 {
+                        font-size: 14px;
+                    }
+                }
             }
         }
     }
