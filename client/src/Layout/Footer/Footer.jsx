@@ -6,6 +6,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { useTranslation } from 'react-i18next';
+import { TfiEmail } from "react-icons/tfi";
 
 function Footer() {
     const { t } = useTranslation();
@@ -17,29 +18,30 @@ function Footer() {
                     <img src={Logo} alt="" />
                     <p>{t("FooterHeadText")}</p>
                     <div className="socialBox">
-                        <div className="iconBox"><FaFacebook /></div>
-                        <div className="iconBox"><FaWhatsapp /></div>
-                        <div className="iconBox"><FaLinkedin /></div>
+                        <Link className="iconBox" to={"https://api.whatsapp.com/send?phone=994553432143"}><FaWhatsapp /></Link>
+                        <Link className="iconBox" to={"https://www.linkedin.com/company/pmsystems/"}><FaLinkedin /></Link>
+                        <Link className="iconBox" to={"mailto:info@pmsystems.az"}><TfiEmail /></Link>
                     </div>
                 </div>
                 <div className="rightBox">
                     <div className="oneBox">
-                        <Link className='link'>{t("AboutUSLittle")}</Link>
-                        <Link className='littleLink'>{t("WhoWeAre")}</Link>
-                        <Link className='littleLink'>{t("Services")}</Link>
-                        <Link className='littleLink'>{t("Partners")}</Link>
-                        <Link className='littleLink'>{t("OurTeam")}</Link>
-                        <Link className='littleLink'>{t("FAQ")}</Link>
+                        <Link to={"/about"} className='link'>{t("AboutUSLittle")}</Link>
+                        <Link to={"/about"} className='littleLink'>{t("WhoWeAre")}</Link>
+                        <Link to={"/about"} className='littleLink'>{t("Services")}</Link>
+                        <Link to={"/about"} className='littleLink'>{t("Partners")}</Link>
+                        <Link to={"/about"} className='littleLink'>{t("OurTeam")}</Link>
+                        <Link to={"/about"} className='littleLink'>{t("FAQ")}</Link>
                     </div>
                     <div className="oneBox">
-                        <Link className='link'>{t("Contact")}</Link>
-                        <Link className='littleLink'>{t("ContactUs")}</Link>
-                        <Link className='littleLink'>{t("Address")}</Link>
+                        <Link to={"/contact"} className='link'>{t("Contact")}</Link>
+                        <Link to={"/contact"} className='littleLink'>{t("ContactUs")}</Link>
+                        <Link to={"/contact"} className='littleLink'>{t("Address")}</Link>
                     </div>
                     <div className="downBox">
-                        <div className="iconBox"><FaFacebook /></div>
-                        <div className="iconBox"><FaWhatsapp /></div>
-                        <div className="iconBox"><FaLinkedin /></div>
+                        {/* <Link className="iconBox"><FaFacebook /></Link> */}
+                        <Link className="iconBox" to={"https://api.whatsapp.com/send?phone=994553432143"}><FaWhatsapp /></Link>
+                        <Link className="iconBox" to={"https://www.linkedin.com/company/pmsystems/"}><FaLinkedin /></Link>
+                        <Link className="iconBox" to={"mailto:info@pmsystems.az"}><TfiEmail /></Link>
                     </div>
                 </div>
             </div>

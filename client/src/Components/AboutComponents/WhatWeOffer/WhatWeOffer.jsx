@@ -3,6 +3,7 @@ import './WhatWeOffer.scss'
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 function WhatWeOffer() {
     const { t } = useTranslation();
@@ -14,7 +15,7 @@ function WhatWeOffer() {
                 <div className="viewHiddenBtn">
                     <p>{t("ViewAll")}</p>
                 </div>
-                <div className="viewAllBtn">
+                <Link to={"/service"} className="viewAllBtn">
                     <p>{t("ViewAll")}</p>
                     <div className="arrow">
                         <span></span>
@@ -22,7 +23,7 @@ function WhatWeOffer() {
                             <IoIosArrowForward />
                         </div>
                     </div>
-                </div>
+                </Link>
 
             </div>
             <div className="rightBox">

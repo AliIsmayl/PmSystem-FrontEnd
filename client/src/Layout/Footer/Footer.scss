@@ -18,6 +18,7 @@
     font-family: 'Gilroy-Medium';
     src: url('../../Font/Gilroy-Medium.ttf');
 }
+
 @font-face {
     font-family: 'Gilroy-Light';
     src: url('../../Font/Gilroy-Light.otf');
@@ -46,6 +47,8 @@ footer {
                 align-items: center;
                 cursor: pointer;
                 transition: all 0.1s;
+                text-decoration: none;
+                color: white;
 
                 &:hover {
                     color: #34a29f;
@@ -89,7 +92,7 @@ footer {
                 .littleLink {
                     text-decoration: none;
                     color: white;
-                  
+
                 }
 
                 .link {
@@ -118,7 +121,7 @@ footer {
         border-top: 2px solid gray;
         padding: 20px 0;
         color: rgb(189, 189, 189);
-    font-family: 'Gilroy-Light';
+        font-family: 'Gilroy-Light';
 
     }
 }

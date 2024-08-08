@@ -4,6 +4,7 @@ import BackroundImage from '../../../Image/Background.png'
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 function OurService() {
     const { t } = useTranslation();
@@ -16,7 +17,7 @@ function OurService() {
                     <p>{t("ViewAll")}</p>
                 </div>
                 <p>{t("OurServiceAnswer")}</p>
-                <div className="viewAllBtn">
+                <Link to={"/service"} className="viewAllBtn">
                     <p>{t("ViewAll")}</p>
                     <div className="arrow">
                         <span></span>
@@ -24,7 +25,7 @@ function OurService() {
                             <IoIosArrowForward />
                         </div>
                     </div>
-                </div>
+                </Link>
 
             </div>
             <div className="rightBox">

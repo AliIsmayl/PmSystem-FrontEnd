@@ -5,6 +5,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { LuMinus } from "react-icons/lu";
 import { FiPlus } from "react-icons/fi";
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 function Faq() {
     const [openIndex, setOpenIndex] = useState(null);
@@ -115,7 +116,7 @@ function Faq() {
         <section id='faq' style={{ backgroundImage: `url(${Background})` }}>
             <div className="leftBox">
                 <h1 data-aos="fade-right" data-aos-duration="1000">{t("GotAnyGuestion")}</h1>
-                <div className="viewAllBtn">
+                <Link to={"/about"} className="viewAllBtn">
                     <p>{t("Explore")}</p>
                     <div className="arrow">
                         <span></span>
@@ -123,7 +124,7 @@ function Faq() {
                             <IoIosArrowForward />
                         </div>
                     </div>
-                </div>
+                </Link>
             </div>
             <div className="rightBox">
                 <div className="faqBox">
