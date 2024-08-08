@@ -1,6 +1,5 @@
 import React from 'react'
 import './OurPartners.scss'
-import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 
 function OurPartners() {

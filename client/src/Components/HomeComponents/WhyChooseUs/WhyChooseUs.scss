@@ -50,10 +50,10 @@
         padding: 50px 100px;
         display: flex;
         flex-wrap: wrap;
-        gap: 70px;
+        gap: 30px 0px;
+        justify-content: space-between;
 
         .chooseCardBox {
-            // height: 400px;
             width: 275px;
             overflow: hidden;
 
@@ -90,9 +90,10 @@
 
 @media only screen and (max-width: 503px) {
     #whyChooseUs {
+        padding: 0px 10px;
 
         .upTextBox {
-            padding: 0 30px;
+            padding: 0 0px;
 
             p {
                 font-size: 45px;
@@ -102,15 +103,16 @@
         }
 
         .downTextBox {
-            padding: 50px 30px;
+            padding: 50px 10px;
             @include MyFlex();
 
             .chooseCardBox {
-                text-align: center;
+                text-align: start;
 
                 .imgBox {
                     img {
-                        margin-left: 0%;
+                        margin-left: -20%;
+                        margin-bottom: 28px;
                     }
 
 
@@ -118,6 +120,7 @@
 
                 h1 {
                     margin-top: -10px;
+                    height: 80px;
                 }
 
                 p {

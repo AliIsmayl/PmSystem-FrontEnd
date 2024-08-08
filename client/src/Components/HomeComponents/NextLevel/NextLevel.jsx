@@ -85,7 +85,7 @@ function NextLevel() {
           </div>
         </div>
       </div>
-      <div className="downBox">
+      {/* <div className="downBox">
         <Link className='link'>
           <img src={sap1} alt="" />
         </Link>
@@ -98,7 +98,7 @@ function NextLevel() {
         <Link className='link'>
           <img src={sap4} alt="" />
         </Link>
-      </div>
+      </div> */}
     </section>
   );
 }

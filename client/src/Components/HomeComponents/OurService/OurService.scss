@@ -31,6 +31,11 @@
     src: url('../../../Font/Gilroy-UltraLight.otf');
 }
 
+@font-face {
+    font-family: 'Gilroy-Regular';
+    src: url('../../../Font/Gilroy-Regular.otf');
+}
+
 #ourService {
     margin-top: -70px;
     height: 170vh;
@@ -38,6 +43,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+
 
     .viewHiddenBtn {
         display: none;
@@ -47,20 +53,19 @@
         width: 440px;
         font-family: 'Gilroy-Bold';
         color: white;
-        margin-top: 145px;
+        margin-top: 200px;
 
         h1 {
-            font-size: 60px;
+            font-size: 58px;
             line-height: 1;
         }
 
         p {
             margin-top: 20px;
-            font-family: 'Gilroy-Medium';
+            font-family: 'Gilroy-Regular';
             max-width: 70%;
             line-height: 1.7;
             color: rgb(218, 215, 215);
-
         }
 
         .viewAllBtn {
@@ -213,6 +218,10 @@
             width: 350px;
             margin-top: 5px;
 
+            p {
+                max-width: 100%;
+            }
+
             .viewAllBtn {
                 margin-top: 20px;
             }
@@ -322,11 +331,12 @@
 
 @media only screen and (max-width: 547px) {
     #ourService {
+        padding: 20px 20px;
 
         .leftBox {
 
             h1 {
-                font-size: 35px;
+                font-size: 45px;
                 max-width: 100%;
             }
 

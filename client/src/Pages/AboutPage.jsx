@@ -7,7 +7,6 @@ import OurPartners from '../Components/AboutComponents/OurPartners/OurPartners';
 import MeetOurTeam from '../Components/AboutComponents/MeetOurTeam/MeetOurTeam';
 
 function AboutPage() {
-  console.log("salam");
   return (
     <div style={{ background: "linear-gradient(180deg, rgba(10,11,15,1) 41%, rgba(18,17,19,1) 75%)" }}>
 

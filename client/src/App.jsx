@@ -1,17 +1,9 @@
-import './App.css';
-import { BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes } from "react-router-dom";
-import Homepage from './Pages/Homepage';
-import AboutPage from './Pages/AboutPage';
-import ServicePage from './Pages/ServicePage';
-import ContactPage from './Pages/ContactPage';
-import MainLayout from './Layout/MainLayout';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
-import { useLocation } from "react-router-dom";
-import ServiceDetail from './Pages/ServiceDetail/ServiceDetail';
+import { createBrowserRouter, RouterProvider, useLocation } from "react-router-dom";
+import './App.css';
 import './i18n';
-import QrCode from './Pages/QrCode/QrCode';
 import { ROUTE } from './Router/Route';
 
 
@@ -26,6 +18,7 @@ function App() {
 
   return (
     <RouterProvider router={router} />
+
     // <>
     //   <BrowserRouter>
     //     <ScrollToTop />

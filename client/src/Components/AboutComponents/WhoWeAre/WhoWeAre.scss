@@ -26,12 +26,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-    padding: 50px 110px;
+    padding: 50px 100px;
     overflow: hidden;
 
     h1 {
         font-family: 'Gilroy-Bold';
-        font-size: 80px;
+        font-size: 58px;
 
     }
 
@@ -41,6 +41,7 @@
         justify-content: space-between;
         position: relative;
         min-height: 55%;
+
         span {
             font-family: 'Gilroy-Regular';
             line-height: 1.5;
@@ -107,6 +108,12 @@
 
 @media only screen and (max-width: 361px) {
     #whoWeAre {
+        padding: 50px 15px;
+
+        h1 {
+            font-size: 45px;
+        }
+
         .textBox {
             height: 85%;
 

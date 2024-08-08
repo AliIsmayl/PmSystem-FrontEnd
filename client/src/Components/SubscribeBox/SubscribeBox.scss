@@ -36,6 +36,8 @@
     gap: 30px;
 
     .text {
+        max-width: 550px;
+
         span {
             font-size: 50px;
             font-family: 'Gilroy-Bold';
@@ -43,10 +45,10 @@
 
         p {
             margin-top: 20px;
-            max-width: 550px;
             font-size: 18px;
             font-family: 'Gilroy-Regular';
             line-height: 1.5;
+            max-width: 90%;
 
         }
     }
@@ -61,7 +63,7 @@
 
         input {
             height: 60px;
-            width: 75%;
+            width: 77%;
             padding: 10px 30px;
             border: none;
             outline: none;
@@ -79,7 +81,7 @@
             width: 200px;
             border: none;
             font-family: 'Gilroy-Regular';
-            font-size: 20px;
+            font-size: 17px;
             cursor: pointer;
             background-color: white;
 
@@ -90,7 +92,7 @@
     }
 }
 
-@media only screen and (max-width: 1015px) {
+@media only screen and (max-width: 1082px) {
     .subscribe {
         flex-direction: column;
 

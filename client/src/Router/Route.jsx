@@ -36,7 +36,7 @@ export const ROUTE = [
 
     },
     {
-        path: "/qrCode",
+        path: "qrCode/:name",
         element: <QrCode />
     }
 ]

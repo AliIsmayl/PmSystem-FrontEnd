@@ -39,7 +39,7 @@
         height: 570px;
 
         h1 {
-            font-size: 50px;
+            font-size: 58px;
             font-family: 'Gilroy-Bold';
             max-width: 200px;
         }
@@ -208,7 +208,11 @@
 @media only screen and (max-width: 572px) {
     #faq {
         padding: 50px 20px;
-
+.leftBox{
+    h1{
+        font-size: 45px;
+    }
+}
         .rightBox {
             .faqBox {
                 .oneBox {

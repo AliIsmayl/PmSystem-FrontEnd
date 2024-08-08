@@ -61,7 +61,7 @@ function ContactComponents() {
                     </div>
                     <div className="textBox">
                         <AiOutlineMail />
-                        <p>office@pmsystems.az</p>
+                        <p>info@pmsystems.az</p>
                     </div>
                     <div className="textBox">
                         <IoLocationSharp />

@@ -1,13 +1,27 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './MeetOurTeam.scss';
 import cardBackground from '../../../Image/BackgroundCard.png';
-import oglan from '../../../Image/oglan.png';
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 
 function MeetOurTeam() {
     const { t } = useTranslation();
     const teamBoxRef = useRef(null);
+    const [team, setTeam] = useState([]);
+
+    async function getData() {
+        try {
+            const res = await axios.get(`https://pmsystems.az/qrcode/list/`);
+            setTeam(res.data);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    }
+
+    useEffect(() => {
+        getData();
+    }, []);
 
     useEffect(() => {
         const handleWheel = (event) => {
@@ -29,15 +43,18 @@ function MeetOurTeam() {
         <section id='meetOurTeam'>
             <h1 data-aos="fade-right" data-aos-duration="1000">{t("MeetOurTeam")}</h1>
             <div className="ourTeamBox" ref={teamBoxRef}>
-                {Array(20).fill().map((_, index) => (
+                {team && team.map((item, index) => (
                     <div className="card" style={{ backgroundImage: `url(${cardBackground})` }} key={index}>
                         <div className="imgBox">
-                            <img src={oglan} alt="Team Member" />
+                            <img src={item.image_url} alt="Team Member" />
                         </div>
                         <div className="textBox">
-                            <h5>Ali İsmayıl</h5>
-                            <p>Front End Developer</p>
-                            <span><Link to={'mailto:ali.ismayil.681@gmail.com'} className='link'>ali.ismayil.681@gmail.com</Link></span>
+                            <h5>{item.fullname}</h5>
+                            <p>{item.position}</p>
+                            {/* <h4>
+                                <Link className='link' to={`/qrCode/${item.name}`}>QrCode</Link>
+                            </h4> */}
+                            <span><Link to={`mailto:${item.email}`} className='link'>{item.email}</Link></span>
                         </div>
                     </div>
                 ))}
