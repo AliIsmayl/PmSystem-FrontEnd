@@ -20,6 +20,21 @@
     background-size: cover;
     background-repeat: no-repeat;
 
+    h3 {
+        font-size: 40px;
+        color: white;
+        font-family: 'Gilroy-Light';
+        text-align: center;
+    }
+
+    p {
+        font-size: 40px;
+        color: white;
+        font-family: 'Gilroy-Light';
+        max-width: 40%;
+        text-align: center;
+    }
+
     img {
         max-width: 260px;
     }
@@ -39,5 +54,21 @@
             background-color: #02cec8;
             color: white;
         }
+    }
+}
+
+@media only screen and (max-width: 627px) {
+    #qrCode {
+
+        h3 {
+            font-size: 30px;
+        
+        }
+        p {
+            font-size: 20px;
+            max-width: 310px;
+        }
+
+
     }
 }

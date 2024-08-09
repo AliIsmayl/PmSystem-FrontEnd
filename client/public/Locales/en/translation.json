@@ -113,5 +113,7 @@
   "EnterEmail": "Enter your email...",
   "Subscribe": "Subscribe",
   "SubscribeMessage": "Subscribed.",
-   "SubscripeNotEmail": "Please enter a valid email address."
+  "SubscripeNotEmail": "Please enter a valid email address.",
+
+  "NotPersonal": "Information about this employee was not found."
 }

@@ -116,5 +116,6 @@
   "EnterEmail": "Emailinizi daxil edin...",
   "Subscribe": "Abunə ol",
   "SubscribeMessage": "Abunə olundu.",
-  "SubscripeNotEmail": "Zəhmət olmasa, etibarlı bir email adresi daxil edin."
+  "SubscripeNotEmail": "Zəhmət olmasa, etibarlı bir email adresi daxil edin.",
+  "NotPersonal": "Bu işci haqqında məlumat tapılmadı"
 }

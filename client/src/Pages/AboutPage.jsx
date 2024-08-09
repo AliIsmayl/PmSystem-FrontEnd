@@ -9,7 +9,6 @@ import MeetOurTeam from '../Components/AboutComponents/MeetOurTeam/MeetOurTeam';
 function AboutPage() {
   return (
     <div style={{ background: "linear-gradient(180deg, rgba(10,11,15,1) 41%, rgba(18,17,19,1) 75%)" }}>
-
       <AboutHeader />
       <WhoWeAre/>
       <WhatWeOffer/>

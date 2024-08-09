@@ -1,39 +1,40 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from 'react';
-import { createBrowserRouter, RouterProvider, useLocation } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './App.css';
 import './i18n';
-import { ROUTE } from './Router/Route';
-
-
+import { createRoutesWithLoading } from './Router/Route';
+import Loading from "./Pages/Loading/Loading";
 
 function App() {
+  const [loading, setloading] = useState(true);
+
   useEffect(() => {
     AOS.init();
     AOS.refresh();
   }, []);
 
-  const router = createBrowserRouter(ROUTE)
+  useEffect(() => {
+    setloading(true);
+
+    const timer = setTimeout(() => {
+      setloading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [setloading]);
+
+  const router = createBrowserRouter(createRoutesWithLoading());
 
   return (
-    <RouterProvider router={router} />
-
-    // <>
-    //   <BrowserRouter>
-    //     <ScrollToTop />
-    //     <Routes>
-    //       <Route path="/" element={<MainLayout />} >
-    //         <Route path="/" element={<Homepage />} />
-    //         <Route path="/about" element={<AboutPage />} />
-    //         <Route path="/service" element={<ServicePage />} />
-    //         <Route path="/contact" element={<ContactPage />} />
-    //         <Route path="/serviceDetail" element={<ServiceDetail />} />
-    //       </Route>
-    //       <Route path="/qrCode" element={<QrCode />} />
-    //     </Routes>
-    //   </BrowserRouter>
-    // </>
+    <>
+      {loading ? (
+        <Loading />
+      ) : (
+        <RouterProvider router={router} />
+      )}
+    </>
   );
 }
 

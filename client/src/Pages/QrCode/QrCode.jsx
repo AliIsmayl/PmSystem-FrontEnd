@@ -4,10 +4,13 @@ import Logo from '../../Image/whiteLogo.png';
 import { Link, useParams } from 'react-router-dom';
 import Background from '../../Image/qrCodeBack.png';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
+import Loading from '../Loading/Loading';
 
-function QrCode() {
+function QrCode({ setloading, loading }) {
     const [qrCode, setQrCode] = useState([null]);
     const { name } = useParams()
+    const { t } = useTranslation();
 
     async function getData() {
         try {
@@ -20,22 +23,52 @@ function QrCode() {
     }
 
     useEffect(() => {
+        setloading(true);
+
+        const timer = setTimeout(() => {
+            setloading(false);
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, [setloading]);
+
+    useEffect(() => {
         getData();
     }, [name]);
 
     return (
-        <section id='qrCode' style={{ backgroundImage: `url(${Background})` }}>
-            <img src={Logo} alt="Logo" />
-            {qrCode ? (
-                <div>
-                    <Link className='link' to={`mailto:${qrCode.email}`}>E-mail</Link>
-                </div>
+        <>
+            {loading ? (
+                <Loading />
             ) : (
-                <p>Loading...</p>
+                <section id='qrCode' style={{ backgroundImage: `url(${Background})` }}>
+                    <img src={Logo} alt="Logo" />
+                    <h3>
+                        {
+                            qrCode.fullname
+                        }
+                    </h3>
+                    {
+                        qrCode.name ?
+                            <>
+                                {qrCode ? (
+                                    <div>
+                                        <Link className='link' to={`mailto:${qrCode.email}`}>E-mail</Link>
+                                    </div>
+                                ) : (
+                                    <p>Loading...</p>
+                                )}
+
+                                <Link className='link' to={'https://www.linkedin.com/company/pmsystems/'}>Linkedin</Link>
+                                <Link className='link' to={'https://pmsystems.az/'}>Website</Link>
+                            </>
+                            : <p>{t("NotPersonal")}</p>
+                    }
+
+                </section>
             )}
-            <Link className='link' to={'https://www.linkedin.com/company/pmsystems/'}>Linkedin</Link>
-            <Link className='link' to={'https://pmsystems.az/'}>Website</Link>
-        </section>
+        </>
+
     );
 }
 

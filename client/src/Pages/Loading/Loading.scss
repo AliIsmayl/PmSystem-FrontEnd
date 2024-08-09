@@ -1,0 +1,62 @@
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// @include MyFlex();
+
+
+
+.loading {
+    height: 100vh;
+    @include MyFlex();
+    position: fixed;
+    width: 100%;
+    background-color: #121113;
+    z-index: 4;
+    height: 100vh;
+
+    .loadingBox {
+        height: 140px;
+        width: 140px;
+        position: relative;
+        @include MyFlex();
+        animation: rotateAnimation 5s ease infinite;
+        overflow: hidden;
+
+        img {
+            max-width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+
+
+
+    }
+}
+
+
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: 0px 0px 15px 5px;
+
+    }
+
+    50% {
+        transform: rotate(360deg);
+        box-shadow: 0px 0px 15px 10px #00c2cb;
+
+    }
+
+    100% {
+        transform: rotate(0deg);
+        box-shadow: 0px 0px 15px 5px;
+
+    }
+}
