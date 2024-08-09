@@ -18,23 +18,23 @@ export function createRoutesWithLoading() {
       children: [
         {
           path: "/",
-          element: <Homepage  />
+          element: <Homepage />
         },
         {
           path: "/about",
-          element: <AboutPage  />
+          element: <AboutPage />
         },
         {
           path: "/service",
-          element: <ServicePage  />
+          element: <ServicePage />
         },
         {
           path: "/contact",
-          element: <ContactPage  />
+          element: <ContactPage />
         },
         {
-          path: "/serviceDetail",
-          element: <ServiceDetail  />
+          path: "/service/:detail",
+          element: <ServiceDetail />
         },
       ]
     },

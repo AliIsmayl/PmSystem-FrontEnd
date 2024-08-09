@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './ServiceAllPackets.scss';
 import { IoIosArrowRoundForward } from "react-icons/io";
 import axios from 'axios';
+import i18next from 'i18next';
+import { Link } from 'react-router-dom';
 
 function ServiceAllPackets() {
-    const [service, setService] = useState(null);
+    const [service, setService] = useState([]);
+    const [language, setLanguage] = useState(i18next.language);
 
     async function getData() {
         try {
@@ -12,113 +15,82 @@ function ServiceAllPackets() {
             setService(res.data);
         } catch (error) {
             console.error('Error fetching data:', error);
-            setService(null); // Handle fetch error
         }
     }
 
     useEffect(() => {
         getData();
+
+        const handleLanguageChange = (lng) => {
+            setLanguage(lng);
+        };
+
+        i18next.on('languageChanged', handleLanguageChange);
+
+        return () => {
+            i18next.off('languageChanged', handleLanguageChange);
+        };
     }, []);
 
-    const languageKey = "Az";
+    const languageKey = language.toLocaleUpperCase();
 
     return (
         <section id='serviceAllPackets'>
-            {service && service[languageKey] ? (
-                <>
-                    <div className="upBox">
-                        <div id="cardBig" data-aos="fade-right" data-aos-duration="1000" className='cardHover'>
-                            <div className="arrowBox">
-                                <IoIosArrowRoundForward />
-                            </div>
-                            <h1 style={{ maxWidth: "70%" }}>{service[languageKey].LargeHeadName}</h1>
-                            <p>{service[languageKey].LittleTextInfo}</p>
-                        </div>
-                        <div id="cardSmall" data-aos="fade-right" data-aos-duration="1000" className='cardHover'>
-                            <div className="arrowBox">
-                                <IoIosArrowRoundForward />
-                            </div>
-                            <h1 >{service[languageKey].LargeHeadName}</h1>
-                            <p>{service[languageKey].LittleTextInfo}</p>
-                        </div>
-                    </div>
-                    <div className="upBox" >
-                        <div id="cardBig2" data-aos="fade-right" data-aos-duration="1000" className='cardHover'>
-                            <div className="arrowBox">
-                                <IoIosArrowRoundForward />
-                            </div>
-                            <h1 style={{ maxWidth: "70%" }}>{service[languageKey].LargeHeadName}</h1>
-                            <p>{service[languageKey].LittleTextInfo}</p>
-                        </div>
-                        <div id="cardSmall2" data-aos="fade-right" data-aos-duration="1000" className='cardHover'>
-                            <div className="arrowBox">
-                                <IoIosArrowRoundForward />
-                            </div>
-                            <h1 style={{ maxWidth: "70%" }}>{service[languageKey].LargeHeadName}</h1>
-                            <p>{service[languageKey].LittleTextInfo}</p>
-                        </div>
-                    </div>
-                </>
+            {service.length > 0 ? (
+                service.map((item, index) => {
+                    // Son tek sayılı öğe
+                    const isLastItem = index === service.length - 1 && service.length % 2 !== 0;
 
-
-
+                    if (index % 2 === 0 && service[index + 1]) {
+                        return (
+                            <div key={index} className="upBox"
+                                data-aos={index % 4 === 0 ? "fade-left" : "fade-right"}
+                                data-aos-duration="1000">
+                                <div id="cardBig" style={{ width: index % 4 === 0 ? "58%" : "43%" }} className='cardHover'>
+                                    <Link to={`detail/${item.id}`} className="arrowBox" >
+                                        <IoIosArrowRoundForward />
+                                    </Link>
+                                    {index}
+                                    <h1 style={{ maxWidth: "70%" }}>{item[languageKey].LargeHeadName}</h1>
+                                    <p>{item[languageKey].LittleTextInfo}</p>
+                                    {item.id}
+                                </div>
+                                <div id="cardSmall" style={{ width: index % 4 === 0 ? "40%" : "55%" }} className='cardHover'>
+                                    <div className="arrowBox">
+                                        <IoIosArrowRoundForward />
+                                    </div>
+                                    {index + 1}
+                                    <h1>{service[index + 1][languageKey].LargeHeadName}</h1>
+                                    <p>{service[index + 1][languageKey].LittleTextInfo}</p>
+                                    {service[index + 1].id}
+                                </div>
+                            </div>
+                        );
+                    } else if (isLastItem) {
+                        return (
+                            <div key={index} className="upBox"
+                                data-aos="fade-left"
+                                data-aos-duration="1000">
+                                <div id="cardBig" style={{ width: "100%", backgroundColor: "red" }} className='cardHover'>
+                                    <div className="arrowBox">
+                                        <IoIosArrowRoundForward />
+                                    </div>
+                                    {index}
+                                    <h1 style={{ maxWidth: "70%" }}>{item[languageKey].LargeHeadName}</h1>
+                                    <p>{item[languageKey].LittleTextInfo}</p>
+                                    {item.id}
+                                </div>
+                            </div>
+                        );
+                    } else if (index % 2 !== 0) {
+                        return null;
+                    }
+                })
             ) : (
-                <p>Not product...</p>
-            )
-            }
-        </section >
+                <p>Loading...</p>
+            )}
+        </section>
     );
 }
 
 export default ServiceAllPackets;
-
-
-
-{/* <div className="upBox" >
-                <div id="cardBig2" data-aos="fade-right" data-aos-duration="1000" className='cardHover'>
-                    <div className="arrowBox">
-                        <IoIosArrowRoundForward />
-                    </div>
-                    <h1 style={{ maxWidth: "70%" }}>Web Development</h1>
-                    <p>With over [X] years in the industry, our team of certified professionals brings a wealth of knowledge </p>
-                </div>
-                <div id="cardSmall2" data-aos="fade-right" data-aos-duration="1000" className='cardHover'>
-                    <div className="arrowBox">
-                        <IoIosArrowRoundForward />
-                    </div>
-                    <h1 >Web Development</h1>
-                    <p>With over [X] years in the industry, our team of certified professionals brings a wealth of knowledge </p>
-                </div>
-            </div>
-            <div className="upBox" id='thirdBox'>
-                <div id="cardBig" data-aos="fade-left" data-aos-duration="1000" className='cardHover'>
-                    <div className="arrowBox">
-                        <IoIosArrowRoundForward />
-                    </div>
-                    <h1>Web Development</h1>
-                    <p>With over [X] years in the industry, our team of certified professionals brings a wealth of knowledge </p>
-                </div>
-                <div id="cardSmall" data-aos="fade-left" data-aos-duration="1000" className='cardHover'>
-                    <div className="arrowBox">
-                        <IoIosArrowRoundForward />
-                    </div>
-                    <h1>Web Development</h1>
-                    <p>With over [X] years in the industry, our team of certified professionals brings a wealth of knowledge </p>
-                </div>
-            </div>
-            <div className="upBox" >
-                <div id="cardBig2" data-aos="fade-right" data-aos-duration="1000" className='cardHover'>
-                    <div className="arrowBox">
-                        <IoIosArrowRoundForward />
-                    </div>
-                    <h1 style={{ maxWidth: "70%" }}>Web Development</h1>
-                    <p>With over [X] years in the industry, our team of certified professionals brings a wealth of knowledge </p>
-                </div>
-                <div id="cardSmall2" data-aos="fade-right" data-aos-duration="1000" className='cardHover'>
-                    <div className="arrowBox">
-                        <IoIosArrowRoundForward />
-                    </div>
-                    <h1 >Web Development</h1>
-                    <p>With over [X] years in the industry, our team of certified professionals brings a wealth of knowledge </p>
-                </div>
-            </div> */}
