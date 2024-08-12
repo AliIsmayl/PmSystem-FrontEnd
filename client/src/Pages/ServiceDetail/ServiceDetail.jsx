@@ -13,7 +13,7 @@ function ServiceDetail() {
 
     async function getData() {
         try {
-            // const res = await axios.get(`https://pmsystems.az/qrcode/list/${id}/`);
+            // const res = await axios.get(`https://pmsystems.az/qrcode/service_details/${id}`);
             console.log("dataaaaaa", res.data);
             setQrCode(res.data);
         } catch (error) {

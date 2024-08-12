@@ -4,7 +4,6 @@
     align-items: center;
 }
 
-// @include MyFlex();
 @font-face {
     font-family: 'Gilroy-Bold';
     src: url('../../../Font/Gilroy-Bold.otf');
@@ -19,76 +18,55 @@
         font-size: 58px;
         font-family: 'Gilroy-Bold';
         margin-bottom: 50px;
-
     }
 
-
-    .main-container__marquee {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        width: 100vw;
-        max-width: 100%;
-        min-height: 2rem;
-        overflow-x: hidden;
-        font-family: "Merriweather", serif;
-        text-transform: uppercase;
-        font-size: 18px;
-        color: rgba(255, 255, 255, 1);
-        margin: 30px 0 0;
-    }
-
-    .main-container__marquee-track {
-        display: flex;
-        gap: 20px;
-        white-space: nowrap;
-        position: relative;
-        display: flex;
+    .marquee {
+        width: 100%;
+        height: 12rem;
+        pointer-events: none;
         overflow: hidden;
-        user-select: none;
     }
 
-    .main-container__marquee-items {
-        flex-shrink: 0;
-        display: flex;
-        gap: 20px;
-        justify-content: space-around;
-        min-width: 100%;
-        animation: marquee 10s linear infinite;
-        height: 100px;
+    .marquee__inner-wrap {
+        height: 100%;
+        width: 100%;
 
-        .margueeLink {
-            width: 400px;
-            @include MyFlex();
-
-            img {
-                max-width: 70%;
-            }
-        }
     }
 
-    .main-container__marquee-item {
-        display: flex;
-        justify-content: center;
+
+    .marquee__img {
+        width: 300px;
+        background-size: cover;
+        background-position: center;
+        height: 8rem;
+        margin: 0 4vw;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: grayscale(0.6);
+
+    }
+
+    .marquee__inner {
+        overflow: hidden;
+        height: 100%;
+        width: fit-content;
         align-items: center;
-        font-size: 18px;
-        width: auto;
-        transition: all 0.1s ease-in-out;
-
-
+        display: flex;
+        position: relative;
+        animation: marquee 10s linear infinite;
+        will-change: transform;
     }
 
     @keyframes marquee {
-        from {
-            transform: translateX(0);
-        }
-
         to {
-            transform: translateX(-100%);
+            transform: translateX(-50%);
         }
     }
+
+
 }
+
 
 @media only screen and (max-width: 625px) {
     #ourPartners {
@@ -96,6 +74,12 @@
         h1 {
             font-size: 45px;
             padding: 0px 15px;
+        }
+        .marquee__img {
+            width: 270px;
+            height: 7rem;
+            margin: 0 3vw;  
+    
         }
     }
 }
