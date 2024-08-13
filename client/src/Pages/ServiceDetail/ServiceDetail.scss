@@ -175,7 +175,7 @@
 
             .upBox,
             .downBox {
-                flex-direction: column;
+                flex-direction: column !important;
 
                 .leftBox {
                     width: 100%;

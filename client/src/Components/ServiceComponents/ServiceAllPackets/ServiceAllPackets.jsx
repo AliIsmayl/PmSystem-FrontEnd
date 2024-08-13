@@ -23,6 +23,7 @@ function ServiceAllPackets() {
 
         const handleLanguageChange = (lng) => {
             setLanguage(lng);
+            getData();  
         };
 
         i18next.on('languageChanged', handleLanguageChange);
@@ -38,31 +39,31 @@ function ServiceAllPackets() {
         <section id='serviceAllPackets'>
             {service.length > 0 ? (
                 service.map((item, index) => {
-                    // Son tek sayılı öğe
                     const isLastItem = index === service.length - 1 && service.length % 2 !== 0;
+                    const nextItem = service[index + 1];
 
-                    if (index % 2 === 0 && service[index + 1]) {
+                    // Eğer dil anahtarı mevcut değilse fallback olarak İngilizceyi kullan
+                    const currentItem = item[languageKey] || item['EN'];
+                    const nextItemData = nextItem ? (nextItem[languageKey] || nextItem['EN']) : null;
+
+                    if (index % 2 === 0 && nextItemData) {
                         return (
                             <div key={index} className="upBox"
                                 data-aos={index % 4 === 0 ? "fade-left" : "fade-right"}
                                 data-aos-duration="1000">
                                 <div id="cardBig" style={{ width: index % 4 === 0 ? "58%" : "43%" }} className='cardHover'>
-                                    <Link to={`detail/${item.id}`} className="arrowBox" >
+                                    <Link to={`${item.id}`} className="arrowBox" >
                                         <IoIosArrowRoundForward />
                                     </Link>
-                                    {index}
-                                    <h1 style={{ maxWidth: "70%" }}>{item[languageKey].LargeHeadName}</h1>
-                                    <p>{item[languageKey].LittleTextInfo}</p>
-                                    {item.id}
+                                    <h1 style={{ maxWidth: "70%" }}>{currentItem.LargeHeadName}</h1>
+                                    <p>{currentItem.LittleTextInfo}</p>
                                 </div>
                                 <div id="cardSmall" style={{ width: index % 4 === 0 ? "40%" : "55%" }} className='cardHover'>
-                                    <div className="arrowBox">
+                                    <Link to={`${item.id + 1}`} className="arrowBox">
                                         <IoIosArrowRoundForward />
-                                    </div>
-                                    {index + 1}
-                                    <h1>{service[index + 1][languageKey].LargeHeadName}</h1>
-                                    <p>{service[index + 1][languageKey].LittleTextInfo}</p>
-                                    {service[index + 1].id}
+                                    </Link>
+                                    <h1>{nextItemData.LargeHeadName}</h1>
+                                    <p>{nextItemData.LittleTextInfo}</p>
                                 </div>
                             </div>
                         );
@@ -71,20 +72,17 @@ function ServiceAllPackets() {
                             <div key={index} className="upBox"
                                 data-aos="fade-left"
                                 data-aos-duration="1000">
-                                <div id="cardBig" style={{ width: "100%", backgroundColor: "red" }} className='cardHover'>
-                                    <div className="arrowBox">
+                                <div id="cardBig" style={{ width: "100%" }} className='cardHover'>
+                                    <Link to={`${item.id}`} className="arrowBox">
                                         <IoIosArrowRoundForward />
-                                    </div>
-                                    {index}
-                                    <h1 style={{ maxWidth: "70%" }}>{item[languageKey].LargeHeadName}</h1>
-                                    <p>{item[languageKey].LittleTextInfo}</p>
-                                    {item.id}
+                                    </Link>
+                                    <h1 style={{ maxWidth: "70%" }}>{currentItem.LargeHeadName}</h1>
+                                    <p>{currentItem.LittleTextInfo}</p>
                                 </div>
                             </div>
                         );
-                    } else if (index % 2 !== 0) {
-                        return null;
                     }
+                    return null;
                 })
             ) : (
                 <p>Loading...</p>

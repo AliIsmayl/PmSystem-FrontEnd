@@ -12,7 +12,7 @@ function MeetOurTeam() {
 
     async function getData() {
         try {
-            const res = await axios.get(`https://pmsystems.az/qrcode/list/`);
+            const res = await axios.get(`https://pmsystems.az/qrcode/list/all/`);
             setTeam(res.data);
         } catch (error) {
             console.error("Error fetching data:", error);
@@ -51,9 +51,6 @@ function MeetOurTeam() {
                         <div className="textBox">
                             <h5>{item.fullname}</h5>
                             <p>{item.position}</p>
-                            {/* <h4>
-                                <Link className='link' to={`/qrCode/${item.name}`}>QrCode</Link>
-                            </h4> */}
                             <span><Link to={`mailto:${item.email}`} className='link'>{item.email}</Link></span>
                         </div>
                     </div>

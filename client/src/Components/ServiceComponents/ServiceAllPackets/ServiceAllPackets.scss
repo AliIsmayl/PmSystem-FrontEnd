@@ -118,7 +118,26 @@
     }
 }
 
+@media only screen and (max-width: 1400px) {
+    #serviceAllPackets {
+        .cardHover {
+            p {
+                font-family: 'Gilroy-UltraLight';
+                font-size: 14px;
+                line-height: 1.4;
+                color: rgb(206, 204, 204);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
 
+
+            }
+
+
+        }
+
+    }
+}
 
 
 
@@ -161,6 +180,7 @@
 
             p {
                 max-width: 90%;
+
             }
         }
     }

@@ -33,13 +33,13 @@ export function createRoutesWithLoading() {
           element: <ContactPage />
         },
         {
-          path: "/service/:detail",
+          path: "/service/:id",
           element: <ServiceDetail />
         },
       ]
     },
     {
-      path: "qrCode/:name",
+      path: "/codes/:name",
       element: <QrCode setloading={setloading} loading={loading} />
     }
   ];

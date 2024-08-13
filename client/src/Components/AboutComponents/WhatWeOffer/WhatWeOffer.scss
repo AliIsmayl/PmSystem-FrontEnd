@@ -38,7 +38,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-
     // background-color: #09090c;
     .viewHiddenBtn {
         display: none;
@@ -157,6 +156,9 @@
                 font-size: 14px;
                 line-height: 1.4;
                 color: rgb(206, 204, 204);
+                white-space: nowrap;         
+                overflow: hidden;            
+                text-overflow: ellipsis;   
 
             }
 
@@ -277,9 +279,9 @@
 
 @media only screen and (max-width: 624px) {
     #whatWeOffer {
-        padding: 20px 15px;
+        padding: 0px 15px;
         overflow: hidden;
-        margin-top: 0px;
+        margin-top: -140px;
 
 
         .viewHiddenBtn {

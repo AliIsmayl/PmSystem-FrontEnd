@@ -163,6 +163,9 @@
                 font-size: 14px;
                 line-height: 1.4;
                 color: rgb(206, 204, 204);
+                white-space: nowrap;         
+                overflow: hidden;            
+                text-overflow: ellipsis;   
 
             }
 
