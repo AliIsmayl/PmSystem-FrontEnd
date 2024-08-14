@@ -38,12 +38,11 @@
 
 #ourService {
     margin-top: -70px;
-    height: 170vh;
+    min-height: 170vh;
     @include MyFlex();
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-
 
     .viewHiddenBtn {
         display: none;
@@ -124,7 +123,7 @@
         display: flex;
         flex-direction: column;
         gap: 27.5px;
-
+        
         .cardHover {
             -webkit-box-shadow: 0px 3px 3px 0px #02CEC8;
             -moz-box-shadow: 0px 3px 3px 0px #02CEC8;
@@ -163,9 +162,9 @@
                 font-size: 14px;
                 line-height: 1.4;
                 color: rgb(206, 204, 204);
-                white-space: nowrap;         
-                overflow: hidden;            
-                text-overflow: ellipsis;   
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
 
             }
 
@@ -185,6 +184,7 @@
         .upBox {
             display: flex;
             justify-content: space-between;
+            text-decoration: none;
 
             #cardBig {
                 width: 58%;
@@ -214,8 +214,9 @@
 @media only screen and (max-width: 1166px) {
     #ourService {
         flex-direction: column;
-        padding: 0px 100px;
+        padding: 100px;
         align-items: start;
+        margin-top: 0;
 
         .leftBox {
             width: 350px;
@@ -245,10 +246,10 @@
 @media only screen and (max-width: 854px) {
     #ourService {
         flex-direction: column;
-        padding: 0px 100px;
+        padding:  100px;
         align-items: start;
         position: relative;
-        height: 190vh;
+        // height: 190vh;
 
         .viewHiddenBtn {
             display: block;

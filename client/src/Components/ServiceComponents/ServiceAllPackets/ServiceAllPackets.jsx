@@ -48,7 +48,7 @@ function ServiceAllPackets() {
 
                     if (index % 2 === 0 && nextItemData) {
                         return (
-                            <div key={index} className="upBox"
+                            <Link to={`${item.id}`} key={index} className="upBox"
                                 data-aos={index % 4 === 0 ? "fade-left" : "fade-right"}
                                 data-aos-duration="1000">
                                 <div id="cardBig" style={{ width: index % 4 === 0 ? "58%" : "43%" }} className='cardHover'>
@@ -65,7 +65,7 @@ function ServiceAllPackets() {
                                     <h1>{nextItemData.LargeHeadName}</h1>
                                     <p>{nextItemData.LittleTextInfo}</p>
                                 </div>
-                            </div>
+                            </Link>
                         );
                     } else if (isLastItem) {
                         return (

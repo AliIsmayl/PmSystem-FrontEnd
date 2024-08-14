@@ -1,7 +1,7 @@
 {
   "Home": "Ana Səhifə",
-  "About": "Haqqında",
-  "Service": "Xidmət",
+  "About": "Haqqımızda",
+  "Service": "Xidmətlər",
   "Contact": "Əlaqə",
   "BstIt": "QLOBAL İCMADA ƏN YAXŞI İT HƏLLİ VƏ ŞİRKƏTİ",
   "TogetherWith": "SAP ilə birlikdə, innovativ və etibarlı həllər təqdim edərək biznes proseslərinizi daha səmərəli və rəqabətqabiliyyətli edirik. Məqsədimiz şirkətinizin uğuruna töhfə vermək və davamlı inkişafınızı təmin etməkdir.",
@@ -16,7 +16,7 @@
   "WhyChooseAnswer3": "Biz ən yüksək keyfiyyət standartlarına riayət edirik, hər bir layihəni dəqiqlik və mükəmməlliklə həyata keçiririk. Sərt keyfiyyət nəzarətimiz sizə mükəmməl nəticələr və tam məmnuniyyət təmin edir.",
   "WhyChooseAnswer4": "Həllərimiz beynəlxalq standartlara tam uyğun şəkildə həyata keçirilir, bu da sizin tələblərinizə dəqiq uyğunluq təmin edir. Müasir standartları inteqrasiya edərək, biznes əməliyyatlarınız üçün yüksək keyfiyyət və etibarlılıq təmin edirik.",
   "OurService": "Xidmətlərimiz",
-  "OurServiceAnswer": "PM System müştərilərimizə xüsusi, yüksək keyfiyyətli və etibarlı həllər təqdim edir. Təcrübəli komandamız və qabaqcıl texnologiyamızla layihələrinizin uğurunu təmin edirik və biznesinizin inkişafı üçün güclü dəstək veririk.",
+  "OurServiceAnswer": "PMSystems müştərilərimizə xüsusi, yüksək keyfiyyətli və etibarlı həllər təqdim edir. Təcrübəli komandamız və qabaqcıl texnologiyamızla layihələrinizin uğurunu təmin edirik və biznesinizin inkişafı üçün güclü dəstək veririk.",
   "ViewAll": "Hamısına bax",
   "ReadyTo": "Biznesinizi növbəti",
   "NextLevel": "səviyyəyə çıxarmağa hazırsınız?",
@@ -75,32 +75,32 @@
   "faqAns4Txt6": "Canlıya keçməzdən əvvəl problemləri müəyyənləşdirmək və həll etmək üçün ətraflı test edin.",
 
   "AboutUS": "HAQQIMIZDA",
-  "AboutHeadText": "PM System, innovativ həllər və peşəkar məsləhətlər ilə biznesinizi inkişaf etdirməyə sadiqdir. Peşəkar komandamız hər layihə üçün dəqiq və yüksək keyfiyyətli nəticələr təmin etmək üçün ən müasir texnologiyalardan istifadə edir. Biz sistemlərin optimallaşdırılması və layihələrin idarə edilməsi ilə əlaqədar xüsusi dəstəyi təmin edərək sizin uğurunuza və böyüməyinizə fokuslanırıq.",
+  "AboutHeadText": "PMSystems, innovativ həllər və peşəkar məsləhətlər ilə biznesinizi inkişaf etdirməyə sadiqdir. Peşəkar komandamız hər layihə üçün dəqiq və yüksək keyfiyyətli nəticələr təmin etmək üçün ən müasir texnologiyalardan istifadə edir. Biz sistemlərin optimallaşdırılması və layihələrin idarə edilməsi ilə əlaqədar xüsusi dəstəyi təmin edərək sizin uğurunuza və böyüməyinizə fokuslanırıq.",
 
   "WhoWeAre": "Biz Kimik?",
   "WhoWeAreText1": "Biz dünya miqyasında qanunvericiliyə uyğun olaraq müxtəlif dövlət və qeyri-dövlət təşkilatları üçün həllər təqdim edə bilərik.",
-  "WhoWeAreText2": "PM System-də biz biznes uğurunu yenidən müəyyənləşdirmək üçün innovativ və yüksək təsirli həllər təqdim edirik. Ekspert komandamız dərin sənaye biliklərini ən müasir texnologiyalarla birləşdirərək sizin unikal tələblərinizə uyğunlaşdırılmış fərdi və etibarlı xidmətlər təqdim edir. Əhatəli layihə idarəçiliyindən tutmuş qabaqcıl sistem optimallaşdırmasına qədər hər layihənizin aspektinin dəqiqlik və mükəmməlliklə idarə olunmasını təmin edirik. Mükəmməlliyə olan həvəsimiz bizi sizin biznesinizi dəstəkləməyə və inkişaf etdirməyə sövq edir, çətinlikləri böyümə imkanlarına çevirir. Bizimlə əməkdaşlıq edərək, bizim sədaqət və təcrübəmizin sizin biznesinizi necə yeni zirvələrə qaldıra biləcəyini hiss edin.",
+  "WhoWeAreText2": "PMSystems-də biz biznes uğurunu yenidən müəyyənləşdirmək üçün innovativ və yüksək təsirli həllər təqdim edirik. Ekspert komandamız dərin sənaye biliklərini ən müasir texnologiyalarla birləşdirərək sizin unikal tələblərinizə uyğunlaşdırılmış fərdi və etibarlı xidmətlər təqdim edir. Əhatəli layihə idarəçiliyindən tutmuş qabaqcıl sistem optimallaşdırmasına qədər hər layihənizin aspektinin dəqiqlik və mükəmməlliklə idarə olunmasını təmin edirik. Mükəmməlliyə olan həvəsimiz bizi sizin biznesinizi dəstəkləməyə və inkişaf etdirməyə sövq edir, çətinlikləri böyümə imkanlarına çevirir. Bizimlə əməkdaşlıq edərək, bizim sədaqət və təcrübəmizin sizin biznesinizi necə yeni zirvələrə qaldıra biləcəyini hiss edin.",
 
   "WhatWeOffer": "Biz Nə Təklif Edirik?",
 
   "OurPartners": "Partnyorlar",
 
-  "MeetOurTeam": "Komanda ilə Tanış Olun",
+  "MeetOurTeam": "Komandamız",
 
-  "OurServiceHead": "Xidmətlərimiz",
+  "OurServiceHead": "XİDMƏRLƏRİMİZ",
   "ServiceHeadText": "SAP ilə sıx əməkdaşlıq edərək həm SAP, həm də digər platformalar üçün geniş xidmətlər təklif edirik. Xidmətlərimizə inkişaf, məsləhət, audit, keyfiyyət təminatı, avtomatlaşdırma və süni intellekt həlləri daxildir ki, bu da biznes fəaliyyətlərinizi inkişaf etdirir. Bizimlə əməkdaşlıq etməklə, şirkətinizin effektivliyini və rəqabət qabiliyyətini artırmaq üçün ən müasir texnologiyalardan istifadə edirsiniz.",
 
   "ContactUs": "Bizimlə əlaqə",
   "ContactText": "Sorğu formasında əlaqə",
-  "ContactText2": "Hər hansı bir sualınız və ya yardım üçün bizimlə əlaqə saxlamaqdan çəkinməyin.",
+  "ContactText2": "Hər hansı bir sual və yardım üçün bizimlə əlaqə saxlamaqdan çəkinməyin.",
   "Name": "Ad",
   "Surname": "Soyad",
   "Email": "E-poçt",
   "Message": "Mesaj",
   "Send": "Göndər",
 
-  "FooterHeadText": "Məlumatı idarə et, Dünyanı idarə et!",
-  "Created": "© 2024 PM Systems tərəfindən yaradılmışdır",
+  "FooterHeadText": "Məlumata sahib ol, Dünyanı idarə et!",
+  "Created": "© 2024 PMSystems tərəfindən yaradılmışdır",
   "Contact": "Əlaqə",
   "Services": "Xidmətlər",
   "Partners": "Tərəfdaşlar",

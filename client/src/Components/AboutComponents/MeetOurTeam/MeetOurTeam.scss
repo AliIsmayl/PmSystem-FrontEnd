@@ -20,6 +20,8 @@
     display: flex;
     color: white;
     width: 100%;
+    background: rgb(18, 17, 19);
+    background: linear-gradient(180deg, rgba(18, 17, 19, 1) 37%, rgba(17, 16, 18, 1) 59%);
 
     h1 {
         font-family: 'Gilroy-Bold';
@@ -39,11 +41,8 @@
             display: none;
         }
 
-        /* Firefox için */
         -ms-overflow-style: none;
-        /* Internet Explorer 10+ */
         scrollbar-width: none;
-        /* Firefox */
 
         .card {
             background-position: center;
@@ -97,7 +96,7 @@
                 transition: 0.7s;
                 width: 250px;
                 position: absolute;
-                bottom: 130px;
+                bottom: 100px;
                 left: -80px;
             }
 
@@ -107,7 +106,7 @@
                 color: gray;
                 color: white;
                 visibility: hidden;
-                font-size: 30px;
+                font-size: 25px;
                 transition: 0.2s;
                 margin-bottom: 30px;
                 opacity: 0;
@@ -150,7 +149,7 @@
 
                 p {
                     transition: 0.5s;
-                    font-size: 20px;
+                    font-size: 17px;
                     transform: rotate(360deg);
                     bottom: 23px;
                     left: 0px;
@@ -201,6 +200,7 @@
     #meetOurTeam {
         flex-direction: column;
         padding: 50px 15px;
+
 
         h1 {
             font-size: 45px;

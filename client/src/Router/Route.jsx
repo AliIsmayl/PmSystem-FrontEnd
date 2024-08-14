@@ -40,7 +40,7 @@ export function createRoutesWithLoading() {
     },
     {
       path: "/codes/:name",
-      element: <QrCode setloading={setloading} loading={loading} />
+      element: <QrCode />
     }
   ];
 }
