@@ -4,7 +4,6 @@
     align-items: center;
 }
 
-// @include MyFlex();
 @font-face {
     font-family: 'Gilroy-Bold';
     src: url('../../../Font/Gilroy-Bold.otf');
@@ -22,11 +21,52 @@
     width: 100%;
     background: rgb(18, 17, 19);
     background: linear-gradient(180deg, rgba(18, 17, 19, 1) 37%, rgba(17, 16, 18, 1) 59%);
+    position: relative;
 
     h1 {
         font-family: 'Gilroy-Bold';
         font-size: 50px;
         max-width: 300px;
+    }
+
+    .buttons {
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+        width: 84.5%;
+        right: 0px;
+        z-index: 2;
+        pointer-events: none;
+
+        .scrollButton {
+            pointer-events: auto;
+            background-color: #04040485;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+            @include MyFlex();
+
+            &:hover {
+                background-color: #0DB5B1;
+            }
+        }
+
+        .leftButton {
+            position: absolute;
+            left: 10px;
+            opacity: 0;  /* Başlangıçta görünmez */
+            transition: opacity 0.3s ease;
+        }
+
+        .rightButton {
+            position: absolute;
+            right: 10px;
+        }
     }
 
     .ourTeamBox {
@@ -36,6 +76,7 @@
         width: 100%;
         overflow-x: auto;
         white-space: nowrap;
+        scroll-behavior: smooth;
 
         ::-webkit-scrollbar {
             display: none;
@@ -90,7 +131,6 @@
             p {
                 font-family: 'Gilroy-Semibold';
                 transform: rotate(270deg);
-                color: rgb(40, 38, 38);
                 color: white;
                 font-size: 25px;
                 transition: 0.7s;
@@ -103,7 +143,6 @@
             h5 {
                 font-family: 'Gilroy-Semibold';
                 font-size: 16px;
-                color: gray;
                 color: white;
                 visibility: hidden;
                 font-size: 25px;
@@ -115,7 +154,6 @@
             h4 {
                 font-family: 'Gilroy-Semibold';
                 font-size: 16px;
-                color: gray;
                 color: white;
                 visibility: hidden;
                 font-size: 20px;
@@ -124,7 +162,6 @@
                 .link {
                     color: #ffffff;
                     text-decoration: none;
-
                 }
 
                 margin-bottom: 30px;
@@ -144,66 +181,71 @@
                 }
             }
 
-            &:hover {
-                width: 320px;
+            &:hover{
+                width: 320px !important;
 
                 p {
-                    transition: 0.5s;
-                    font-size: 17px;
-                    transform: rotate(360deg);
-                    bottom: 23px;
-                    left: 0px;
-                    color: rgba(255, 255, 255, 0.849);
+                    transition: 0.5s !important;
+                    font-size: 17px !important;
+                    transform: rotate(360deg) !important;
+                    bottom: 23px !important;
+                    left: 0px !important;
+                    color: rgba(255, 255, 255, 0.849) !important;
                 }
-
+        
                 img {
-                    visibility: visible;
-                    transition: 2.5s;
-                    opacity: 1;
+                    visibility: visible !important;
+                    transition: 2.5s !important;
+                    opacity: 1 !important;
                 }
-
+        
                 h5 {
-                    visibility: visible;
-                    transition: 2.5s;
-                    opacity: 1;
+                    visibility: visible !important;
+                    transition: 2.5s !important;
+                    opacity: 1 !important;
                 }
-
+        
                 h4 {
-                    visibility: visible;
-                    transition: 2.5s;
-                    opacity: 1;
+                    visibility: visible !important;
+                    transition: 2.5s !important;
+                    opacity: 1 !important;
                 }
-
+        
                 span {
-                    visibility: visible;
-                    transition: 2.5s;
-                    opacity: 1;
+                    visibility: visible !important;
+                    transition: 2.5s !important;
+                    opacity: 1 !important;
                 }
             }
         }
     }
 
 
-}
 
-@media only screen and (max-width: 967px) {
-    #meetOurTeam {
+    @media only screen and (max-width: 967px) {
         flex-direction: column;
 
         .ourTeamBox {
             padding: 50px 50px 50px 0px;
         }
-    }
-}
 
-@media only screen and (max-width: 625px) {
-    #meetOurTeam {
+        .buttons {
+            top: inherit;
+            width: 89%;
+            bottom: 50px;
+        }
+    }
+
+    @media only screen and (max-width: 625px) {
         flex-direction: column;
         padding: 50px 15px;
 
-
         h1 {
             font-size: 45px;
+        }
+
+        .buttons {
+            display: none;
         }
 
         .ourTeamBox {

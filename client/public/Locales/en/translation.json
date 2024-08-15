@@ -82,7 +82,7 @@
 
   "WhatWeOffer": "What we offer?",
   "OurPartners": "Our Partners",
-  "MeetOurTeam": "Meet Our Team",
+  "MeetOurTeam": "Our Team",
 
   "OurServiceHead": "OUR SERVICES",
   "ServiceHeadText": "We work closely with SAP to offer a wide range of services for both SAP and non-SAP platforms. Our services include development, consulting, audit, quality assurance, automation, and artificial intelligence solutions to enhance your business operations. By partnering with us, you leverage cutting-edge technologies to increase your company's efficiency and competitiveness.",
@@ -115,5 +115,11 @@
   "SubscribeMessage": "Subscribed.",
   "SubscripeNotEmail": "Please enter a valid email address.",
 
-  "NotPersonal": "Information about this employee was not found."
+  "NotPersonal": "Information about this employee was not found.",
+
+  "Customer": "Customer",
+  "Businness": "Businness",
+  "CompanyName": "Company Name",
+  "Position": "Position",
+  "ServiceText": "Service"
 }

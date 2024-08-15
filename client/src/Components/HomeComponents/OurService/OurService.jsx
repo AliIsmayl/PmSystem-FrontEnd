@@ -42,9 +42,9 @@ function OurService() {
         <section id='ourService' style={{ backgroundImage: `url(${BackroundImage})` }} >
             <div className="leftBox">
                 <h1>{t("OurService")}</h1>
-                <div className="viewHiddenBtn">
+                <Link to={"/service"} className="viewHiddenBtn">
                     <p>{t("ViewAll")}</p>
-                </div>
+                </Link>
                 <p>{t("OurServiceAnswer")}</p>
                 <Link to={"/service"} className="viewAllBtn">
                     <p>{t("ViewAll")}</p>

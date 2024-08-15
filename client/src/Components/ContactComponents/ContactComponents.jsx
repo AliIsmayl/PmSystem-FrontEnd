@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ContactComponents.scss';
 import { PiPhoneCall } from "react-icons/pi";
 import { AiOutlineMail } from "react-icons/ai";
@@ -7,13 +7,33 @@ import image from '../../Image/ContactHeader.png';
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
+import axios from 'axios'
 
 function ContactComponents() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const [serviceMessage, setServiceMessage] = useState('');
+    const [postion, setPostion] = useState('');
+    const [companyName, setCompanyName] = useState('');
     const [isSending, setIsSending] = useState(false);
     const { t } = useTranslation();
+    const [changeForm, setChangeForm] = useState(false)
+    const [service, setService] = useState([]);
+    const [language, setLanguage] = useState(i18next.language);
+
+    async function getData() {
+        try {
+            const res = await axios.get('https://pmsystems.az/qrcode/service_details/');
+            setService(res.data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    }
+    function handleChangeIpnut() {
+        setChangeForm(!changeForm)
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -31,10 +51,11 @@ function ContactComponents() {
 
         const templateParams = {
             from_name: name,
-            from_email: email,
-            to_name: "Project Management System",
-            message: message
+            from_email: email, 
+            to_name: "Project Management System", 
+            message: message, 
         };
+
 
         emailjs.send(serviceId, templateId, templateParams, publicKey)
             .then((response) => {
@@ -49,7 +70,64 @@ function ContactComponents() {
                 setIsSending(false);
             });
     }
+    function handleSubmitBusinness(e) {
+        e.preventDefault();
 
+        if (!name || !email || !message || !companyName || !serviceMessage || !postion) {
+            toast.error(`${t("MessageFalse")}`);
+            return;
+        }
+
+        setIsSending(true);
+
+        const serviceId = "service_2cp0xmn";
+        const templateId = "template_bui21b8";
+        const publicKey = "FUls4Y1eg7htMlhlv";
+
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            to_name: "Project Management System",
+            message: message,
+            from_service: serviceMessage,
+            from_company: companyName,
+            from_position: postion,
+        };
+
+
+        emailjs.send(serviceId, templateId, templateParams, publicKey)
+            .then((response) => {
+                setEmail('');
+                setMessage('');
+                setName('');
+                setCompanyName('');
+                setPostion('');
+                setServiceMessage('');
+                setIsSending(false);
+                toast.success(`${t("MessageTrue")}`);
+            })
+            .catch((error) => {
+                console.error("Error sending email:", error);
+                setIsSending(false);
+            });
+    }
+
+    useEffect(() => {
+        getData();
+
+        const handleLanguageChange = (lng) => {
+            setLanguage(lng);
+            getData();
+        };
+
+        i18next.on('languageChanged', handleLanguageChange);
+
+        return () => {
+            i18next.off('languageChanged', handleLanguageChange);
+        };
+    }, []);
+
+    const languageKey = language.toLocaleUpperCase();
     return (
         <section id='contactComponents' style={{ backgroundImage: `url(${image})` }}>
             <div className="containerContactBox">
@@ -72,8 +150,12 @@ function ContactComponents() {
                 <div className="rightBox" data-aos="fade-left" data-aos-duration="1000">
                     <p>{t("ContactText")}</p>
                     <span>{t("ContactText2")}</span>
+                    <ul>
+                        <li onClick={handleChangeIpnut}><h3>{t("Customer")}</h3><span className={`${changeForm ? "linesss" : ""}`}></span></li>
+                        <li onClick={handleChangeIpnut}><h3>{t("Businness")}</h3><span className={`${changeForm ? "" : "linesss"}`}></span></li>
+                    </ul>
                     <div className="chanegInputBox">
-                        <form onSubmit={handleSubmit} action="" className='businessForm'>
+                        <form onSubmit={handleSubmit} action="" className={`customerForm ${changeForm ? "close" : ""}`}>
                             <div className="smallBoxs">
                                 <div className="smallBox">
                                     <label htmlFor="">{t("Name")} , {t("Surname")}</label>
@@ -83,6 +165,50 @@ function ContactComponents() {
                                     <label htmlFor="">{t("Email")}</label>
                                     <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                                 </div>
+                            </div>
+                            <div className="bigBox">
+                                <label htmlFor="">{t("Message")}</label>
+                                <textarea type="text" value={message} onChange={(e) => setMessage(e.target.value)} />
+                            </div>
+                            <button type='submit' disabled={isSending}>
+                                {isSending ? <img src="https://i.gifer.com/ZKZg.gif" alt="Loading" /> : t("Send")}
+                            </button>
+                        </form>
+                        <form onSubmit={handleSubmitBusinness} action="" className={`businessForm ${changeForm ? "open" : ""}`}>
+                            <div className="smallBoxs">
+                                <div className="smallBox">
+                                    <label htmlFor="">{t("Name")} , {t("Surname")}</label>
+                                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                                </div>
+                                <div className="smallBox">
+                                    <label htmlFor="">{t("Email")}</label>
+                                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                                </div>
+                            </div>
+                            <div className="smallBoxs">
+                                <div className="smallBox">
+                                    <label htmlFor="">{t("CompanyName")}</label>
+                                    <input type="text" value={companyName} onChange={(e) => setCompanyName(e.target.value)} />
+                                </div>
+                                <div className="smallBox" >
+                                    <label htmlFor="">{t("Position")}</label>
+                                    <input type="text" value={postion} onChange={(e) => setPostion(e.target.value)} />
+                                </div>
+                            </div>
+                            <div className="bigBox">
+                                <label htmlFor="">{t("ServiceText")}</label>
+                                <select name="" id="" onChange={(e) => setServiceMessage(e.target.value)}>
+                                    {service.length > 0 ? (
+                                        service.map((item, index) => (
+                                            <option key={index} value={item[languageKey].LargeHeadName}>
+                                                {item[languageKey].LargeHeadName}
+                                            </option>
+                                        ))
+                                    ) : (
+                                        <option>Loading...</option>
+                                    )}
+                                </select>
+
                             </div>
                             <div className="bigBox">
                                 <label htmlFor="">{t("Message")}</label>
@@ -104,19 +230,3 @@ export default ContactComponents;
 
 
 
-{/* <div className="smallBoxs">
-                                <div className="smallBox">
-                                    <label htmlFor="">Company Name</label>
-                                    <input type="text" />
-                                </div>
-                                <div className="smallBox">
-                                    <label htmlFor="">Position</label>
-                                    <input type="text" />
-                                </div>
-                            </div> */}
-{/* <div className="bigBox">
-                                <label htmlFor="">Service</label>
-                                <select name="" id="">
-                                    <option value=""></option>
-                                </select>
-                            </div> */}

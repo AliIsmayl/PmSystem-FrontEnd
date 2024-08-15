@@ -117,5 +117,11 @@
   "Subscribe": "Abunə ol",
   "SubscribeMessage": "Abunə olundu.",
   "SubscripeNotEmail": "Zəhmət olmasa, etibarlı bir email adresi daxil edin.",
-  "NotPersonal": "Bu işci haqqında məlumat tapılmadı"
+  "NotPersonal": "Bu işci haqqında məlumat tapılmadı",
+
+  "Customer": "Müştəri",
+  "Businness": "Biznes",
+  "CompanyName": "Şirkət Adı",
+  "Position": "Vəzifə",
+  "ServiceText": "Xidmət"
 }

@@ -29,7 +29,7 @@ function QrCode() {
     }, [name]);
 
     return (
-        <section id='qrCode' style={{ backgroundImage: `url(${Background})` }}>
+        <section id='qrCode'>
             <img src={Logo} alt="Logo" />
             <h3>
                 {

@@ -74,7 +74,7 @@
             iframe {
                 margin-top: 20px;
                 height: 300px;
-                width: 520px;
+                width: 500px;
                 border-radius: 30px;
             }
         }
@@ -82,6 +82,14 @@
         .rightBox {
             width: 600px;
             margin-top: 100px;
+
+            .businessForm {
+                display: none;
+            }
+
+            .customerForm {
+                display: flex;
+            }
 
             p {
                 font-family: 'Gilroy-Bold';
@@ -189,6 +197,12 @@
                         border-radius: 10px;
                         margin-top: 10px;
                         background-color: #eff0f676;
+                        color: white;
+                        padding: 0px 10px;
+                        option{
+                            color: black;
+
+                        }
 
 
                     }
@@ -217,7 +231,8 @@
                     font-family: 'Gilroy-Regular';
                     transition: all 0.3s;
                     height: 40px;
-width: 160px;
+                    width: 160px;
+
                     img {
                         max-width: 15px;
                     }
@@ -230,6 +245,18 @@ width: 160px;
             }
         }
     }
+}
+
+.linesss {
+    background: transparent !important;
+}
+
+.open {
+    display: flex !important;
+}
+
+.close {
+    display: none !important;
 }
 
 @media only screen and (max-width: 1139px) {
@@ -258,7 +285,7 @@ width: 160px;
     }
 }
 
-@media only screen and (max-width: 1013px) {
+@media only screen and (max-width: 1375px) {
     #contactComponents {
 
         .containerContactBox {
