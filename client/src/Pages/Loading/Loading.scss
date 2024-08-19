@@ -22,7 +22,7 @@
         width: 140px;
         position: relative;
         @include MyFlex();
-        animation: rotateAnimation 5s ease infinite;
+        animation: rotateAnimation 3s ease infinite;
         overflow: hidden;
 
         img {

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import back from '../../../Image/CardBack.png'
 
 function MeetOurTeam() {
     const { t } = useTranslation();
@@ -16,11 +17,13 @@ function MeetOurTeam() {
     async function getData() {
         try {
             const res = await axios.get(`https://pmsystems.az/qrcode/list/all/`);
-            setTeam(res.data);
+            const sortedData = res.data.sort((a, b) => a.order - b.order);
+            setTeam(sortedData);
         } catch (error) {
             console.error("Error fetching data:", error);
         }
     }
+
 
     function handleOpenCard(index) {
         if (openedCardIndex === index) {
@@ -95,7 +98,8 @@ function MeetOurTeam() {
                         key={index}
                     >
                         <div className="imgBox">
-                            <img src={item.image_url} alt="Team Member" />
+                            <img src={back} alt="Team Member" />
+                            {/* <img src={item.image_url} alt="Team Member" /> */}
                         </div>
                         <div className="textBox">
                             <h5>{item.fullname}</h5>

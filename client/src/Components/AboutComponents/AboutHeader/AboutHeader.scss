@@ -53,7 +53,7 @@
     background-position: center;
     background-size: cover;
 
-    p {
+    h1 {
         margin-top: 90px;
         font-size: 65px;
         text-align: center;
@@ -112,7 +112,7 @@
 
 @media only screen and (max-width: 1245px) {
     #aboutHeader {
-        p {
+        h1 {
             font-size: 50px;
 
         }
@@ -122,7 +122,7 @@
 @media only screen and (max-width: 724px) {
     #aboutHeader {
 
-        p {
+        h1 {
             font-size: 40px;
             max-width: 90%;
             line-height: 1.3;

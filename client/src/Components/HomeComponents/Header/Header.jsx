@@ -15,7 +15,7 @@ const { t } = useTranslation();
             <h5>office@pmsystems.az</h5>
             <h5>46 Ashiq Molla Juma, Baku</h5> */}
 
-            <p>{t("BstIt")}</p>
+            <h1>{t("BstIt")}</h1>
             <span>{t("TogetherWith")}</span>
             <Link to={'https://partnerfinder.sap.com/'} className="exploreBtn">
                 <span>{t("Explore")}</span>

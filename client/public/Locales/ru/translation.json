@@ -122,5 +122,6 @@
   "Businness": "Бизнес",
   "CompanyName": "Название компании",
   "Position": "Должность",
-  "ServiceText": "Услуга"
+  "ServiceText": "Услуга",
+  "ChooseService": "Выберите услугу..."
 }

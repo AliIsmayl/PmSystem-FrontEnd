@@ -37,11 +37,13 @@ function ServiceDetail() {
         };
     }, [id]);
 
+ 
+
     if (!detail) {
         return <p>Loading...</p>;
     }
 
-    const languageKey = language.toUpperCase();
+    const languageKey = language === "en-US" ? "EN" : language.toUpperCase();
     console.log("Language Key:", languageKey);
 
     return (

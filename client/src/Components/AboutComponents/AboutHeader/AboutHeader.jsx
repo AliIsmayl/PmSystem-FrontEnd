@@ -8,7 +8,7 @@ function AboutHeader() {
 
     return (
         <header id='aboutHeader' style={{ backgroundImage: `url(${Image})` }}>
-            <p>{t("AboutUS")}</p>
+            <h1>{t("AboutUS")}</h1>
             <span>{t("AboutHeadText")}</span>
         </header>
     )

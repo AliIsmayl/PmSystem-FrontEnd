@@ -7,7 +7,7 @@ import { FiPlus } from "react-icons/fi";
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-function Faq() {
+function Faq({ going  }) {
     const [openIndex, setOpenIndex] = useState(null);
     const { t } = useTranslation();
 
@@ -116,7 +116,7 @@ function Faq() {
         <section id='faq' style={{ backgroundImage: `url(${Background})` }}>
             <div className="leftBox">
                 <h1 data-aos="fade-right" data-aos-duration="1000">{t("GotAnyGuestion")}</h1>
-                <Link to={"/about"} className="viewAllBtn">
+                <Link to={going ? "/about" : "https://partnerfinder.sap.com/"} className="viewAllBtn">
                     <p>{t("Explore")}</p>
                     <div className="arrow">
                         <span></span>

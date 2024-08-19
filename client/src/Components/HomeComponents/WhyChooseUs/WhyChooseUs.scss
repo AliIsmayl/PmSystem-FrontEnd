@@ -98,20 +98,21 @@
             p {
                 font-size: 45px;
                 max-width: 100%;
-
             }
         }
 
         .downTextBox {
             padding: 50px 10px;
             @include MyFlex();
+            justify-content: start !important;
 
             .chooseCardBox {
                 text-align: start;
+                width: 90%;
 
                 .imgBox {
                     img {
-                        margin-left: -20%;
+                        margin-left: -16%;
                         margin-bottom: 28px;
                     }
 

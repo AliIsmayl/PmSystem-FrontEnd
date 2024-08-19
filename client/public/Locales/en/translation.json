@@ -108,7 +108,7 @@
   "MessageFalse": "Please fill out the form...",
   "AboutUSLittle": "About Us",
 
-  "SubscribeHead": "Subcribe to our Newsletter",
+  "SubscribeHead": "Subcsribe to our Newsletter",
   "SubscribeText": "Subscribe to our IT solutions to gain access to premium support, advanced security, and cutting-edge cloud services. Stay ahead with regular software updates and exclusive training resources designed to elevate your business.",
   "EnterEmail": "Enter your email...",
   "Subscribe": "Subscribe",
@@ -121,5 +121,6 @@
   "Businness": "Businness",
   "CompanyName": "Company Name",
   "Position": "Position",
-  "ServiceText": "Service"
+  "ServiceText": "Service",
+  "ChooseService":"Choose Service..."
 }

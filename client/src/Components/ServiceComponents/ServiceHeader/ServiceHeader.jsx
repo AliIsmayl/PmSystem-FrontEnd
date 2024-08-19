@@ -8,7 +8,7 @@ function ServiceHeader() {
 
   return (
     <header id='serviceHeader' style={{ backgroundImage: `url(${Image})` }}>
-      <p>{t("OurServiceHead")}</p>
+      <h1>{t("OurServiceHead")}</h1>
       <span>{t("ServiceHeadText")}</span>
 
     </header>

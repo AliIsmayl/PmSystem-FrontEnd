@@ -51,9 +51,9 @@ function ContactComponents() {
 
         const templateParams = {
             from_name: name,
-            from_email: email, 
-            to_name: "Project Management System", 
-            message: message, 
+            from_email: email,
+            to_name: "Project Management System",
+            message: message,
         };
 
 
@@ -127,7 +127,9 @@ function ContactComponents() {
         };
     }, []);
 
-    const languageKey = language.toLocaleUpperCase();
+    const languageKey = localStorage.getItem(language.toLocaleUpperCase()) || 'EN';
+
+
     return (
         <section id='contactComponents' style={{ backgroundImage: `url(${image})` }}>
             <div className="containerContactBox">
@@ -198,11 +200,15 @@ function ContactComponents() {
                             <div className="bigBox">
                                 <label htmlFor="">{t("ServiceText")}</label>
                                 <select name="" id="" onChange={(e) => setServiceMessage(e.target.value)}>
+                                    <option hidden>{t("ChooseService")}</option>
                                     {service.length > 0 ? (
                                         service.map((item, index) => (
-                                            <option key={index} value={item[languageKey].LargeHeadName}>
-                                                {item[languageKey].LargeHeadName}
-                                            </option>
+                                            <>
+                                                <option key={index} value={item[languageKey].name}>
+                                                    {item[languageKey].name}
+                                                </option>
+                                            </>
+
                                         ))
                                     ) : (
                                         <option>Loading...</option>

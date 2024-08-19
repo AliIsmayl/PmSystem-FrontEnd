@@ -13,7 +13,7 @@ function Homepage() {
       <WhyChooseUs />
       <OurService />
       <NextLevel />
-      <Faq />
+      <Faq going={true} />
     </>
   );
 }

@@ -4,7 +4,7 @@
   "Service": "Xidmətlər",
   "Contact": "Əlaqə",
   "BstIt": "QLOBAL İCMADA ƏN YAXŞI İT HƏLLİ VƏ ŞİRKƏTİ",
-  "TogetherWith": "SAP ilə birlikdə, innovativ və etibarlı həllər təqdim edərək biznes proseslərinizi daha səmərəli və rəqabətqabiliyyətli edirik. Məqsədimiz şirkətinizin uğuruna töhfə vermək və davamlı inkişafınızı təmin etməkdir.",
+  "TogetherWith": "SAP ilə birlikdə, innovativ və etibarlı həllər təqdim edərək biznes proseslərinizi daha səmərəli və rəqabət qabiliyyətli edirik. Məqsədimiz şirkətinizin uğuruna töhfə vermək və davamlı inkişafınızı təmin etməkdir.",
   "Explore": "Araşdır",
   "WhyChooseUs": "Nə üçün bizi seçirlər?",
   "WhyChoose1": "Sürətli uğur üçün uyğunlaşma",
@@ -123,5 +123,6 @@
   "Businness": "Biznes",
   "CompanyName": "Şirkət Adı",
   "Position": "Vəzifə",
-  "ServiceText": "Xidmət"
+  "ServiceText": "Xidmət",
+   "ChooseService": "Xidməti seçin..."
 }

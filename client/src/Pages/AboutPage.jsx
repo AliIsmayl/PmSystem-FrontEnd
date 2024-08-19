@@ -14,7 +14,7 @@ function AboutPage() {
       {/* <WhatWeOffer/> */}
       <OurPartners/>
       <MeetOurTeam/>
-      <Faq />
+      <Faq going={false} />
     </div>
   )
 }
