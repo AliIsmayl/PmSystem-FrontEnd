@@ -14,7 +14,7 @@ function QrCode() {
 
     async function getData() {
         try {
-            const res = await axios.get(`https://pmsystems.az/qrcode/list/${name}/`);
+            const res = await axios.get(`https://pmsystems.az/qrcode/list/all/${name}/`);
             console.log("dataaaaaa", res.data);
             setQrCode(res.data);
         } catch (error) {

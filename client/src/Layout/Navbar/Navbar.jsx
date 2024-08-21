@@ -11,7 +11,7 @@ import i18n from '../../i18n';
 function Navbar() {
     const [openRespNavbar, setOpenRespNavbar] = useState(true);
     const [openLangBox, setOpenLangBox] = useState(false);
-    const defaultLang = localStorage.getItem('language') || 'EN';
+    const defaultLang = localStorage.getItem("language") ? JSON.parse(localStorage.getItem("language")) : 'EN';
     const [whichLang, setWhichLang] = useState(defaultLang);
     const languages = ["AZ", "EN", "RU"];
     const filteredLanguages = languages.filter(lang => lang !== whichLang);
@@ -23,7 +23,7 @@ function Navbar() {
 
     function changeLang(lang) {
         i18n.changeLanguage(lang);
-        localStorage.setItem('language', lang.toUpperCase());
+        localStorage.setItem("language", JSON.stringify(lang.toUpperCase()))
     }
 
     const handleScroll = () => {
@@ -48,6 +48,8 @@ function Navbar() {
     function handleOpenLangBox() {
         setOpenLangBox(!openLangBox);
     }
+
+   
 
     return (
         <nav className={`navbar ${visible ? 'visible' : 'hidden'} ${isScrolled ? 'scrolled' : ''}`}>

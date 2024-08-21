@@ -37,13 +37,14 @@ function ServiceDetail() {
         };
     }, [id]);
 
- 
+
 
     if (!detail) {
         return <p>Loading...</p>;
     }
 
-    const languageKey = language === "en-US" ? "EN" : language.toUpperCase();
+    const languageKey = localStorage.getItem("language") ? JSON.parse(localStorage.getItem("language")) : 'EN';
+
     console.log("Language Key:", languageKey);
 
     return (

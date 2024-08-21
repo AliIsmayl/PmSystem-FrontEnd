@@ -4,36 +4,30 @@
     align-items: center;
 }
 
-// @include MyFlex();
 @font-face {
     font-family: 'Gilroy-Bold';
     src: url('../../Font/Gilroy-Bold.otf');
-
 }
 
 @font-face {
     font-family: 'Gilroy-Medium';
     src: url('../../Font/Gilroy-Medium.ttf');
-
-
 }
 
 @font-face {
     font-family: 'Gilroy-Light';
     src: url('../../Font/Gilroy-Light.otf');
-
-
 }
 
 @font-face {
     font-family: 'Gilroy-Extrabold';
     src: url('../../Font/Gilroy-Extrabold.otf');
-
 }
 
 #serviceDetail {
     color: white;
     overflow: hidden;
+    background-color: #141414;
 
     #serviceDetailHeader {
         padding: 80px 100px;
@@ -55,10 +49,7 @@
             span {
                 font-size: 20px;
                 margin-top: 0px;
-
             }
-
-
         }
 
         p {
@@ -70,7 +61,6 @@
             max-width: 80%;
             line-height: 1.5;
             font-family: 'Gilroy-Extrabold';
-
         }
 
         span {
@@ -81,7 +71,6 @@
             max-width: 60%;
             line-height: 1.5;
         }
-
     }
 
     main {
@@ -108,7 +97,6 @@
                     font-family: 'Gilroy-Medium';
                     font-size: 17px;
                     line-height: 1.5;
-
                 }
             }
 
@@ -121,7 +109,6 @@
                     max-width: 100%;
                     aspect-ratio: 1/1.5;
                     object-fit: cover;
-
                 }
             }
         }
@@ -136,19 +123,14 @@
     }
 }
 
-
 @media only screen and (max-width: 1037px) {
-
     #serviceDetail {
         #serviceDetailHeader {
             padding: 50px 30px;
-
         }
 
         main {
             padding: 30px 20px;
-
-
         }
     }
 }
@@ -156,20 +138,15 @@
 @media only screen and (max-width: 873px) {
     #serviceDetail {
         #serviceDetailHeader {
-
             p {
                 font-size: 50px;
                 line-height: 1.3;
-
             }
 
             span {
                 margin-top: 17px;
                 max-width: 90%;
-
             }
-
-
         }
 
         main {
@@ -184,17 +161,14 @@
 
                     h1 {
                         font-size: 45px;
-
                     }
-
-
                 }
 
                 .rightBox {
                     width: 100%;
-                    height: 500px;
-
+                    height: 360px;
                 }
+             
             }
 
             .downBox {
@@ -202,26 +176,19 @@
             }
         }
     }
-
 }
 
 @media only screen and (max-width: 461px) {
     #serviceDetail {
         #serviceDetailHeader {
-
             p {
                 font-size: 30px;
                 line-height: 1.3;
-
             }
 
             span {
                 font-size: 15px;
-
             }
-
-
         }
     }
-
 }
