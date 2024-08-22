@@ -10,15 +10,15 @@ function Homepage() {
 
   useEffect(() => {
     if (!localStorage.getItem('language')) {
-      localStorage.setItem('language', JSON.stringify('RU'));
+      localStorage.setItem('language', JSON.stringify('EN'));
     }
 
     const i18nextLng = localStorage.getItem('i18nextLng');
     if (!i18nextLng || i18nextLng === 'en-US') {
-      localStorage.setItem('i18nextLng', 'ru');
-      i18next.changeLanguage('ru'); 
+      localStorage.setItem('i18nextLng', 'en');
+      i18next.changeLanguage('en');
     } else {
-      i18next.changeLanguage(i18nextLng); 
+      i18next.changeLanguage(i18nextLng);
     }
   }, []);
   return (

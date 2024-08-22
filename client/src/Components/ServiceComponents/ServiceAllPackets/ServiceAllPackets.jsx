@@ -49,17 +49,18 @@ function ServiceAllPackets() {
                                     <Link to={`${item.id}`} className="arrowBox">
                                         <IoIosArrowRoundForward />
                                     </Link>
+
                                     <h1 style={{ maxWidth: "70%" }}>{currentItem.LargeHeadName}</h1>
                                     <p>{currentItem.LittleTextInfo}</p>
                                 </div>
                                 {nextItemData && (
-                                    <div id="cardSmall" style={{ width: index % 4 === 0 ? "40%" : "55%" }} className='cardHover'>
+                                    <Link id="cardSmall" to={`${item.id + 1}`} style={{ width: index % 4 === 0 ? "40%" : "55%" }} className='cardHover'>
                                         <Link to={`${item.id + 1}`} className="arrowBox">
                                             <IoIosArrowRoundForward />
                                         </Link>
                                         <h1>{nextItemData.LargeHeadName}</h1>
                                         <p>{nextItemData.LittleTextInfo}</p>
-                                    </div>
+                                    </Link>
                                 )}
                             </Link>
                         );

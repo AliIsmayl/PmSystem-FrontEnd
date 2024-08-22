@@ -72,13 +72,13 @@ function OurService() {
                                         <h1 style={{ maxWidth: "70%" }}>{currentItem.LargeHeadName}</h1>
                                         <p>{currentItem.LittleTextInfo}</p>
                                     </div>
-                                    <div id="cardSmall" style={{ width: index % 4 === 0 ? "40%" : "55%" }} className='cardHover'>
+                                    <Link to={`service/${item.id + 1}`} id="cardSmall" style={{ width: index % 4 === 0 ? "40%" : "55%" }} className='cardHover'>
                                         <Link to={`service/${nextItem.id}`} className="arrowBox">
                                             <IoIosArrowRoundForward />
                                         </Link>
                                         <h1>{nextItemData.LargeHeadName}</h1>
                                         <p>{nextItemData.LittleTextInfo}</p>
-                                    </div>
+                                    </Link>
                                 </Link>
                             );
                         }

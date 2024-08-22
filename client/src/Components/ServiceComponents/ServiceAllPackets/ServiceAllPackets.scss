@@ -41,6 +41,7 @@
     gap: 27.5px;
     padding: 50px 100px 100px;
     background: #141414;
+    text-decoration: none;
 
     .cardHover {
         -webkit-box-shadow: 0px 3px 3px 0px #02CEC8;
@@ -79,6 +80,13 @@
             font-size: 14px;
             line-height: 1.4;
             color: rgb(206, 204, 204);
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 15;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-height: 6em;
+            line-height: 1.5em;
 
         }
 
@@ -103,18 +111,26 @@
 
         #cardBig {
             width: 58%;
+            text-decoration: none;
+
         }
 
         #cardSmall {
             width: 39%;
+            text-decoration: none;
+
         }
 
         #cardBig2 {
             width: 42%;
+            text-decoration: none;
+
         }
 
         #cardSmall2 {
             width: 55%;
+            text-decoration: none;
+
         }
     }
 }

@@ -123,7 +123,7 @@
         display: flex;
         flex-direction: column;
         gap: 27.5px;
-        
+
         .cardHover {
             -webkit-box-shadow: 0px 3px 3px 0px #02CEC8;
             -moz-box-shadow: 0px 3px 3px 0px #02CEC8;
@@ -187,19 +187,27 @@
             text-decoration: none;
 
             #cardBig {
+                text-decoration: none;
+
                 width: 58%;
             }
 
             #cardSmall {
                 width: 39%;
+                text-decoration: none;
+
             }
 
             #cardBig2 {
                 width: 42%;
+                text-decoration: none;
+
             }
 
             #cardSmall2 {
                 width: 55%;
+                text-decoration: none;
+
             }
         }
     }
@@ -246,7 +254,7 @@
 @media only screen and (max-width: 854px) {
     #ourService {
         flex-direction: column;
-        padding:  100px;
+        padding: 100px;
         align-items: start;
         position: relative;
         // height: 190vh;
