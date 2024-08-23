@@ -116,7 +116,7 @@ function Faq({ going  }) {
         <section id='faq' style={{ backgroundImage: `url(${Background})` }}>
             <div className="leftBox">
                 <h1 data-aos="fade-right" data-aos-duration="1000">{t("GotAnyGuestion")}</h1>
-                <Link to={going ? "/about" : "https://partnerfinder.sap.com/"} className="viewAllBtn">
+                <Link to={going ? "/about" : "https://partnerfinder.sap.com/profile/0002850313"} target="_blank" className="viewAllBtn">
                     <p>{t("Explore")}</p>
                     <div className="arrow">
                         <span></span>

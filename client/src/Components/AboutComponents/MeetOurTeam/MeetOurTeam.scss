@@ -59,7 +59,8 @@
         .leftButton {
             position: absolute;
             left: 10px;
-            opacity: 0;  /* Başlangıçta görünmez */
+            opacity: 0;
+            /* Başlangıçta görünmez */
             transition: opacity 0.3s ease;
         }
 
@@ -74,9 +75,15 @@
         display: flex;
         padding: 0 50px 50px 50px;
         width: 100%;
+        // overflow-x: auto;
+        overflow: hidden;
+        // white-space: nowrap;
+        // scroll-behavior: smooth;
+        scroll-behavior: smooth; // Yumuşak kaydırma için scroll-behavior ekleniyor
         overflow-x: auto;
         white-space: nowrap;
-        scroll-behavior: smooth;
+        display: flex;
+        transition: transform 0.3s ease-in-out;
 
         ::-webkit-scrollbar {
             display: none;
@@ -181,7 +188,7 @@
                 }
             }
 
-            &:hover{
+            &:hover {
                 width: 320px !important;
 
                 p {
@@ -192,25 +199,25 @@
                     left: 0px !important;
                     color: rgba(255, 255, 255, 0.849) !important;
                 }
-        
+
                 img {
                     visibility: visible !important;
                     transition: 2.5s !important;
                     opacity: 1 !important;
                 }
-        
+
                 h5 {
                     visibility: visible !important;
                     transition: 2.5s !important;
                     opacity: 1 !important;
                 }
-        
+
                 h4 {
                     visibility: visible !important;
                     transition: 2.5s !important;
                     opacity: 1 !important;
                 }
-        
+
                 span {
                     visibility: visible !important;
                     transition: 2.5s !important;

@@ -18,9 +18,9 @@ function Footer() {
                     <img src={Logo} alt="" />
                     <p>{t("FooterHeadText")}</p>
                     <div className="socialBox">
-                        <Link className="iconBox" to={"https://api.whatsapp.com/send?phone=994553432143"}><FaWhatsapp /></Link>
-                        <Link className="iconBox" to={"https://www.linkedin.com/company/pmsystems/"}><FaLinkedin /></Link>
-                        <Link className="iconBox" to={"mailto:info@pmsystems.az"}><TfiEmail /></Link>
+                        <Link className="iconBox" to={"https://api.whatsapp.com/send?phone=994553432143"} target="_blank"><FaWhatsapp /></Link>
+                        <Link className="iconBox" to={"https://www.linkedin.com/company/pmsystems/"} target="_blank"><FaLinkedin /></Link>
+                        <Link className="iconBox" to={"mailto:info@pmsystems.az"} target="_blank"><TfiEmail /></Link>
                     </div>
                 </div>
                 <div className="rightBox">
@@ -39,9 +39,9 @@ function Footer() {
                     </div>
                     <div className="downBox">
                         {/* <Link className="iconBox"><FaFacebook /></Link> */}
-                        <Link className="iconBox" to={"https://api.whatsapp.com/send?phone=994553432143"}><FaWhatsapp /></Link>
-                        <Link className="iconBox" to={"https://www.linkedin.com/company/pmsystems/"}><FaLinkedin /></Link>
-                        <Link className="iconBox" to={"mailto:info@pmsystems.az"}><TfiEmail /></Link>
+                        <Link className="iconBox" target="_blank" to={"https://api.whatsapp.com/send?phone=994553432143"}><FaWhatsapp /></Link>
+                        <Link className="iconBox" target="_blank" to={"https://www.linkedin.com/company/pmsystems/"}><FaLinkedin /></Link>
+                        <Link className="iconBox" target="_blank" to={"mailto:info@pmsystems.az"}><TfiEmail /></Link>
                     </div>
                 </div>
             </div>

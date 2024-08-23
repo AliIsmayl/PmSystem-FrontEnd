@@ -10,14 +10,14 @@ const { t } = useTranslation();
 
     return (
         <header id='homeHeader' style={{ backgroundImage: `url(${Image})` }}>
-            {/* <p>Under Construction...</p>
+            {/* <h1>Under Construction...</h1>
             <h5>+994 55 343 21 43</h5>
             <h5>office@pmsystems.az</h5>
             <h5>46 Ashiq Molla Juma, Baku</h5> */}
 
             <h1>{t("BstIt")}</h1>
             <span>{t("TogetherWith")}</span>
-            <Link to={'https://partnerfinder.sap.com/'} className="exploreBtn">
+            <Link to={'https://partnerfinder.sap.com/profile/0002850313'} target="_blank" className="exploreBtn">
                 <span>{t("Explore")}</span>
                 <div className="arrow">
                     <IoIosArrowRoundForward />

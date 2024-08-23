@@ -204,8 +204,8 @@ function ContactComponents() {
                                     {service.length > 0 ? (
                                         service.map((item, index) => (
                                             <>
-                                                <option key={index} value={item[languageKey].name}>
-                                                    {item[languageKey].name}
+                                                <option key={index} value={item[languageKey].LittleHeadName}>
+                                                    {item[languageKey].LittleHeadName}
                                                 </option>
                                             </>
 

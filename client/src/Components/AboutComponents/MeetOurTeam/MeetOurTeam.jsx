@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
-import back from '../../../Image/CardBack.png'
+import back from '../../../Image/CardBack.png';
 
 function MeetOurTeam() {
     const { t } = useTranslation();
@@ -13,6 +13,7 @@ function MeetOurTeam() {
     const [team, setTeam] = useState([]);
     const [openedCardIndex, setOpenedCardIndex] = useState(null);
     const [showLeftButton, setShowLeftButton] = useState(false);
+    const [showRightButton, setShowRightButton] = useState(true);
 
     async function getData() {
         try {
@@ -24,7 +25,6 @@ function MeetOurTeam() {
         }
     }
 
-
     function handleOpenCard(index) {
         if (openedCardIndex === index) {
             setOpenedCardIndex(null);
@@ -34,21 +34,20 @@ function MeetOurTeam() {
     }
 
     function scrollRight() {
-        teamBoxRef.current.scrollLeft += 300; // Sağ tarafa 300px kaydır
-        updateButtonVisibility(); // Buton görünürlüğünü kontrol et
+        teamBoxRef.current.scrollLeft += 300; // Scroll 300px to the right
+        updateButtonVisibility(); // Check button visibility
     }
 
     function scrollLeft() {
-        teamBoxRef.current.scrollLeft -= 300; // Sol tarafa 300px kaydır
-        updateButtonVisibility(); // Buton görünürlüğünü kontrol et
+        teamBoxRef.current.scrollLeft -= 300; // Scroll 300px to the left
+        updateButtonVisibility(); // Check button visibility
     }
 
     function updateButtonVisibility() {
-        if (teamBoxRef.current.scrollLeft > 0) {
-            setShowLeftButton(true);
-        } else {
-            setShowLeftButton(false);
-        }
+        const { scrollLeft, scrollWidth, clientWidth } = teamBoxRef.current;
+
+        setShowLeftButton(scrollLeft > 0);
+        setShowRightButton(scrollLeft + clientWidth < scrollWidth);
     }
 
     useEffect(() => {
@@ -56,24 +55,7 @@ function MeetOurTeam() {
     }, []);
 
     useEffect(() => {
-        const handleWheel = (event) => {
-            if (event.deltaY !== 0) {
-                teamBoxRef.current.scrollLeft += event.deltaY;
-                event.preventDefault();
-                updateButtonVisibility(); // Kaydırma sırasında butonları kontrol et
-            }
-        };
-
-        const teamBox = teamBoxRef.current;
-        teamBox.addEventListener('wheel', handleWheel);
-
-        return () => {
-            teamBox.removeEventListener('wheel', handleWheel);
-        };
-    }, []);
-
-    useEffect(() => {
-        updateButtonVisibility(); // İlk yüklemede buton görünürlüğünü ayarla
+        updateButtonVisibility(); // Initial button visibility check
     }, [team]);
 
     return (
@@ -87,7 +69,13 @@ function MeetOurTeam() {
                 >
                     <FaArrowLeft />
                 </button>
-                <button onClick={scrollRight} className="scrollButton rightButton"><FaArrowRight /></button>
+                <button
+                    onClick={scrollRight}
+                    className="scrollButton rightButton"
+                    style={{ opacity: showRightButton ? 1 : 0 }}
+                >
+                    <FaArrowRight />
+                </button>
             </div>
             <div className="ourTeamBox" ref={teamBoxRef}>
                 {team && team.map((item, index) => (
