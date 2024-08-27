@@ -35,56 +35,59 @@ function ServiceAllPackets() {
     return (
         <section id='serviceAllPackets'>
             {service.length > 0 ? (
-                service.map((item, index) => {
-                    const currentItem = item[languageKey] || item['EN'];
-                    const isLastOddItem = index === service.length - 1 && service.length % 2 !== 0;
+                service
+                    .sort((a, b) => a.order - b.order) // Sort the service array by order
+                    .map((item, index) => {
+                        const currentItem = item[languageKey] || item['EN'];
+                        const isLastOddItem = index === service.length - 1 && service.length % 2 !== 0;
 
-                    if (index % 2 === 0) {
-                        const nextItem = service[index + 1];
-                        const nextItemData = nextItem ? (nextItem[languageKey] || nextItem['EN']) : null;
+                        if (index % 2 === 0) {
+                            const nextItem = service[index + 1];
+                            const nextItemData = nextItem ? (nextItem[languageKey] || nextItem['EN']) : null;
 
-                        return (
-                            <Link to={`${item.id}`} key={index} className="upBox" data-aos={index % 4 === 0 ? "fade-left" : "fade-right"} data-aos-duration="1000">
-                                <div id="cardBig" style={{ width: index % 4 === 0 ? "58%" : "43%" }} className='cardHover'>
-                                    <Link to={`${item.id}`} className="arrowBox">
-                                        <IoIosArrowRoundForward />
-                                    </Link>
-
-                                    <h1 style={{ maxWidth: "70%" }}>{currentItem.LargeHeadName}</h1>
-                                    <p>{currentItem.LittleTextInfo}</p>
-                                </div>
-                                {nextItemData && (
-                                    <Link id="cardSmall" to={`${item.id + 1}`} style={{ width: index % 4 === 0 ? "40%" : "55%" }} className='cardHover'>
-                                        <Link to={`${item.id + 1}`} className="arrowBox">
+                            return (
+                                <Link to={`${item.id}`} key={index} className="upBox" data-aos={index % 4 === 0 ? "fade-left" : "fade-right"} data-aos-duration="1000">
+                                    <div id="cardBig" style={{ width: index % 4 === 0 ? "58%" : "43%" }} className='cardHover'>
+                                        <Link to={`${item.id}`} className="arrowBox">
                                             <IoIosArrowRoundForward />
                                         </Link>
-                                        <h1>{nextItemData.LargeHeadName}</h1>
-                                        <p>{nextItemData.LittleTextInfo}</p>
-                                    </Link>
-                                )}
-                            </Link>
-                        );
-                    }
 
-                    if (isLastOddItem) {
-                        return (
-                            <div key={index} className="upBox" data-aos="fade-left" data-aos-duration="1000">
-                                <div id="cardBig" style={{ width: "100%" }} className='cardHover'>
-                                    <Link to={`${item.id}`} className="arrowBox">
-                                        <IoIosArrowRoundForward />
-                                    </Link>
-                                    <h1 style={{ maxWidth: "70%" }}>{currentItem.LargeHeadName}</h1>
-                                    <p>{currentItem.LittleTextInfo}</p>
+                                        <h1 style={{ maxWidth: "70%" }}>{currentItem.LargeHeadName}</h1>
+                                        <p>{currentItem.LittleTextInfo}</p>
+                                    </div>
+                                    {nextItemData && (
+                                        <Link id="cardSmall" to={`${item.id + 1}`} style={{ width: index % 4 === 0 ? "40%" : "55%" }} className='cardHover'>
+                                            <Link to={`${item.id + 1}`} className="arrowBox">
+                                                <IoIosArrowRoundForward />
+                                            </Link>
+                                            <h1>{nextItemData.LargeHeadName}</h1>
+                                            <p>{nextItemData.LittleTextInfo}</p>
+                                        </Link>
+                                    )}
+                                </Link>
+                            );
+                        }
+
+                        if (isLastOddItem) {
+                            return (
+                                <div key={index} className="upBox" data-aos="fade-left" data-aos-duration="1000">
+                                    <div id="cardBig" style={{ width: "100%" }} className='cardHover'>
+                                        <Link to={`${item.id}`} className="arrowBox">
+                                            <IoIosArrowRoundForward />
+                                        </Link>
+                                        <h1 style={{ maxWidth: "70%" }}>{currentItem.LargeHeadName}</h1>
+                                        <p>{currentItem.LittleTextInfo}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        );
-                    }
+                            );
+                        }
 
-                    return null;
-                })
+                        return null;
+                    })
             ) : (
                 <p>Loading...</p>
             )}
+
         </section>
     );
 }

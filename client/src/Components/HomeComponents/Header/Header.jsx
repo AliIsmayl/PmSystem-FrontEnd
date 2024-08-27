@@ -12,7 +12,7 @@ const { t } = useTranslation();
         <header id='homeHeader' style={{ backgroundImage: `url(${Image})` }}>
             {/* <h1>Under Construction...</h1>
             <h5>+994 55 343 21 43</h5>
-            <h5>office@pmsystems.az</h5>
+            <h5>info@pmsystems.az</h5>
             <h5>46 Ashiq Molla Juma, Baku</h5> */}
 
             <h1>{t("BstIt")}</h1>
