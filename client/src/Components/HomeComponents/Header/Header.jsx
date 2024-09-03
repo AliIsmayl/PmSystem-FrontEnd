@@ -16,7 +16,7 @@ const { t } = useTranslation();
             <h5>46 Ashiq Molla Juma, Baku</h5> */}
 
             <h1>{t("BstIt")}</h1>
-            <span>{t("TogetherWith")}</span>
+            <h2>{t("TogetherWith")}</h2>
             <Link to={'https://partnerfinder.sap.com/profile/0002850313'} target="_blank" className="exploreBtn">
                 <span>{t("Explore")}</span>
                 <div className="arrow">

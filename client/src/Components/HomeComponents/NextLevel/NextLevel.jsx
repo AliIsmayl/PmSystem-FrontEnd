@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useRef } from 'react';
-import './NextLevel.scss';
-import { Link } from 'react-router-dom';
-import sap1 from '../../../Image/sap1.png'
-import sap2 from '../../../Image/sap2.png'
-import sap3 from '../../../Image/sap3.png'
-import sap4 from '../../../Image/sap4.png'
-import { useTranslation } from 'react-i18next';
+import React, { useEffect, useState, useRef } from "react";
+import "./NextLevel.scss";
+import { Link } from "react-router-dom";
+import sap1 from "../../../Image/sap1.png";
+import sap2 from "../../../Image/sap2.png";
+import sap3 from "../../../Image/sap3.png";
+import sap4 from "../../../Image/sap4.png";
+import { useTranslation } from "react-i18next";
 
 function NextLevel() {
   const { t } = useTranslation();
@@ -64,10 +64,14 @@ function NextLevel() {
   }, [isVisible]);
 
   return (
-    <section id='nextLevel' ref={sectionRef}>
+    <section id="nextLevel" ref={sectionRef}>
       <div className="upBox">
-        <h1 data-aos="fade-right" data-aos-duration="1000">{t("ReadyTo")}</h1>
-        <h5 data-aos="fade-right" data-aos-duration="1000">{t("NextLevel")}</h5>
+        <h1 data-aos="fade-right" data-aos-duration="1000">
+          {t("ReadyTo")}
+        </h1>
+        <h5 data-aos="fade-right" data-aos-duration="1000">
+          {t("NextLevel")}
+        </h5>
         <div className="normalBox">
           <div className="counBox" style={{ width: "130px" }}>
             <p>{projectsCount}+</p>
@@ -85,20 +89,6 @@ function NextLevel() {
           </div>
         </div>
       </div>
-      {/* <div className="downBox">
-        <Link className='link'>
-          <img src={sap1} alt="" />
-        </Link>
-        <Link className='link'>
-          <img src={sap2} alt="" />
-        </Link>
-        <Link className='link'>
-          <img src={sap3} alt="" />
-        </Link>
-        <Link className='link'>
-          <img src={sap4} alt="" />
-        </Link>
-      </div> */}
     </section>
   );
 }

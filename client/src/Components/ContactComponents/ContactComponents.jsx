@@ -167,7 +167,7 @@ function ContactComponents() {
           ></iframe>
         </div>
         <div className="rightBox" data-aos="fade-left" data-aos-duration="1000">
-          <p>{t("ContactText")}</p>
+          <h2>{t("ContactText")}</h2>
           <span>{t("ContactText2")}</span>
           <ul>
             <li onClick={handleChangeIpnut}>

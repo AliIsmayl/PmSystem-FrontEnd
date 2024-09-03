@@ -16,10 +16,10 @@ function ServiceDetail() {
     async function getData() {
         try {
             const res = await axios.get(`https://pmsystems.az/qrcode/service_details/${id}`);
-            console.log("Fetched Data:", res.data);
+            // console.log("Fetched Data:", res.data);
             setDetail(res.data);
         } catch (error) {
-            console.error("Error fetching detail data:", error);
+            // console.error("Error fetching detail data:", error);
         }
     }
 
@@ -45,7 +45,7 @@ function ServiceDetail() {
 
     const languageKey = localStorage.getItem("language") ? JSON.parse(localStorage.getItem("language")) : 'EN';
 
-    console.log("Language Key:", languageKey);
+    // console.log("Language Key:", languageKey);
 
     return (
         <section id='serviceDetail'>
