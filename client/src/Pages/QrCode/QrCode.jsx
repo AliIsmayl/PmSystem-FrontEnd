@@ -10,7 +10,7 @@ import Loading from "../Loading/Loading";
 function QrCode() {
   const [qrCode, setQrCode] = useState([null]);
   const { name } = useParams();
-  const { t } = useTranslation();
+  const { t } = useTranslation(); 
 
   async function getData() {
     try {

@@ -27,6 +27,7 @@ function AppRoute() {
                         color: '#713200',
                         fontFamily: "Gilroy-Light"
                     },
+                    duration: 1000,
                 }} 
             />
             <Navbar />

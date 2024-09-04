@@ -1,205 +1,192 @@
 @mixin MyFlex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // @include MyFlex();
 
 @font-face {
-    font-family: 'Gilroy-Bold';
-    src: url('../../../Font/Gilroy-Bold.otf');
+  font-family: "Gilroy-Bold";
+  src: url("../../../Font/Gilroy-Bold.otf");
 }
 
 @font-face {
-    font-family: 'Gilroy-Medium';
-    src: url('../../../Font/Gilroy-Medium.ttf');
+  font-family: "Gilroy-Medium";
+  src: url("../../../Font/Gilroy-Medium.ttf");
 }
 
 @font-face {
-    font-family: 'Gilroy-Semibold';
-    src: url('../../../Font/Gilroy-Semibold.otf');
+  font-family: "Gilroy-Semibold";
+  src: url("../../../Font/Gilroy-Semibold.otf");
 }
 
 @font-face {
-    font-family: 'Gilroy-Light';
-    src: url('../../../Font/Gilroy-Light.otf');
+  font-family: "Gilroy-Light";
+  src: url("../../../Font/Gilroy-Light.otf");
 }
 
 @font-face {
-    font-family: 'Gilroy-UltraLight';
-    src: url('../../../Font/Gilroy-UltraLight.otf');
+  font-family: "Gilroy-UltraLight";
+  src: url("../../../Font/Gilroy-UltraLight.otf");
 }
 
 #serviceAllPackets {
-    @include MyFlex();
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
+  @include MyFlex();
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 27.5px;
+  padding: 50px 100px 100px;
+  background: #141414;
+  text-decoration: none;
+
+  .cardHover {
+    -webkit-box-shadow: 0px 3px 3px 0px #02cec8;
+    -moz-box-shadow: 0px 3px 3px 0px #02cec8;
+    box-shadow: 0px 3px 3px 0px #02cec8;
+    color: white;
+    border: 2px solid #02cec8;
+    gap: 17px;
+    background-color: rgba(0, 0, 0, 0.345);
+    cursor: pointer;
+    position: relative;
+    padding: 30px 40px 0;
+    height: 250px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    gap: 27.5px;
-    padding: 50px 100px 100px;
-    background: #141414;
+    transition: all 0.7s;
+
+    .arrowBox {
+      position: absolute;
+      top: 20px;
+      font-size: 50px;
+      right: 20px;
+      transition: all 0.7s;
+      color: #22fff8;
+    }
+
+    h1 {
+      font-family: "Gilroy-Light";
+      font-size: 23px;
+      line-height: 1.4;
+      width: 70%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+    }
+
+    p {
+      font-family: "Gilroy-UltraLight";
+      font-size: 14px;
+      line-height: 1.4;
+      color: rgb(206, 204, 204);
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 15;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-height: 6em;
+      line-height: 1.5em;
+    }
+
+    &:hover {
+      -webkit-box-shadow: 0px 5px 14px 0px rgba(2, 206, 200, 1) !important;
+      -moz-box-shadow: 0px 5px 14px 0px rgba(2, 206, 200, 1) !important;
+      box-shadow: 0px 5px 14px 0px rgba(2, 206, 200, 1) !important;
+      background: rgba(0, 0, 0, 0.575);
+
+      .arrowBox {
+        right: 10px;
+      }
+    }
+  }
+
+  .upBox {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
     text-decoration: none;
 
-    .cardHover {
-        -webkit-box-shadow: 0px 3px 3px 0px #02CEC8;
-        -moz-box-shadow: 0px 3px 3px 0px #02CEC8;
-        box-shadow: 0px 3px 3px 0px #02CEC8;
-        color: white;
-        border: 2px solid #02CEC8;
-        gap: 17px;
-        background-color: rgba(0, 0, 0, 0.345);
-        cursor: pointer;
-        position: relative;
-        padding: 30px 40px 0;
-        height: 250px;
-        border-radius: 20px;
-        display: flex;
-        flex-direction: column;
-        transition: all 0.7s;
-
-        .arrowBox {
-            position: absolute;
-            top: 20px;
-            font-size: 50px;
-            right: 20px;
-            transition: all 0.7s;
-            color: #22FFF8;
-        }
-
-        h1 {
-            font-family: 'Gilroy-Light';
-            font-size: 23px;
-                line-height: 1.4;
-                width: 70%;
-        }
-
-        p {
-            font-family: 'Gilroy-UltraLight';
-            font-size: 14px;
-            line-height: 1.4;
-            color: rgb(206, 204, 204);
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 15;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-height: 6em;
-            line-height: 1.5em;
-
-        }
-
-        &:hover {
-            -webkit-box-shadow: 0px 5px 14px 0px rgba(2, 206, 200, 1) !important;
-            -moz-box-shadow: 0px 5px 14px 0px rgba(2, 206, 200, 1) !important;
-            box-shadow: 0px 5px 14px 0px rgba(2, 206, 200, 1) !important;
-            background: rgba(0, 0, 0, 0.575);
-
-            .arrowBox {
-                right: 10px;
-
-            }
-        }
+    #cardBig {
+      width: 58%;
+      text-decoration: none;
     }
 
-    .upBox {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        text-decoration: none;
-
-        #cardBig {
-            width: 58%;
-            text-decoration: none;
-
-        }
-
-        #cardSmall {
-            width: 39%;
-            text-decoration: none;
-
-        }
-
-        #cardBig2 {
-            width: 42%;
-            text-decoration: none;
-
-        }
-
-        #cardSmall2 {
-            width: 55%;
-            text-decoration: none;
-
-        }
+    #cardSmall {
+      width: 39%;
+      text-decoration: none;
     }
+
+    #cardBig2 {
+      width: 42%;
+      text-decoration: none;
+    }
+
+    #cardSmall2 {
+      width: 55%;
+      text-decoration: none;
+    }
+  }
 }
 
 @media only screen and (max-width: 1400px) {
-    #serviceAllPackets {
-        .cardHover {
-            p {
-                font-family: 'Gilroy-UltraLight';
-                font-size: 14px;
-                line-height: 1.4;
-                color: rgb(206, 204, 204);
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-
-
-            }
-
-
-        }
-
+  #serviceAllPackets {
+    .cardHover {
+      p {
+        font-family: "Gilroy-UltraLight";
+        font-size: 14px;
+        line-height: 1.4;
+        color: rgb(206, 204, 204);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
+  }
 }
 
-
-
 @media only screen and (max-width: 854px) {
-    #serviceAllPackets {
-        flex-direction: column;
-        padding: 50px 30px;
-        align-items: start;
-        position: relative;
+  #serviceAllPackets {
+    flex-direction: column;
+    padding: 50px 30px;
+    align-items: start;
+    position: relative;
 
-        .cardHover {
-            width: 100% !important;
-        }
-
-
-        .upBox {
-            flex-direction: column;
-
-            #cardSmall {
-                margin-top: 27.5px;
-            }
-
-            #cardSmall2 {
-                margin-top: 27.5px;
-
-            }
-        }
-
+    .cardHover {
+      width: 100% !important;
     }
+
+    .upBox {
+      flex-direction: column;
+
+      #cardSmall {
+        margin-top: 27.5px;
+      }
+
+      #cardSmall2 {
+        margin-top: 27.5px;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 624px) {
-    #serviceAllPackets {
-        padding: 20px 35px;
-        overflow: hidden;
+  #serviceAllPackets {
+    padding: 20px 35px;
+    overflow: hidden;
 
+    .cardHover {
+      padding: 30px 20px 0;
 
-        .cardHover {
-            padding: 30px 20px 0;
-
-            p {
-                max-width: 90%;
-
-            }
-        }
+      p {
+        max-width: 90%;
+      }
     }
+  }
 }

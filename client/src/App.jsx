@@ -26,7 +26,6 @@ function App() {
   }, [setloading]);
 
   const router = createBrowserRouter(createRoutesWithLoading());
-
   return (
     <>
       {loading ? (
