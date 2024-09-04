@@ -9,6 +9,10 @@ import i18next from '../i18n';
 function Homepage() {
 
   useEffect(() => {
+    // i18next.init({
+    //   debug: false,
+    //   // diğer ayarlar
+    // });
     if (!localStorage.getItem('language')) {
       localStorage.setItem('language', JSON.stringify('EN'));
     }
@@ -20,6 +24,7 @@ function Homepage() {
     } else {
       i18next.changeLanguage(i18nextLng);
     }
+    
   }, []);
 
 

@@ -86,13 +86,19 @@
       font-size: 14px;
       line-height: 1.4;
       color: rgb(206, 204, 204);
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 15;
+      //   display: -webkit-box;
+      //   -webkit-box-orient: vertical;
+      //   -webkit-line-clamp: 15;
+      //   overflow: hidden;
+      //   text-overflow: ellipsis;
+      // max-height: 6em;
+      line-height: 1.5em;
       overflow: hidden;
       text-overflow: ellipsis;
-      max-height: 6em;
-      line-height: 1.5em;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      //   color: red;
     }
 
     &:hover {

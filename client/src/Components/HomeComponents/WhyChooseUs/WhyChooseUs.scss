@@ -1,134 +1,122 @@
 @mixin MyFlex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @font-face {
-    font-family: 'Gilroy-Bold';
-    src: url('../../../Font/Gilroy-Bold.otf');
-
+  font-family: "Gilroy-Bold";
+  src: url("../../../Font/Gilroy-Bold.otf");
 }
 
 @font-face {
-    font-family: 'Gilroy-Semibold';
-    src: url('../../../Font/Gilroy-Semibold.otf');
-
-
+  font-family: "Gilroy-Semibold";
+  src: url("../../../Font/Gilroy-Semibold.otf");
 }
 
 @font-face {
-    font-family: 'Gilroy-Medium';
-    src: url('../../../Font/Gilroy-Medium.ttf');
-
+  font-family: "Gilroy-Medium";
+  src: url("../../../Font/Gilroy-Medium.ttf");
 }
 
 @font-face {
-    font-family: 'Gilroy-Light';
-    src: url('../../../Font/Gilroy-Light.otf');
-
-
+  font-family: "Gilroy-Light";
+  src: url("../../../Font/Gilroy-Light.otf");
 }
 
 // @include MyFlex();
 #whyChooseUs {
-    background-color: #121113;
-    color: white;
+  background-color: #121113;
+  color: white;
 
-    .upTextBox {
-        padding: 0 100px;
+  .upTextBox {
+    padding: 0 100px;
 
-        p {
-            font-size: 58px;
-            font-family: 'Gilroy-Bold';
-            max-width: 400px;
-
-        }
+    p {
+      font-size: 58px;
+      font-family: "Gilroy-Bold";
+      max-width: 400px;
     }
+  }
 
-    .downTextBox {
-        padding: 50px 100px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px 0px;
-        justify-content: space-between;
+  .downTextBox {
+    padding: 50px 100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 0px;
+    justify-content: space-between;
 
-        .chooseCardBox {
-            width: 275px;
-            overflow: hidden;
+    .chooseCardBox {
+      width: 275px;
+      overflow: hidden;
 
-            .imgBox {
-                height: 150px;
-                @include MyFlex();
-                overflow: hidden;
+      .imgBox {
+        height: 150px;
+        @include MyFlex();
+        overflow: hidden;
 
-                img {
-                    margin-left: -10%;
-                    max-width: 750px;
-                }
-
-            }
-
-            h1 {
-                margin-top: 40px;
-                font-size: 25px;
-                font-family: 'Gilroy-Semibold';
-                height: 60px;
-            }
-
-            p {
-                margin-top: 20px;
-                font-family: 'Gilroy-Light';
-                font-size: 16px;
-                color: rgb(205, 202, 202);
-                line-height: 1.5;
-            }
+        img {
+          margin-left: -10%;
+          max-width: 750px;
         }
+      }
 
+      h1 {
+        margin-top: 40px;
+        font-size: 25px;
+        font-family: "Gilroy-Semibold";
+        height: 60px;
+      }
+
+      p {
+        margin-top: 20px;
+        font-family: "Gilroy-Light";
+        font-size: 16px;
+        color: rgb(205, 202, 202);
+        line-height: 1.5;
+      }
     }
+  }
 }
 
 @media only screen and (max-width: 503px) {
-    #whyChooseUs {
-        padding: 0px 10px;
+  #whyChooseUs {
+    padding: 0px 10px;
 
-        .upTextBox {
-            padding: 0 0px;
+    .upTextBox {
+      padding: 0 0px;
 
-            p {
-                font-size: 45px;
-                max-width: 100%;
-            }
-        }
-
-        .downTextBox {
-            padding: 50px 10px;
-            @include MyFlex();
-            justify-content: start !important;
-
-            .chooseCardBox {
-                text-align: start;
-                width: 90%;
-
-                .imgBox {
-                    img {
-                        margin-left: -16%;
-                        margin-bottom: 28px;
-                    }
-
-
-                }
-
-                h1 {
-                    margin-top: -10px;
-                    height: 80px;
-                }
-
-                p {
-                    max-width: 100%;
-                }
-            }
-        }
+      p {
+        font-size: 45px;
+        max-width: 100%;
+      }
     }
 
+    .downTextBox {
+      padding: 50px 10px;
+      @include MyFlex();
+      justify-content: start !important;
+
+      .chooseCardBox {
+        text-align: start;
+        width: 90%;
+
+        .imgBox {
+          img {
+            margin-left: -16%;
+            margin-bottom: 28px;
+          }
+        }
+
+        h1 {
+          margin-top: -10px;
+          height: 80px;
+        }
+
+        p {
+          max-width: 100%;
+        }
+      }
+    }
+  }
 }

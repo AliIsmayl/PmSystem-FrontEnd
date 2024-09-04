@@ -5,22 +5,16 @@
 }
 
 // @include MyFlex();
-@mixin MyFlex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-// @include MyFlex();
 @font-face {
     font-family: 'Gilroy-Bold';
-    src: url('../../Font/Gilroy-Bold.otf');
+    src: url('../../../Font/Gilroy-Bold.otf');
 
 }
 
 @font-face {
     font-family: 'Gilroy-Medium';
-    src: url('../../Font/Gilroy-Medium.ttf');
+    src: url('../../../Font/Gilroy-Medium.ttf');
 
 
 }
@@ -33,14 +27,14 @@
 
 @font-face {
     font-family: 'Gilroy-Light';
-    src: url('../../Font/Gilroy-Light.otf');
+    src: url('../../../Font/Gilroy-Light.otf');
 
 
 }
 
 @font-face {
     font-family: 'Gilroy-Semibold';
-    src: url('../../Font/Gilroy-Semibold.otf');
+    src: url('../../../Font/Gilroy-Semibold.otf');
 
 }
 

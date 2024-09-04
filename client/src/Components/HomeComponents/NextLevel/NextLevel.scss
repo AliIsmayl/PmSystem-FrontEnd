@@ -1,219 +1,206 @@
 @mixin MyFlex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // @include MyFlex();
 @font-face {
-    font-family: 'Gilroy-Bold';
-    src: url('../../../Font/Gilroy-Bold.otf');
+  font-family: "Gilroy-Bold";
+  src: url("../../../Font/Gilroy-Bold.otf");
 }
 
 @font-face {
-    font-family: 'Gilroy-Light';
-    src: url('../../../Font/Gilroy-Light.otf');
+  font-family: "Gilroy-Light";
+  src: url("../../../Font/Gilroy-Light.otf");
 }
 
 #nextLevel {
-    // background: #121113;
-    padding: 50px 100px;
-    margin-top: -100px;
+  // background: #121113;
+  padding: 50px 100px;
+  margin-top: -100px;
 
-    .upBox {
-        font-family: 'Gilroy-Bold';
-        font-size: 40px;
-        gap: 10px;
-        position: relative;
-        color: white;
-        height: 440px;
-        width: 100%;
-        margin-bottom: 40px;
+  .upBox {
+    font-family: "Gilroy-Bold";
+    font-size: 40px;
+    gap: 10px;
+    position: relative;
+    color: white;
+    height: 440px;
+    width: 100%;
+    margin-bottom: 40px;
 
-        h1 {
-            max-width: 475px;
-            font-size: 58px;
-        }
-
-        h5 {
-            font-size: 58px;
-            top: 150px;
-            left: 180px;
-            display: table-cell;
-            font-weight: bold;
-            vertical-align: baseline;
-            color: transparent;
-            -webkit-text-stroke-width: 1.5px;
-            -webkit-text-stroke-color: #02CEC8;
-        }
-
-        .normalBox {
-            @include MyFlex();
-            height: 120px;
-            position: absolute;
-            right: 0;
-            bottom: 0;
-
-            span {
-                height: 2px;
-                width: 120px;
-                background-color: gray;
-                margin-top: -20px;
-
-            }
-
-            .counBox {
-                height: 100px;
-                @include MyFlex();
-                flex-direction: column;
-                gap: 4px;
-
-
-
-                p {
-                    font-size: 50px;
-                    font-family: 'Gilroy-Bold';
-                    color: #02CEC8;
-
-                }
-
-                h6 {
-                    font-size: 20px;
-                    color: white;
-                    font-family: 'Gilroy-Light';
-                    text-align: center;
-                }
-            }
-        }
-
+    h1 {
+      max-width: 475px;
+      font-size: 58px;
     }
 
-    .downBox {
-        margin-top: 50px;
-        display: flex;
-        align-items: end;
-        flex-wrap: wrap;
-        gap: 20px 100px;
+    h5 {
+      font-size: 58px;
+      top: 150px;
+      left: 180px;
+      display: table-cell;
+      font-weight: bold;
+      vertical-align: baseline;
+      color: transparent;
+      -webkit-text-stroke-width: 1.5px;
+      -webkit-text-stroke-color: #02cec8;
+    }
+
+    .normalBox {
+      @include MyFlex();
+      height: 120px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      span {
+        height: 2px;
+        width: 120px;
+        background-color: gray;
+        margin-top: -20px;
+      }
+
+      .counBox {
+        height: 100px;
         @include MyFlex();
+        flex-direction: column;
+        gap: 4px;
 
-        .link {
-            height: 100px;
-            @include MyFlex();
-
-            img {
-                max-width: 180px;
-            }
+        p {
+          font-size: 50px;
+          font-family: "Gilroy-Bold";
+          color: #02cec8;
         }
 
-
+        h6 {
+          font-size: 20px;
+          color: white;
+          font-family: "Gilroy-Light";
+          text-align: center;
+        }
+      }
     }
+  }
+
+  .downBox {
+    margin-top: 50px;
+    display: flex;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 20px 100px;
+    @include MyFlex();
+
+    .link {
+      height: 100px;
+      @include MyFlex();
+
+      img {
+        max-width: 180px;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 1166px) {
-    #nextLevel {
-        margin-top: 0;
-    }
+  #nextLevel {
+    margin-top: 0;
+  }
 }
 
 @media only screen and (max-width: 923px) {
-    #nextLevel {
-        padding: 50px;
+  #nextLevel {
+    padding: 50px;
 
-        .upBox {
-            .normalBox {
-                gap: 30px;
+    .upBox {
+      .normalBox {
+        gap: 30px;
 
-                span {
-
-                    display: none;
-                }
-            }
+        span {
+          display: none;
         }
+      }
     }
+  }
 }
 
 @media only screen and (max-width: 645px) {
-    #nextLevel {
-        margin-top: 80px;
+  #nextLevel {
+    margin-top: 80px;
 
-        .upBox {
-            font-size: 30px;
-            height: 450px;
+    .upBox {
+      font-size: 30px;
+      height: 450px;
 
-            h1 {
-                max-width: 335px;
+      h1 {
+        max-width: 335px;
+      }
 
-            }
+      h5 {
+        font-size: 45px;
+        top: 110px;
+        left: 136px;
+      }
 
-            h5 {
-                font-size: 45px;
-                top: 110px;
-                left: 136px;
-            }
+      .normalBox {
+        gap: 30px;
 
-            .normalBox {
-                gap: 30px;
+        .counBox {
+          text-align: center;
+          justify-content: start;
 
-                .counBox {
-                    text-align: center;
-                    justify-content: start;
+          p {
+            font-size: 40px;
+          }
 
-                    p {
-                        font-size: 40px;
-
-                    }
-
-                    h6 {
-                        font-size: 17px;
-                    }
-                }
-            }
+          h6 {
+            font-size: 17px;
+          }
         }
+      }
     }
+  }
 }
 
 @media only screen and (max-width: 645px) {
-    #nextLevel {
-        padding: 20px;
+  #nextLevel {
+    padding: 20px;
 
-        .upBox {
-            .normalBox {
-                gap: 10px;
-            }
-        }
+    .upBox {
+      .normalBox {
+        gap: 10px;
+      }
     }
+  }
 }
 
 @media only screen and (max-width: 403px) {
-    #nextLevel {
-        padding: 0px 20px;
-        .upBox {
-            h1 {
-                font-size: 45px;
+  #nextLevel {
+    padding: 0px 20px;
+    .upBox {
+      h1 {
+        font-size: 45px;
+      }
 
-            }
+      h5 {
+        top: 160px;
+        left: 0px;
+        font-size: 45px;
+      }
 
-            h5 {
-                top: 160px;
-                left: 0px;
-                font-size: 45px;
-            }
+      .normalBox {
+        gap: 0px;
+        right: -10px;
+        .counBox {
+          p {
+            font-size: 25px;
+          }
 
-            .normalBox {
-                gap: 0px;
-                right:-10px;
-                .counBox {
-                    
-
-                    p {
-                        font-size: 25px;
-                    }
-
-                    h6 {
-                        font-size: 14px;
-                    }
-                }
-            }
+          h6 {
+            font-size: 14px;
+          }
         }
+      }
     }
+  }
 }
