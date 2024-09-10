@@ -95,7 +95,7 @@ function OurService() {
                     <h1 style={{ maxWidth: "70%" }}>
                       {currentItem.LargeHeadName}
                     </h1>
-                    <p>{currentItem.LittleTextInfo}</p>
+                    {/* <p>{currentItem.LittleTextInfo}</p> */}
                   </Link>
                   {/* </Link> */}
                   {/* 
@@ -115,7 +115,7 @@ function OurService() {
                       <IoIosArrowRoundForward />
                     </div>
                     <h1>{nextItemData.LargeHeadName}</h1>
-                    <p>{nextItemData.LittleTextInfo}</p>
+                    {/* <p>{nextItemData.LittleTextInfo}</p> */}
                   </Link>
                   {/* </Link> */}
                 </div>
