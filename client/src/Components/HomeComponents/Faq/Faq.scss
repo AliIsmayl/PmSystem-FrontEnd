@@ -1,224 +1,221 @@
 @mixin MyFlex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // @include MyFlex();
 
 @font-face {
-    font-family: 'Gilroy-Bold';
-    src: url('../../../Font/Gilroy-Bold.otf');
+  font-family: "Gilroy-Bold";
+  src: url("../../../Font/Gilroy-Bold.otf");
 }
 
 @font-face {
-    font-family: 'Gilroy-Semibold';
-    src: url('../../../Font/Gilroy-Semibold.otf');
+  font-family: "Gilroy-Semibold";
+  src: url("../../../Font/Gilroy-Semibold.otf");
 }
 
-
 @font-face {
-    font-family: 'Gilroy-Medium';
-    src: url('../../../Font/Gilroy-Medium.ttf');
+  font-family: "Gilroy-Medium";
+  src: url("../../../Font/Gilroy-Medium.ttf");
 }
 
 #faq {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 50px 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  .leftBox {
+    color: white;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    height: 570px;
+
+    h1 {
+      font-size: 58px;
+      font-family: "Gilroy-Bold";
+      max-width: 200px;
+    }
+
+    .viewAllBtn {
+      border-radius: 20px;
+      border: 2px solid white;
+      @include MyFlex();
+      height: 40px;
+      gap: 10px;
+      width: 170px;
+      cursor: pointer;
+      transition: all 0.7s;
+      margin-bottom: 10px;
+      text-decoration: none;
+      color: white;
+      p {
+        margin: 0;
+        color: white;
+        font-family: "Gilroy-Medium";
+      }
+
+      .arrow {
+        @include MyFlex();
+
+        span {
+          height: 2.5px;
+          border-radius: 20px;
+          width: 20px;
+          transition: all 0.7s;
+          background: white;
+        }
+
+        .arrowHead {
+          @include MyFlex();
+          margin-left: -12px;
+          font-size: 20px;
+        }
+      }
+
+      &:hover {
+        width: 200px;
+
+        .arrow {
+          span {
+            width: 50px;
+          }
+        }
+      }
+    }
+  }
+
+  .rightBox {
+    margin-top: 20px;
+    // background: red;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 20px;
+
+      li {
+        font-family: "Gilroy-Semibold";
+
+        &:not(:first-of-type) {
+          margin-top: -20px;
+        }
+      }
+    }
+
+    .faqBox {
+      width: 750px;
+
+      .oneBox {
+        padding: 10px 50px;
+        position: relative;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #d6d6d67c;
+
+        .minusPlusBox {
+          position: absolute;
+          right: 10px;
+          font-size: 30px;
+          cursor: pointer;
+          color: #d6d6d6;
+        }
+
+        .headBox {
+          cursor: pointer;
+          color: white;
+          padding: 0px 0px 20px;
+
+          p {
+            font-family: "Gilroy-Semibold";
+            font-size: 22px;
+          }
+        }
+
+        .textBox {
+          margin: 0;
+          color: #d6d6d6;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.7s ease, opacity 0.7s ease;
+          opacity: 0;
+
+          p {
+            font-family: "Gilroy-Medium";
+            font-size: 18px;
+            line-height: 1.5;
+            margin: 5px 0 30px;
+            transition: opacity 5s ease;
+          }
+        }
+
+        .textBox.opened {
+          max-height: 170vh;
+          opacity: 1;
+
+          p {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1137px) {
+  #faq {
     align-items: start;
 
     .leftBox {
-        color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 570px;
-
-        h1 {
-            font-size: 58px;
-            font-family: 'Gilroy-Bold';
-            max-width: 200px;
-        }
-
-        .viewAllBtn {
-            border-radius: 20px;
-            border: 2px solid white;
-            @include MyFlex();
-            height: 40px;
-            gap: 10px;
-            width: 170px;
-            cursor: pointer;
-            transition: all 0.7s;
-            margin-bottom: 10px;
-            text-decoration: none;
-            color: white;
-            p {
-                margin: 0;
-                color: white;
-                font-family: 'Gilroy-Medium';
-            }
-
-            .arrow {
-                @include MyFlex();
-
-                span {
-                    height: 2.5px;
-                    border-radius: 20px;
-                    width: 20px;
-                    transition: all 0.7s;
-                    background: white;
-                }
-
-                .arrowHead {
-                    @include MyFlex();
-                    margin-left: -12px;
-                    font-size: 20px;
-                }
-            }
-
-            &:hover {
-                width: 200px;
-
-                .arrow {
-                    span {
-                        width: 50px;
-                    }
-                }
-            }
-        }
+      height: 400px;
     }
 
     .rightBox {
-        margin-top: 20px;
+      margin-top: 20px;
 
-        ul {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            margin-bottom: 20px;
-
-            li {
-                font-family: 'Gilroy-Semibold';
-
-               
-                &:not(:first-of-type){
-                    margin-top: -20px;
-
-                }
-            }
-        }
-
-        .faqBox {
-            width: 750px;
-
-            .oneBox {
-                padding: 10px 50px;
-                position: relative;
-                margin-bottom: 20px;
-                border-bottom: 1px solid #d6d6d67c;
-
-                .minusPlusBox {
-                    position: absolute;
-                    right: 10px;
-                    font-size: 30px;
-                    cursor: pointer;
-                    color: #D6D6D6;
-                }
-
-                .headBox {
-                    cursor: pointer;
-                    color: white;
-                    padding: 0px 0px 20px;
-
-                    p {
-                        font-family: 'Gilroy-Semibold';
-                        font-size: 22px;
-                    }
-                }
-
-                .textBox {
-                    margin: 0;
-                    color: #D6D6D6;
-                    max-height: 0;
-                    overflow: hidden;
-                    transition: max-height 0.7s ease, opacity 0.7s ease;
-                    opacity: 0;
-
-                    p {
-                        font-family: 'Gilroy-Medium';
-                        font-size: 18px;
-                        line-height: 1.5;
-                        margin: 5px 0 30px;
-                        transition: opacity 5s ease;
-                    }
-                }
-
-                .textBox.opened {
-                    max-height: 170vh;
-                    opacity: 1;
-
-                    p {
-                        opacity: 1;
-                    }
-                }
-            }
-        }
+      .faqBox {
+        width: 100%;
+      }
     }
+  }
 }
 
 
 
+@media only screen and (max-width: 1225px) {
+  #faq {
+    padding: 50px 80px;
+    flex-direction: column;
 
-@media only screen and (max-width: 1137px) {
-    #faq {
-        align-items: start;
-
-        .leftBox {
-            height: 400px;
-        }
-
-        .rightBox {
-            margin-top: 20px;
-
-            .faqBox {
-                width: 100%;
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 716px) {
-    #faq {
-        flex-direction: column;
-
-        .leftBox {
-            height: 200px;
-
-            .viewAllBtn {
-                display: none;
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 572px) {
-    #faq {
-        padding: 50px 20px;
-.leftBox{
-    h1{
+    .leftBox {
+      height: 200px;
+      h1 {
         font-size: 45px;
+      }
+      .viewAllBtn {
+        display: none;
+      }
     }
-}
-        .rightBox {
-            .faqBox {
-                .oneBox {
-                    padding: 0px 40px 0 10px;
-                }
-            }
+    .rightBox {
+      .faqBox {
+        .oneBox {
+          padding: 0px 40px 0 10px;
         }
+      }
     }
+  }
 }
+@media only screen and (max-width: 624px) {
+    #faq {
+      padding: 50px 20px;
+      .leftBox {
+  
+     
+      }
+    }
+  }

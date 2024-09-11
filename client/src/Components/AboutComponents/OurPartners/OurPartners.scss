@@ -9,10 +9,10 @@
     src: url('../../../Font/Gilroy-Bold.otf');
 }
 
-#ourPartners {
+#partners {
     color: white;
     padding: 0 0 70px;
-    margin-top: -250px;
+    margin-top: -200px;
     background: rgb(20, 20, 20);
     background: linear-gradient(180deg, rgba(20, 20, 20, 0) 27%, rgba(18, 17, 19, 1) 59%);
 
@@ -61,7 +61,7 @@
 }
 
 @media only screen and (max-width: 625px) {
-    #ourPartners {
+    #partners {
         margin-top: 0;
 
         h1 {

@@ -4,6 +4,7 @@ import Image from '../../../Image/Header.png'
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SAP from '../../../Image/sap2 (1).png'
 
 function Header() {
 const { t } = useTranslation();
@@ -23,6 +24,7 @@ const { t } = useTranslation();
                     <IoIosArrowRoundForward />
                 </div>
             </Link>
+            <img src={SAP} alt="" />
         </header>
     )
 }

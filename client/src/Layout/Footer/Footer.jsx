@@ -10,36 +10,20 @@ function Footer() {
     const { t } = useTranslation();
     const location = useLocation();
 
-    const scrollToTop = (position = 0) => {
-        window.scrollTo({
-            top: position,
-            behavior: 'smooth'
-        });
+    const getElementPosition = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            return element.offsetTop;
+        }
+        return 0;
     };
 
-    const handleScrollAddress = (defaultPosition) => {
-        const screenWidth = window.innerWidth;
-        return screenWidth < 500 ? 750 : defaultPosition;
-    };
-    const handleScrollContact = (defaultPosition) => {
-        const screenWidth = window.innerWidth;
-        return screenWidth < 500 ? 240 : defaultPosition;
-    };
-    const handleScrollWhoWeAre = (defaultPosition) => {
-        const screenWidth = window.innerWidth;
-        return screenWidth < 500 ? 660 : defaultPosition;
-    };
-    const handleScrollPartner = (defaultPosition) => {
-        const screenWidth = window.innerWidth;
-        return screenWidth < 500 ? 1450 : defaultPosition;
-    };
-    const handleScrollTeam = (defaultPosition) => {
-        const screenWidth = window.innerWidth;
-        return screenWidth < 500 ? 2020 : defaultPosition;
-    };
-    const handleScrollFAG = (defaultPosition) => {
-        const screenWidth = window.innerWidth;
-        return screenWidth < 500 ? 2710 : defaultPosition;
+    // Pozisyonu biraz yukarı kaydırmak için manuel ofset ekledik (örn: -100px)
+    const scrollToTop = (position = 0) => {
+        window.scrollTo({
+            top: position - 100, // 100 piksel yukarı kaydırma ekleniyor
+            behavior: 'smooth'
+        });
     };
 
     return (
@@ -59,30 +43,38 @@ function Footer() {
                         <Link
                             to={"/about"}
                             className='link'
-                            onClick={() => location.pathname === "/about" ? scrollToTop() : null}
+                            onClick={() => location.pathname === "/about" ? scrollToTop(getElementPosition("aboutHeader")) : null}
                         >
                             {t("AboutUSLittle")}
                         </Link>
                         <Link
                             to={"/about"}
                             className='littleLink'
-                            onClick={() => location.pathname === "/about" ? scrollToTop(handleScrollWhoWeAre(600)) : null}
-                        >{t("WhoWeAre")}</Link>
+                            onClick={() => location.pathname === "/about" ? scrollToTop(getElementPosition("whoWeAre")) : null}
+                        >
+                            {t("WhoWeAre")}
+                        </Link>
                         <Link
                             to={"/about"}
                             className='littleLink'
-                            onClick={() => location.pathname === "/about" ? scrollToTop(handleScrollPartner(1400)) : null}>
-                            {t("Partners")}</Link>
+                            onClick={() => location.pathname === "/about" ? scrollToTop(getElementPosition("partners")) : null}
+                        >
+                            {t("Partners")}
+                        </Link>
                         <Link
                             to={"/about"}
                             className='littleLink'
-                            onClick={() => location.pathname === "/about" ? scrollToTop(handleScrollTeam(1900)) : null}>
-                            {t("OurTeam")}</Link>
+                            onClick={() => location.pathname === "/about" ? scrollToTop(getElementPosition("meetOurTeam")) : null}
+                        >
+                            {t("OurTeam")}
+                        </Link>
                         <Link
                             to={"/about"}
                             className='littleLink'
-                            onClick={() => location.pathname === "/about" ? scrollToTop(handleScrollFAG(2550)) : null}>
-                            {t("FAQ")}</Link>
+                            onClick={() => location.pathname === "/about" ? scrollToTop(getElementPosition("faq")) : null}
+                        >
+                            {t("FAQ")}
+                        </Link>
                     </div>
                     <div className="oneBox">
                         <Link
@@ -95,14 +87,14 @@ function Footer() {
                         <Link
                             to={"/contact"}
                             className='littleLink'
-                            onClick={() => location.pathname === "/contact" ? scrollToTop(handleScrollContact(100)) : null}
+                            onClick={() => location.pathname === "/contact" ? scrollToTop(getElementPosition("contactUs")) : null}
                         >
                             {t("ContactUs")}
                         </Link>
                         <Link
                             to={"/contact"}
                             className='littleLink'
-                            onClick={() => location.pathname === "/contact" ? scrollToTop(handleScrollAddress(100)) : null}
+                            onClick={() => location.pathname === "/contact" ? scrollToTop(getElementPosition("address")) : null}
                         >
                             {t("Address")}
                         </Link>

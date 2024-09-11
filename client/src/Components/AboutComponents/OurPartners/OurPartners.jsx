@@ -31,7 +31,7 @@ function OurPartners() {
     const { t } = useTranslation();
 
     return (
-        <section id='ourPartners'>
+        <section id='partners'>
             <h1 data-aos="fade-right" data-aos-duration="1000">{t("OurPartners")}</h1>
             <div className="marquee">
                 <div className="marquee__inner-wrap">

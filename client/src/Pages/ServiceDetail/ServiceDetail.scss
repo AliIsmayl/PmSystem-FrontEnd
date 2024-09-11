@@ -38,15 +38,15 @@
     align-items: start;
     background-position: center;
     background-size: cover;
-
     .goLink {
       margin-top: 100px;
       @include MyFlex();
       gap: 10px;
       font-size: 20px;
       font-family: "Gilroy-Medium";
-
-      span {
+      .link, span {
+        color: white;
+        text-decoration: none;
         font-size: 20px;
         margin-top: 0px;
       }
