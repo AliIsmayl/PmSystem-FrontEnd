@@ -11,7 +11,6 @@ import Partner7 from '../../../Image/logo7.png';
 import Partner8 from '../../../Image/logo8.png';
 import Partner9 from '../../../Image/logo9.png';
 import Partner10 from '../../../Image/logo10.png';
-import Partner11 from '../../../Image/logo11.png';
 
 const partners = [
     Partner1,
@@ -24,7 +23,6 @@ const partners = [
     Partner8,
     Partner9,
     Partner10,
-    Partner11
 ];
 
 function OurPartners() {

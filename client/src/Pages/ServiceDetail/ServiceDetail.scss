@@ -23,7 +23,34 @@
   font-family: "Gilroy-Extrabold";
   src: url("../../Font/Gilroy-Extrabold.otf");
 }
-
+.loadingBody {
+  height: 100vh;
+  width: 100%;
+  @include MyFlex();
+  .loader {
+    width: 120px;
+    height: 22px;
+    border-radius: 40px;
+    color: rgba(2, 206, 200, 1);
+    border: 2px solid;
+    position: relative;
+    overflow: hidden;
+  }
+  .loader::before {
+    content: "";
+    position: absolute;
+    margin: 2px;
+    width: 14px;
+    top: 0;
+    bottom: 0;
+    left: -20px;
+    border-radius: inherit;
+    background: currentColor;
+    box-shadow: -10px 0 12px 3px currentColor;
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%, -30px 50%);
+    animation: l14 1s infinite linear;
+  }
+}
 #serviceDetail {
   color: white;
   overflow: hidden;
@@ -44,7 +71,8 @@
       gap: 10px;
       font-size: 20px;
       font-family: "Gilroy-Medium";
-      .link, span {
+      .link,
+      span {
         color: white;
         text-decoration: none;
         font-size: 20px;

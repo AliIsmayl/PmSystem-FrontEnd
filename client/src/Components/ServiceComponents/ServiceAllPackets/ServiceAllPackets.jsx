@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 
 function ServiceAllPackets() {
   const [service, setService] = useState([]);
+  const [loading, setLoading] = useState(true); 
+
   const languageKey = localStorage.getItem("language")
     ? JSON.parse(localStorage.getItem("language"))
     : "EN";
@@ -17,8 +19,10 @@ function ServiceAllPackets() {
         "https://pmsystems.az/qrcode/service_details/"
       );
       setService(res.data);
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
+      setLoading(false); 
     }
   }
 
@@ -26,7 +30,7 @@ function ServiceAllPackets() {
     getData();
 
     const handleLanguageChange = (lng) => {
-      getData(); // Fetch data again if the language changes
+      getData(); 
     };
 
     i18next.on("languageChanged", handleLanguageChange);
@@ -36,11 +40,22 @@ function ServiceAllPackets() {
     };
   }, []);
 
+  // Sayfa her yüklendiğinde en üste kaydır
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
   return (
     <section id="serviceAllPackets">
-      {service.length > 0 ? (
+      {loading ? (
+        <div className="loadingBody">
+          <div className="loader"></div>
+        </div>
+      ) : 
+      service.length > 0 ? (
         service
-          .sort((a, b) => a.order - b.order) // Sort the service array by order
+          .sort((a, b) => a.order - b.order) // Verileri sıralama
           .map((item, index) => {
             const currentItem = item[languageKey] || item["EN"];
             const isLastOddItem =
@@ -54,14 +69,13 @@ function ServiceAllPackets() {
 
               return (
                 <div
-                //   to={`${item.id}`}
                   key={index}
                   className="upBox"
                   data-aos={index % 4 === 0 ? "fade-left" : "fade-right"}
                   data-aos-duration="1000"
                 >
                   <Link
-                  to={`${item.id}`}
+                    to={`${item.id}`}
                     id="cardBig"
                     style={{ width: index % 4 === 0 ? "58%" : "43%" }}
                     className="cardHover"
@@ -77,7 +91,7 @@ function ServiceAllPackets() {
                   </Link>
                   {nextItemData && (
                     <Link
-                    to={`${item.id+1}`}
+                      to={`${item.id + 1}`}
                       id="cardSmall"
                       style={{ width: index % 4 === 0 ? "40%" : "55%" }}
                       className="cardHover"
@@ -106,7 +120,7 @@ function ServiceAllPackets() {
                     style={{ width: "100%" }}
                     className="cardHover"
                   >
-                    <div  className="arrowBox">
+                    <div className="arrowBox">
                       <IoIosArrowRoundForward />
                     </div>
                     <h1 style={{ maxWidth: "70%" }}>
@@ -121,7 +135,7 @@ function ServiceAllPackets() {
             return null;
           })
       ) : (
-        <p>Loading...</p>
+        <p>No data available</p> // Veriler boşsa
       )}
     </section>
   );

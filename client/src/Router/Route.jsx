@@ -7,9 +7,7 @@ import ServiceDetail from "../Pages/ServiceDetail/ServiceDetail";
 import ServicePage from "../Pages/ServicePage";
 import AppRoute from "./AppRoute";
 
-// Function to create routes with the loading state
 export function createRoutesWithLoading() {
-  const [loading, setloading] = useState(true);
 
   return [
     {
