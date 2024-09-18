@@ -1,10 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./NextLevel.scss";
-import { Link } from "react-router-dom";
-import sap1 from "../../../Image/sap1.png";
-import sap2 from "../../../Image/sap2.png";
-import sap3 from "../../../Image/sap3.png";
-import sap4 from "../../../Image/sap4.png";
+
 import { useTranslation } from "react-i18next";
 
 function NextLevel() {

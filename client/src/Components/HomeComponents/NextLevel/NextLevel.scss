@@ -26,13 +26,13 @@
     gap: 10px;
     position: relative;
     color: white;
-    height: 440px;
+    height: 550px;
     width: 100%;
     margin-bottom: 40px;
-
     h1 {
       max-width: 475px;
       font-size: 58px;
+      
     }
 
     h5 {
@@ -130,7 +130,7 @@
 
     .upBox {
       font-size: 30px;
-      height: 450px;
+      // height: 450px;
 
       h1 {
         max-width: 335px;
@@ -148,13 +148,14 @@
         .counBox {
           text-align: center;
           justify-content: start;
-
           p {
             font-size: 40px;
           }
 
           h6 {
             font-size: 17px;
+            text-align: center;
+            max-width: 100px;
           }
         }
       }
