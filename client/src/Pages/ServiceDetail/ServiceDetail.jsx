@@ -6,6 +6,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import i18next from "i18next";
+import Video from "../../Video/Video2.mp4";
 
 function ServiceDetail() {
   const [detail, setDetail] = useState(null);
@@ -21,9 +22,8 @@ function ServiceDetail() {
           `https://pmsystems.az/qrcode/service_details/${id}`
         );
         setDetail(res.data);
-        setLoading(false); 
+        setLoading(false);
       }, 10);
-
     } catch (error) {
       console.error("Error fetching detail data:", error);
     }
@@ -60,19 +60,19 @@ function ServiceDetail() {
         </div>
       ) : (
         <>
-          <header
-            id="serviceDetailHeader"
-            style={{ backgroundImage: `url(${Image})` }}
-          >
-            <div className="goLink">
-              <Link className="link" to={"/service"}>
-                {t("Services")}
-              </Link>
-              <IoIosArrowForward />
-              <span>{detail[languageKey]?.name}</span>
+          <header id="serviceDetailHeader">
+            <video autoPlay muted loop src={Video} />
+            <div className="normalBox">
+              <div className="goLink">
+                <Link className="link" to={"/service"}>
+                  {t("Services")}
+                </Link>
+                <IoIosArrowForward />
+                <span>{detail[languageKey]?.name}</span>
+              </div>
+              <p>{detail[languageKey]?.LargeHeadName}</p>
+              <span>{detail[languageKey]?.LittleTextInfo}</span>
             </div>
-            <p>{detail[languageKey]?.LargeHeadName}</p>
-            <span>{detail[languageKey]?.LittleTextInfo}</span>
           </header>
           <main>
             {detail[languageKey]?.DetailHeads?.map((headObj, index) => (
@@ -102,6 +102,7 @@ function ServiceDetail() {
                           )
                         )}
                       </p>
+
                     </>
                   )}
                   {detail[languageKey]?.DetailTexts2[index] && (

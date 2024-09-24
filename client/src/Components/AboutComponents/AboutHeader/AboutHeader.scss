@@ -44,8 +44,6 @@
     @include MyFlex();
     flex-direction: column;
     color: white;
-
-
     position: relative;
     height: 100vh;
     width: 100%;
@@ -71,7 +69,8 @@
         left: 0;
         height: 100%;
         z-index: 2;
-        background: rgba(27, 27, 27, 0.316);
+        background: rgb(9,11,12);
+        background: linear-gradient(180deg, rgba(9,11,12,0.09016106442577032) 0%, rgba(9,11,12,1) 100%);
     }
 
     h1 {
@@ -143,6 +142,7 @@
 
 @media only screen and (max-width: 724px) {
     #aboutHeader {
+        height: 130vh;
 
         h1 {
             font-size: 40px;
