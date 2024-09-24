@@ -1,10 +1,10 @@
-@mixin MyFlex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  @mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-// @include MyFlex();
+  // @include MyFlex();
 @font-face {
   font-family: "Gilroy-Bold";
   src: url("../../../Font/Gilroy-Bold.otf");
