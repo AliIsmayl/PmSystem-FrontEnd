@@ -36,16 +36,16 @@ function Navbar() {
     setIsScrolled(currentScrollPos > 100);
   };
 
-    function handleOpenNavbar() {
-      setOpenRespNavbar(!openRespNavbar);
-    }
+  function handleOpenNavbar() {
+    setOpenRespNavbar(!openRespNavbar);
+  }
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [prevScrollPos, visible, handleScroll]);
+  }, [prevScrollPos]);
 
   function handleOpenLangBox() {
     setOpenLangBox(!openLangBox);
@@ -65,7 +65,7 @@ function Navbar() {
           alignItems: "center",
         }}
       >
-        <img src={Logo} alt="" />
+        <img src={Logo} alt="Logo" />
       </Link>
       <div className="textAndLangBox">
         <ul>
