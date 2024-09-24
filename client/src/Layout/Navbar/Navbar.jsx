@@ -36,9 +36,9 @@ function Navbar() {
     setIsScrolled(currentScrollPos > 100);
   };
 
-  function handleOpenNavbar() {
-    setOpenRespNavbar(!openRespNavbar);
-  }
+    function handleOpenNavbar() {
+      setOpenRespNavbar(!openRespNavbar);
+    }
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
