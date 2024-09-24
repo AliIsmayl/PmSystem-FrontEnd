@@ -102,12 +102,14 @@
       font-family: "Gilroy-Light";
       font-size: 23px;
       line-height: 1.4;
-      width: 70%;
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 4;
+      width: 370px;
+      height: 65px;
+      
     }
 
     p {
@@ -151,11 +153,13 @@
     #cardBig {
       width: 58%;
       text-decoration: none;
+      
     }
 
     #cardSmall {
       width: 39%;
       text-decoration: none;
+      
     }
 
     #cardBig2 {

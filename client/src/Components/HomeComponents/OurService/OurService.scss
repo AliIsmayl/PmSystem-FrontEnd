@@ -93,6 +93,7 @@
           border-radius: 20px;
           width: 20px;
           transition: all 0.7s;
+
           background: white;
         }
 
@@ -137,7 +138,6 @@
       display: flex;
       flex-direction: column;
       transition: all 0.7s;
-
       .arrowBox {
         position: absolute;
         top: 20px;
@@ -149,8 +149,9 @@
 
       h1 {
         font-family: "Gilroy-Light";
-        font-size: 23px;
-        width: 70%;
+        font-size: 22px;
+        width: 200px;
+        line-height: 1.7;
       }
 
       p {
@@ -174,23 +175,21 @@
         }
       }
     }
-    p{
-        color:white;
-        font-family: "Gilroy-Light";
-
-        
-      }
+    p {
+      color: white;
+      font-family: "Gilroy-Light";
+    }
     .upBox {
       display: flex;
       justify-content: space-between;
       text-decoration: none;
       width: 100%;
-     
-    //   .linkContainer {
-    //     width: 50%;
-    //     cursor: context-menu;
-    //     text-decoration: none;
-    //   }
+
+      //   .linkContainer {
+      //     width: 50%;
+      //     cursor: context-menu;
+      //     text-decoration: none;
+      //   }
       #cardBig {
         text-decoration: none;
         width: 58%;
@@ -273,6 +272,7 @@
 
     .cardHover {
       width: 100% !important;
+      padding: 15px 20px !important;
     }
 
     .leftBox {

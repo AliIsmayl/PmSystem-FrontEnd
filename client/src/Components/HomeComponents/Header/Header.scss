@@ -27,7 +27,7 @@
 
 #homeHeader {
   position: relative;
-  height: 100vh;
+  height: 105vh;
   width: 100%;
   video {
     height: 100%;
@@ -37,7 +37,6 @@
     left: 0;
     z-index: 1;
     object-fit: cover;
-    
   }
 
   .normalBox {
@@ -63,7 +62,7 @@
     text-align: center;
     font-family: "Gilroy-Bold";
     font-weight: bolder;
-    max-width: 80%;
+    max-width: 85%;
     line-height: 1.5;
   }
 
@@ -100,8 +99,9 @@
 
     span {
       left: -10px;
-      font-family: "Gilroy-Medium";
+      font-family: "Gilroy-SemiBold";
       margin: 50px;
+      
     }
 
     .arrow {
@@ -127,7 +127,7 @@
     padding: 50px 10px;
 
     .normalBox {
-      padding: 50px 10px;
+      padding: 50px 0px;
     }
 
     h1 {
@@ -138,7 +138,7 @@
 
 @media only screen and (max-width: 724px) {
   #homeHeader {
-    height: 166vh;
+    height: 136vh;
 
     h1 {
       font-size: 40px;

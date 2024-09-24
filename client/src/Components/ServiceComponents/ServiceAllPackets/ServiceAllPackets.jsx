@@ -40,7 +40,6 @@ function ServiceAllPackets() {
     };
   }, []);
 
-  // Sayfa her yüklendiğinde en üste kaydır
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
