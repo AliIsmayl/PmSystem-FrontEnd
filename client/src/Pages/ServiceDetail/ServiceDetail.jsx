@@ -4,9 +4,10 @@ import { IoIosArrowForward } from "react-icons/io";
 import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import i18next from "i18next";
 import Video from "../../Video/Video2.mp4";
+import UAParser from "ua-parser-js";
 
 function ServiceDetail() {
   const [detail, setDetail] = useState(null);
@@ -14,6 +15,7 @@ function ServiceDetail() {
   const [language, setLanguage] = useState(i18next.language);
   const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
+  const videoRef = useRef(null); // Video elementine referans
 
   async function getData() {
     try {
@@ -48,6 +50,27 @@ function ServiceDetail() {
     window.scrollTo(0, 0);
   }, []);
 
+  // Video oynatma sorunu çözümü için tarayıcı kontrolü ve autoplay
+  useEffect(() => {
+    const parser = new UAParser();
+    const browser = parser.getBrowser();
+    const video = videoRef.current;
+
+    if (video) {
+      video.muted = true; // Tüm tarayıcılarda otomatik oynatma için video sessiz başlıyor
+      video.play().catch((error) => {
+        console.log("Autoplay hatası:", error);
+      });
+
+      // Safari için manuel oynatma kontrolü
+      if (browser.name === "Safari") {
+        video.play().catch((error) => {
+          console.log("Safari autoplay hatası:", error);
+        });
+      }
+    }
+  }, []);
+
   const languageKey = localStorage.getItem("language")
     ? JSON.parse(localStorage.getItem("language"))
     : "EN";
@@ -61,7 +84,7 @@ function ServiceDetail() {
       ) : (
         <>
           <header id="serviceDetailHeader">
-            <video autoPlay muted loop src={Video} />
+            <video ref={videoRef} autoPlay muted loop src={Video} />
             <div className="normalBox">
               <div className="goLink">
                 <Link className="link" to={"/service"}>
@@ -102,7 +125,6 @@ function ServiceDetail() {
                           )
                         )}
                       </p>
-
                     </>
                   )}
                   {detail[languageKey]?.DetailTexts2[index] && (

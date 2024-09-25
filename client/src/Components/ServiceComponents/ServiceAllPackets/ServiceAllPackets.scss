@@ -47,6 +47,7 @@
     height: 30vh;
     width: 100%;
     @include MyFlex();
+
     .loader {
       width: 120px;
       height: 22px;
@@ -56,6 +57,7 @@
       position: relative;
       overflow: hidden;
     }
+
     .loader::before {
       content: "";
       position: absolute;
@@ -107,9 +109,9 @@
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 4;
-      width: 370px;
+      width: 70%;
       height: 65px;
-      
+
     }
 
     p {
@@ -153,13 +155,13 @@
     #cardBig {
       width: 58%;
       text-decoration: none;
-      
+
     }
 
     #cardSmall {
       width: 39%;
       text-decoration: none;
-      
+
     }
 
     #cardBig2 {
@@ -173,22 +175,24 @@
     }
   }
 }
+
 @keyframes l14 {
   100% {
     left: calc(100% + 20px);
   }
 }
-@media only screen and (max-width: 1400px) {
+
+@media only screen and (max-width: 1419px) {
   #serviceAllPackets {
     .cardHover {
+      h1 {
+        width: 75%;
+        height: 90%;
+
+      }
+
       p {
-        font-family: "Gilroy-UltraLight";
-        font-size: 14px;
-        line-height: 1.4;
-        color: rgb(206, 204, 204);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        display: none;
       }
     }
   }
@@ -221,11 +225,16 @@
 
 @media only screen and (max-width: 624px) {
   #serviceAllPackets {
-    padding: 20px 35px;
+    padding: 20px 15px;
     overflow: hidden;
 
     .cardHover {
       padding: 30px 20px 0;
+
+      h1 {
+        width: 85%;
+
+      }
 
       p {
         max-width: 90%;

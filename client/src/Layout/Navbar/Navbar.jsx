@@ -19,8 +19,6 @@ function Navbar() {
   const filteredLanguages = languages.filter((lang) => lang !== whichLang);
   const { t } = useTranslation();
 
-  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
-  const [visible, setVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
 
   function changeLang(lang) {
@@ -30,10 +28,7 @@ function Navbar() {
 
   const handleScroll = () => {
     const currentScrollPos = window.pageYOffset;
-    const isVisible = prevScrollPos > currentScrollPos;
-    setVisible(isVisible);
-    setPrevScrollPos(currentScrollPos);
-    setIsScrolled(currentScrollPos > 100);
+    setIsScrolled(currentScrollPos > 100); // Arka plan renginin değişimini koruyoruz
   };
 
   function handleOpenNavbar() {
@@ -45,18 +40,14 @@ function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [prevScrollPos]);
+  }, []);
 
   function handleOpenLangBox() {
     setOpenLangBox(!openLangBox);
   }
 
   return (
-    <nav
-      className={`navbar ${visible ? "visible" : "hidden"} ${
-        isScrolled ? "scrolled" : ""
-      }`}
-    >
+    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <Link
         to={"/"}
         style={{
