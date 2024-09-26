@@ -6,7 +6,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState, useRef } from "react";
 import i18next from "i18next";
-import Video from "../../Video/Video2.mp4";
+import Video from "../../Video/Video2.webm";
 import UAParser from "ua-parser-js";
 
 function ServiceDetail() {
@@ -58,14 +58,25 @@ function ServiceDetail() {
 
     if (video) {
       video.muted = true; // Tüm tarayıcılarda otomatik oynatma için video sessiz başlıyor
-      video.play().catch((error) => {
-        console.log("Autoplay hatası:", error);
-      });
+      video.loop = true; // Videonun sürekli oynatılması için loop ekliyoruz
+
+      const playVideo = async () => {
+        try {
+          await video.play();
+        } catch (error) {
+          console.log("Autoplay hatası:", error);
+        }
+      };
+
+      // Tüm tarayıcılarda videoyu oynatmaya çalışıyoruz
+      playVideo();
 
       // Safari için manuel oynatma kontrolü
       if (browser.name === "Safari") {
-        video.play().catch((error) => {
-          console.log("Safari autoplay hatası:", error);
+        video.addEventListener('ended', () => {
+          video.play().catch((error) => {
+            console.log("Safari autoplay hatası:", error);
+          });
         });
       }
     }
@@ -84,7 +95,10 @@ function ServiceDetail() {
       ) : (
         <>
           <header id="serviceDetailHeader">
-            <video ref={videoRef} autoPlay muted loop src={Video} />
+            <video ref={videoRef} autoPlay
+              muted
+              loop
+              playsInline src={Video} />
             <div className="normalBox">
               <div className="goLink">
                 <Link className="link" to={"/service"}>

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./Header.scss";
-import Video from "../../../Video/Video1.mp4";
+import Video from "../../../Video/Video1.webm";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
