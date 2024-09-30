@@ -6,6 +6,7 @@ import QrCode from "../Pages/QrCode/QrCode";
 import ServiceDetail from "../Pages/ServiceDetail/ServiceDetail";
 import ServicePage from "../Pages/ServicePage";
 import AppRoute from "./AppRoute";
+import CareerPage from "../Pages/CareerPage";
 
 export function createRoutesWithLoading() {
 
@@ -25,6 +26,10 @@ export function createRoutesWithLoading() {
         {
           path: "/service",
           element: <ServicePage />
+        },
+        {
+          path: "/career",
+          element: <CareerPage />
         },
         {
           path: "/contact",
