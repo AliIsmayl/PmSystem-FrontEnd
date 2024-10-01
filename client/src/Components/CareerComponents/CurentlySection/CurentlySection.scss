@@ -1,257 +1,254 @@
 @mixin MyFlex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // @include MyFlex();
 
 @font-face {
-    font-family: 'Gilroy-Bold';
-    src: url('../../../Font/Gilroy-Bold.otf');
-
+  font-family: "Gilroy-Bold";
+  src: url("../../../Font/Gilroy-Bold.otf");
 }
 
 @font-face {
-    font-family: 'Gilroy-Medium';
-    src: url('../../../Font/Gilroy-Medium.ttf');
-
-
+  font-family: "Gilroy-Medium";
+  src: url("../../../Font/Gilroy-Medium.ttf");
 }
 
 @font-face {
-    font-family: 'Gilroy-Regular';
-    src: url('../../../Font/Gilroy-Regular.otf');
-
-
+  font-family: "Gilroy-Regular";
+  src: url("../../../Font/Gilroy-Regular.otf");
 }
 
 @font-face {
-    font-family: 'Gilroy-Light';
-    src: url('../../../Font/Gilroy-Light.otf');
-
-
+  font-family: "Gilroy-Light";
+  src: url("../../../Font/Gilroy-Light.otf");
 }
 
 @font-face {
-    font-family: 'Gilroy-Semibold';
-    src: url('../../../Font/Gilroy-Semibold.otf');
-
+  font-family: "Gilroy-Semibold";
+  src: url("../../../Font/Gilroy-Semibold.otf");
 }
 
 #curentlySection {
-    padding: 50px 100px 100px 100px;
-    @include MyFlex();
-    flex-direction: column;
-    gap: 10px;
-    background: rgb(22, 60, 73);
-    background: linear-gradient(180deg, rgba(22, 60, 73, 1) 15%, rgba(44, 86, 98, 1) 53%, rgba(0, 44, 38, 1) 99%);
-    color: white;
+  padding: 50px 100px 100px 100px;
+  @include MyFlex();
+  flex-direction: column;
+  gap: 10px;
+  background: rgb(22, 60, 73);
+  background: linear-gradient(
+    180deg,
+    rgba(22, 60, 73, 1) 15%,
+    rgba(44, 86, 98, 1) 53%,
+    rgba(0, 44, 38, 1) 99%
+  );
+  color: white;
 
-    .upBox {
-        margin-bottom: 20px;
+  .upBox {
+    margin-bottom: 20px;
 
-        h2 {
-            font-family: 'Gilroy-Bold';
-            font-size: 40px;
-        }
+    h2 {
+      font-family: "Gilroy-Bold";
+      font-size: 40px;
     }
+  }
 
-    .downBox {
+  .downBox {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    .filterBox {
+      width: 320px;
+      font-family: "Gilroy-Regular";
+
+      ul {
         display: flex;
-        justify-content: space-between;
-        gap: 30px;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 40px;
 
-        .filterBox {
-            width: 320px;
-            font-family: 'Gilroy-Regular';
+        li {
+          padding: 10px 0px 10px 10px;
+          cursor: pointer;
+          font-size: 16px;
 
-            ul {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-                margin-bottom: 40px;
-
-                li {
-                    padding: 10px 0px 10px 10px;
-                    cursor: pointer;
-                    font-size: 16px;
-
-                    &:hover {
-                        background: #03121b;
-                        border-radius: 14px;
-                    }
-                }
-            }
-
-            p {
-                line-height: 1.3;
-
-                font-size: 17px;
-            }
-
-            .shareCvBtn {
-                margin-top: 20px;
-                padding: 8px 10px;
-                width: 200px;
-                cursor: pointer;
-                text-align: center;
-                border-radius: 20px;
-                border: 2px solid white;
-                font-size: 17px;
-
-            }
+          &:hover {
+            background: #03121b;
+            border-radius: 14px;
+          }
         }
+      }
 
-        .vacancyBox {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+      p {
+        line-height: 1.7;
+        font-size: 15px;
+        max-width: 300px;
+      }
 
-            .vacancyCard {
-                background: #142024;
-                padding: 20px;
-                width: 900px;
-                height: 250px;
-                border-radius: 15px;
-                font-family: 'Gilroy-Regular';
-                border: 1px solid transparent;
-
-                &:hover {
-                    -webkit-box-shadow: 0px 3px 3px 0px #02cec8;
-                    -moz-box-shadow: 0px 3px 3px 0px #02cec8;
-                    box-shadow: 0px 3px 3px 0px #02cec8;
-                    border: 1px solid #02cec8;
-
-                }
-
-                p {
-                    font-family: 'Gilroy-Medium';
-                    font-size: 23px;
-                }
-
-                .btnsBox {
-                    display: flex;
-                    gap: 10px;
-                    margin: 10px 0px;
-
-                    // background: red;
-                    .btn {
-                        border: 1px solid #079894;
-                        padding: 5px 10px;
-                        border-radius: 13px;
-                        cursor: pointer;
-                        font-size: 13px;
-                    }
-                }
-
-                .endBox {
-                    margin-top: 15px;
-                    display: flex;
-                    justify-content: space-between;
-                    gap: 10px;
-
-                    p {
-                        width: 75%;
-                        font-size: 16px;
-                        line-height: 1.5em;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        display: -webkit-box;
-                        -webkit-box-orient: vertical;
-                        -webkit-line-clamp: 4;
-                    }
-
-                    .viewBtn {
-                        background: #090808;
-                        width: 190px;
-                        @include MyFlex();
-                        cursor: pointer;
-                        height: 45px;
-                        font-size: 15px;
-                        border-radius: 20px;
-                        transition: all 0.2s;
-
-                        &:hover {
-                            background-color: #02cec8;
-                        }
-
-                        .icon {
-                            font-size: 25px;
-                            display: flex;
-                        }
-                    }
-                }
-            }
-
+      .shareCvBtn {
+        margin-top: 50px;
+        padding: 8px 10px;
+        width: 200px;
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 20px;
+        border: 2px solid white;
+        font-size: 17px;
+        .link {
+          text-decoration: none;
+          color: white;
         }
+      }
     }
+
+    .vacancyBox {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .vacancyCard {
+        background: #142024;
+        padding: 20px;
+        width: 900px;
+        height: 250px;
+        border-radius: 15px;
+        font-family: "Gilroy-Regular";
+        border: 1px solid transparent;
+
+        &:hover {
+          -webkit-box-shadow: 0px 3px 3px 0px #02cec8;
+          -moz-box-shadow: 0px 3px 3px 0px #02cec8;
+          box-shadow: 0px 3px 3px 0px #02cec8;
+          border: 1px solid #02cec8;
+        }
+
+        p {
+          font-family: "Gilroy-Medium";
+          font-size: 23px;
+        }
+
+        .btnsBox {
+          display: flex;
+          gap: 10px;
+          margin: 10px 0px;
+
+          // background: red;
+          .btn {
+            border: 1px solid #079894;
+            padding: 5px 10px;
+            border-radius: 13px;
+            cursor: pointer;
+            font-size: 13px;
+          }
+        }
+
+        .endBox {
+          margin-top: 15px;
+          display: flex;
+          justify-content: space-between;
+          gap: 10px;
+
+          p {
+            width: 75%;
+            font-size: 16px;
+            line-height: 1.5em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+          }
+
+          .viewBtn {
+            background: #090808;
+            width: 190px;
+            @include MyFlex();
+            cursor: pointer;
+            height: 45px;
+            font-size: 15px;
+            border-radius: 20px;
+            transition: all 0.2s;
+            color: white;
+            text-decoration: none;
+            &:hover {
+              background-color: #02cec8;
+            }
+
+            .icon {
+              font-size: 25px;
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 1414px) {
-    #curentlySection {
-        .downBox {
-            .vacancyBox {
-                .vacancyCard {
-                    width: 700px;
-                }
-
-            }
+  #curentlySection {
+    .downBox {
+      .vacancyBox {
+        .vacancyCard {
+          width: 700px;
         }
+      }
     }
+  }
 }
 
 @media only screen and (max-width: 1118px) {
-    #curentlySection {
-        padding: 50px 20px 100px 20px;
+  #curentlySection {
+    padding: 50px 20px 100px 20px;
 
-        .downBox {
-            flex-direction: column;
+    .downBox {
+      flex-direction: column;
 
-            .vacancyBox {
-                width: 100%;
+      .vacancyBox {
+        width: 100%;
 
-                .vacancyCard {
-                    width: 100%;
-
-                }
-
-            }
+        .vacancyCard {
+          width: 100%;
         }
+      }
     }
+  }
 }
 
 @media only screen and (max-width: 739px) {
-    #curentlySection {
-        h2 {
-            font-size: 28px !important;
-            text-align: center;
-        }
-
-        .downBox {
-            .filterBox {
-                width: 100%;
-
-                ul {
-                    width: 100%;
-                }
-            }
-
-            .vacancyBox {
-                .vacancyCard {
-                    height: 300px;
-
-                    .endBox {
-                        flex-direction: column;
-                        gap: 20px;
-
-                        p {
-                            width: 100%;
-                        }
-                    }
-
-                }
-            }
-        }
+  #curentlySection {
+    h2 {
+      font-size: 28px !important;
+      text-align: center;
     }
+
+    .downBox {
+      .filterBox {
+        width: 100%;
+
+        ul {
+          width: 100%;
+        }
+      }
+
+      .vacancyBox {
+        .vacancyCard {
+          height: 300px;
+
+          .endBox {
+            flex-direction: column;
+            gap: 20px;
+
+            p {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
 }

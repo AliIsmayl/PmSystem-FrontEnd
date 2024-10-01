@@ -1,0 +1,196 @@
+@mixin MyFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// @include MyFlex();
+
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url("../../../Font/Gilroy-Bold.otf");
+}
+
+@font-face {
+  font-family: "Gilroy-Medium";
+  src: url("../../../Font/Gilroy-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Gilroy-Regular";
+  src: url("../../../Font/Gilroy-Regular.otf");
+}
+
+@font-face {
+  font-family: "Gilroy-Light";
+  src: url("../../../Font/Gilroy-Light.otf");
+}
+
+@font-face {
+  font-family: "Gilroy-Semibold";
+  src: url("../../../Font/Gilroy-Semibold.otf");
+}
+#vacancyDetail {
+  padding: 140px 100px;
+  color: white;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .oneBox {
+    display: flex;
+    font-family: "Gilroy-Regular";
+    font-size: 20px;
+    padding: 0px 40px;
+    span {
+      margin-right: 20px;
+    }
+    .icon {
+      @include MyFlex();
+    }
+    .touchLink{
+        color: white;
+        text-decoration: none;
+    }
+    .link {
+      color: white;
+      margin-left: 10px;
+    }
+  }
+  .threeBox {
+    display: flex;
+    font-family: "Gilroy-Regular";
+    font-size: 18px;
+    margin-top: 2px;
+    padding: 40px 40px 0px 40px;
+    gap: 17px;
+  }
+  .twoBox {
+    margin-top: 50px;
+    gap: 50px;
+    border-radius: 10px;
+    height: 230px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: 30px 40px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    h1 {
+      font-family: "Gilroy-Bold";
+      font-size: 40px;
+    }
+    .applyBtn {
+      background: white;
+      width: 160px;
+      text-align: center;
+      display: flex;
+      font-size: 16px;
+      @include MyFlex();
+      border-radius: 20px;
+      height: 40px;
+      cursor: pointer;
+      color: black;
+      font-family: "Gilroy-Medium";
+text-decoration: none;
+      .icon {
+        @include MyFlex();
+        font-size: 30px;
+      }
+    }
+  }
+  .fourBox {
+    padding: 0px 40px;
+    h2 {
+      margin: 60px 0px 20px 0px;
+      font-size: 30px;
+      font-family: "Gilroy-Semibold";
+    }
+    p {
+      font-family: "Gilroy-Light";
+      line-height: 1.9;
+    }
+    ul {
+      padding: 0px 20px;
+      flex-direction: column;
+      font-family: "Gilroy-Light";
+      gap: 5px;
+      list-style: disc;
+      width: 100%;
+    
+    }
+  }
+  .fiveBox {
+    margin-top: 50px;
+    padding: 0px 40px;
+    display: flex;
+
+    iframe {
+      width: 720px;
+      border-radius: 10px;
+      height: 260px;
+    }
+    .contactBox {
+      padding: 50px;
+      .normalBox {
+        display: flex;
+        gap: 10px;
+        padding: 10px 0px;
+        font-family: "Gilroy-Light";
+
+        .icon {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 994px) {
+  #vacancyDetail {
+    padding: 140px 20px;
+
+    .fiveBox {
+      flex-direction: column;
+      padding: 0px;
+
+      iframe {
+        width: 100%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 668px) {
+  #vacancyDetail {
+    .oneBox {
+      padding: 0px 0px;
+      @include MyFlex();
+
+    }
+    .threeBox {
+      padding: 40px 0px 0px 0px;
+    }
+    .twoBox {
+      flex-direction: column;
+      padding: 30px 20px;
+      h1 {
+        font-size: 30px;
+      }
+      .applyBtn {
+        width: 140px;
+        font-size: 14px;
+      }
+    }
+    .fourBox {
+      padding: 0px 0px;
+    }
+    .fiveBox {
+      padding: 0px 0px;
+
+      .contactBox {
+        padding:20px 0px;
+       
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@ import React from 'react'
 import './CurentlySection.scss'
 import { useTranslation } from 'react-i18next';
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { Link } from 'react-router-dom';
 
 function CurentlySection() {
     const { t } = useTranslation();
@@ -21,8 +22,9 @@ function CurentlySection() {
                         <li>misal (1)</li>
                     </ul>
                     <p>{t("CurentlyDesc")}</p>
-
-                    <div className="shareCvBtn">{t("ShareCv")}</div>
+                    <div className="shareCvBtn">
+                        <Link className='link' to={"/sendCv"}>{t("ShareCv")}</Link>
+                    </div>
                 </div>
                 <div className="vacancyBox">
                     <div className="vacancyCard">
@@ -33,12 +35,12 @@ function CurentlySection() {
                         </div>
                         <div className="endBox">
                             <p>Due to growing workload, we are looking for experienced and talented Full-Stack Developers to join our fast-paced Engineering team. You will work closely with Product, Design and Marketing to analyze, develop, debug, test, roll-out and support new and existing product features.</p>
-                            <div className="viewBtn">
+                            <Link className="viewBtn" to={"/yoxlama"}>
                                 <span>{t("ViewPos")}</span>
                                 <div className="icon">
                                 <IoIosArrowRoundForward />
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                     <div className="vacancyCard">

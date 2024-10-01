@@ -1,0 +1,217 @@
+@mixin MyFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// @include MyFlex();
+
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url("../../../Font/Gilroy-Bold.otf");
+}
+
+@font-face {
+  font-family: "Gilroy-Medium";
+  src: url("../../../Font/Gilroy-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Gilroy-Regular";
+  src: url("../../../Font/Gilroy-Regular.otf");
+}
+
+@font-face {
+  font-family: "Gilroy-Light";
+  src: url("../../../Font/Gilroy-Light.otf");
+}
+
+@font-face {
+  font-family: "Gilroy-Semibold";
+  src: url("../../../Font/Gilroy-Semibold.otf");
+}
+#sendCvPage {
+  padding: 140px 100px;
+  color: white;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .oneBox {
+    display: flex;
+    font-family: "Gilroy-Regular";
+    font-size: 20px;
+    padding: 0px 40px;
+    span {
+      margin-right: 20px;
+      text-align: center;
+    }
+    .icon {
+      @include MyFlex();
+    }
+    .touchLink {
+      color: white;
+      text-decoration: none;
+      text-align: center;
+    }
+    .link {
+      color: white;
+      margin: 0px 10px;
+      text-align: center;
+    }
+    .link2 {
+      color: white;
+      margin: 0px 10px;
+      text-decoration: none;
+      text-align: center;
+    }
+  }
+  .downBox {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    h1 {
+      font-family: "Gilroy-Semibold";
+    }
+    .leftBox {
+      width: 50%;
+      height: 550px;
+      border-radius: 20px;
+      padding: 40px;
+      font-family: "Gilroy-Light";
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      .normalBox {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+      }
+    }
+    .rightBox {
+      width: 45%;
+      form {
+        display: flex;
+        flex-direction: column;
+        label {
+          margin: 10px 0px;
+          font-family: "Gilroy-Light";
+        }
+        input,
+        textarea {
+          width: 400px;
+          height: 40px;
+          border-radius: 10px;
+          border: none;
+          background-color: rgba(34, 34, 34, 0.285);
+          outline: none;
+          padding: 10px ;
+          color: white;
+        }
+        textarea {
+          height: 120px;
+        }
+
+        .imageBox {
+          margin-top: 40px;
+          width: 400px;
+          height: 120px;
+          border-radius: 10px;
+          position: relative;
+          .frontBox {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            border: 2px dashed rgba(147, 147, 147, 0.993);
+            font-family: "Gilroy-Light";
+            @include MyFlex();
+            gap: 10px;
+            color: rgb(189, 189, 189);
+            p {
+              font-size: 18px;
+              color: rgb(189, 189, 189);
+            }
+            .icon {
+              font-size: 25px;
+            }
+          }
+
+          .fileInput {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 2;
+            opacity: 0;
+          }
+        }
+        p {
+          font-size: 13px;
+          color: rgb(189, 189, 189);
+          font-family: "Gilroy-Light";
+          max-width: 400px;
+          text-align: center;
+        }
+        .sendBtn {
+          margin-top: 30px;
+          height: 35px;
+          width: 100px;
+          cursor: pointer;
+          @include MyFlex();
+          border-radius: 210px;
+          font-family: "Gilroy-Semibold";
+          border: 2px solid #3aaca8;
+          transition: all 0.2s;
+          &:hover {
+            background-color: #3aaca8;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1035px) {
+  #sendCvPage {
+    padding: 140px 20px;
+  }
+}
+@media only screen and (max-width: 930px) {
+  #sendCvPage {
+    .downBox {
+      flex-direction: column;
+
+      .leftBox {
+        width: 100%;
+      }
+      .rightBox {
+        margin-top: 50px;
+        width: 100%;
+        form {
+          input, textarea {
+            width: 100%;
+          }
+
+          .imageBox {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 668px) {
+  #sendCvPage {
+    .oneBox {
+      padding: 0px 0px;
+      display: flex;
+      align-items: center;
+    }
+    .downBox {
+      flex-direction: column;
+
+      .leftBox {
+        padding: 40px 20px;
+      }
+    }
+  }
+}

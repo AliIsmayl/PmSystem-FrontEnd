@@ -28,7 +28,7 @@ function Navbar() {
 
   const handleScroll = () => {
     const currentScrollPos = window.pageYOffset;
-    setIsScrolled(currentScrollPos > 100); // Arka plan renginin değişimini koruyoruz
+    setIsScrolled(currentScrollPos > 30); // Arka plan renginin değişimini koruyoruz
   };
 
   function handleOpenNavbar() {
