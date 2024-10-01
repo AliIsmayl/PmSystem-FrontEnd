@@ -23,6 +23,7 @@
   font-family: "Gilroy-Extrabold";
   src: url("../../Font/Gilroy-Extrabold.otf");
 }
+
 .loadingBody {
   position: relative;
   height: 100vh;
@@ -38,6 +39,7 @@
     position: relative;
     overflow: hidden;
   }
+
   .loader::before {
     content: "";
     position: absolute;
@@ -53,6 +55,7 @@
     animation: l14 1s infinite linear;
   }
 }
+
 #serviceDetail {
   color: white;
   overflow: hidden;
@@ -68,6 +71,7 @@
     align-items: start;
     background-position: center;
     background-size: cover;
+
     .normalBox {
       height: 100%;
       width: 100%;
@@ -82,12 +86,11 @@
       align-items: start;
       padding: 80px 100px;
       background: rgb(9, 11, 12);
-      background: linear-gradient(
-        180deg,
-        rgba(9, 11, 12, 0.09016106442577032) 0%,
-        rgba(20, 20, 20, 1) 100%
-      );
+      background: linear-gradient(180deg,
+          rgba(9, 11, 12, 0.09016106442577032) 0%,
+          rgba(20, 20, 20, 1) 100%);
     }
+
     video {
       height: 100%;
       width: 100%;
@@ -97,12 +100,14 @@
       z-index: 1;
       object-fit: cover;
     }
+
     .goLink {
       margin-top: 100px;
       @include MyFlex();
       gap: 10px;
       font-size: 20px;
       font-family: "Gilroy-Bold";
+
       .link,
       span {
         color: white;
@@ -188,6 +193,7 @@
   #serviceDetail {
     #serviceDetailHeader {
       padding: 50px 30px;
+
       .normalBox {
         padding: 10px;
       }
@@ -218,6 +224,7 @@
     }
 
     main {
+
       .upBox,
       .downBox {
         flex-direction: column !important;
@@ -250,6 +257,7 @@
       .normalBox {
         padding: 50px 10px;
       }
+
       p {
         font-size: 30px;
         line-height: 1.3;

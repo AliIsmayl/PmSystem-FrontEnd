@@ -60,9 +60,13 @@
         gap: 50px;
         flex-wrap: wrap;
 
-            @include MyFlex();
-            .card {
-            @include MyFlex();
+        // @include MyFlex();
+        display: flex;
+
+        .card {
+            // @include MyFlex();
+            display: flex;
+            align-items: center;
             flex-direction: column;
             // background: green;
             gap: 10px;
@@ -77,6 +81,8 @@
                 margin-bottom: 30px;
                 background: rgb(9, 13, 15);
                 background: linear-gradient(180deg, rgba(9, 13, 15, 1) 0%, rgba(6, 13, 14, 0.722) 99%);
+           background-position: center;
+           background-size: cover;
             }
 
             p {
@@ -85,7 +91,7 @@
                 text-align: center;
                 max-width: 250px;
                 line-height: 1.5;
-
+                min-height: 10px;
             }
 
             span {
@@ -100,32 +106,33 @@
 
     }
 }
-@media only screen and (max-width: 600px){
+
+@media only screen and (max-width: 600px) {
     #whyWork {
-    
+
         h2 {
             font-size: 40px;
-    
+
         }
-    
+
         .downBox {
-    
-                .card {
-         
+
+            .card {
+
                 width: 100%;
-    
-    
+
+
                 p {
                     font-size: 22px;
-    
+
                 }
-    
+
                 span {
                     font-size: 15px;
-    
+
                 }
             }
-    
+
         }
-    } 
+    }
 }

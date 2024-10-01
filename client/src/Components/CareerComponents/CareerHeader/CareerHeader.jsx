@@ -48,8 +48,8 @@ function CareerHeader() {
         loop
         playsInline src={Video} /> {/* Video otomatik oynatma ve loop */}
       <div className="normalBox">
-        <h1>{t("AboutUS")}</h1>
-        <h2>{t("AboutHeadText")}</h2>
+        <h1>{t("CareerHead")}</h1>
+        <h2>{t("CareerLittle")}</h2>
       </div>
     </header>
   );

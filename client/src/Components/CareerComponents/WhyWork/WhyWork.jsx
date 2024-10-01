@@ -1,25 +1,31 @@
 import React from 'react'
 import './WhyWork.scss'
+import { useTranslation } from 'react-i18next';
+import Icon1 from '../../../Image/Careerİcon1.png'
+import Icon2 from '../../../Image/Careerİcon2.png'
+import Icon3 from '../../../Image/Careerİcon3.png'
 
 function WhyWork() {
+    const { t } = useTranslation();
+
     return (
         <section id='whyWork'>
-            <h2>Why work with us?</h2>
+            <h2>{t("WhyWorkHead")}</h2>
             <div className="downBox">
                 <div className="card">
-                    <div className="imgBox"></div>
-                    <p>Career Growth in the IT Industry</p>
-                    <span>At PM Systems, we offer numerous career opportunities in IT and ERP job roles that allow you to grow and develop your skills in a rapidly advancing industry. Whether you are an expert in SAP technologies or looking to specialize in IT project management, we provide you with the right environment to excel.</span>
+                    <div className="imgBox" style={{ backgroundImage: `url(${Icon1})` }}></div>
+                    <p>{t("WorkBox1Head")}</p>
+                    <span>{t("WorkBox1")}</span>
                 </div>
                 <div className="card">
-                    <div className="imgBox"></div>
-                    <p>Career Growth in the IT Industry</p>
-                    <span>At PM Systems, we offer numerous career opportunities in IT and ERP job roles that allow you to grow and develop your skills in a rapidly advancing industry. Whether you are an expert in SAP technologies or looking to specialize in IT project management, we provide you with the right environment to excel.</span>
+                    <div className="imgBox" style={{ backgroundImage: `url(${Icon2})` }}></div>
+                    <p>{t("WorkBox2Head")}</p>
+                    <span>{t("WorkBox2")}</span>
                 </div>
                 <div className="card">
-                    <div className="imgBox"></div>
-                    <p>Career Growth in the IT Industry</p>
-                    <span>At PM Systems, we offer numerous career opportunities in IT and ERP job roles that allow you to grow and develop your skills in a rapidly advancing industry. Whether you are an expert in SAP technologies or looking to specialize in IT project management, we provide you with the right environment to excel.</span>
+                    <div className="imgBox" style={{ backgroundImage: `url(${Icon3})` }}></div>
+                    <p>{t("WorkBox3Head")}</p>
+                    <span>{t("WorkBox3")}</span>
                 </div>
             </div>
         </section>

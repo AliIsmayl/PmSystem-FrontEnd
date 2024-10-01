@@ -85,7 +85,7 @@ function Navbar() {
             to={"/career"}
             className={({ isActive }) => (isActive ? "active" : "link")}
           >
-            <li>Career</li>
+            <li>{t("Career")}</li>
             <div className="line"></div>
           </NavLink>
           <NavLink
