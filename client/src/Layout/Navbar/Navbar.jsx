@@ -124,7 +124,6 @@ function Navbar() {
       <div className={`respNavbar ${openRespNavbar ? "openedNavbar" : ""}`}>
         <ul>
           <NavLink
-            onClick={handleOpenNavbar}
             to={"/"}
             className={({ isActive }) => (isActive ? "active" : "link")}
           >
@@ -132,7 +131,6 @@ function Navbar() {
             <div className="line"></div>
           </NavLink>
           <NavLink
-            onClick={handleOpenNavbar}
             to={"/about"}
             className={({ isActive }) => (isActive ? "active" : "link")}
           >
@@ -140,7 +138,6 @@ function Navbar() {
             <div className="line"></div>
           </NavLink>
           <NavLink
-            onClick={handleOpenNavbar}
             to={"/service"}
             className={({ isActive }) => (isActive ? "active" : "link")}
           >
@@ -148,7 +145,13 @@ function Navbar() {
             <div className="line"></div>
           </NavLink>
           <NavLink
-            onClick={handleOpenNavbar}
+            to={"/career"}
+            className={({ isActive }) => (isActive ? "active" : "link")}
+          >
+            <li>{t("Career")}</li>
+            <div className="line"></div>
+          </NavLink>
+          <NavLink
             to={"/contact"}
             className={({ isActive }) => (isActive ? "active" : "link")}
           >

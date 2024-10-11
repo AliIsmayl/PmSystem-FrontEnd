@@ -12,53 +12,52 @@ import ApplyJobPage from "../Pages/ApplyJobPage/ApplyJobPage";
 import SendCvPage from "../Pages/SendCvPage/SendCvPage";
 
 export function createRoutesWithLoading() {
-
   return [
     {
-      path: '/',
+      path: "/",
       element: <AppRoute />,
       children: [
         {
           path: "/",
-          element: <Homepage />
+          element: <Homepage />,
         },
         {
           path: "/about",
-          element: <AboutPage />
+          element: <AboutPage />,
         },
         {
           path: "/service",
-          element: <ServicePage />
+          element: <ServicePage />,
         },
         {
           path: "/career",
-          element: <CareerPage />
+          element: <CareerPage />,
         },
         {
-          path: "/yoxlama",
-          element: <VacancyDetail />
+          path: "/career/:id",
+          element: <VacancyDetail />,
         },
         {
           path: "/contact",
-          element: <ContactPage />
+          element: <ContactPage />,
         },
         {
-          path: "/app",
-          element: <ApplyJobPage />
+          path: "/app/:id",
+          element: <ApplyJobPage />,
         },
         {
           path: "/sendCv",
-          element: <SendCvPage />
+          element: <SendCvPage />,
         },
         {
           path: "/service/:id",
-          element: <ServiceDetail />
+          element: <ServiceDetail />,
         },
-      ]
+      ],
     },
     {
       path: "/codes/:name",
-      element: <QrCode />
-    }
+      element: <QrCode />,
+    },
   ];
 }

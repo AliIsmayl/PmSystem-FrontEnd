@@ -36,6 +36,10 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  .error {
+      font-family: "Gilroy-Light";
+      color: red;
+  }
   .oneBox {
     display: flex;
     font-family: "Gilroy-Regular";
@@ -159,7 +163,7 @@
           font-family: "Gilroy-Semibold";
           border: 2px solid #3aaca8;
           transition: all 0.2s;
-          &:hover{
+          &:hover {
             background-color: #3aaca8;
           }
         }
