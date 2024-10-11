@@ -86,7 +86,6 @@
         font-size: 15px;
         max-width: 300px;
       }
-
       .shareCvBtn {
         margin-top: 50px;
         padding: 8px 10px;
@@ -98,11 +97,10 @@
         border-radius: 20px;
         border: 2px solid white;
         font-size: 17px;
-        .link {
-          text-decoration: none;
-          color: white;
-        }
+        display: inline-block;
       }
+      
+   
     }
 
     .vacancyBox {
