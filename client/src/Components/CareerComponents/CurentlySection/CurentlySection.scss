@@ -37,12 +37,10 @@
   flex-direction: column;
   gap: 10px;
   background: rgb(22, 60, 73);
-  background: linear-gradient(
-    180deg,
-    rgba(22, 60, 73, 1) 15%,
-    rgba(44, 86, 98, 1) 53%,
-    rgba(0, 44, 38, 1) 99%
-  );
+  background: linear-gradient(180deg,
+      rgba(22, 60, 73, 1) 15%,
+      rgba(44, 86, 98, 1) 53%,
+      rgba(0, 44, 38, 1) 99%);
   color: white;
 
   .upBox {
@@ -75,9 +73,16 @@
           font-size: 16px;
 
           &:hover {
-            background: #03121b;
+            background: #03121b9c;
             border-radius: 14px;
           }
+
+          
+        }
+        .active {
+          background: #03121b;
+          border-radius: 14px;
+          color: #fff;
         }
       }
 
@@ -86,6 +91,7 @@
         font-size: 15px;
         max-width: 300px;
       }
+
       .shareCvBtn {
         margin-top: 50px;
         padding: 8px 10px;
@@ -99,8 +105,8 @@
         font-size: 17px;
         display: inline-block;
       }
-      
-   
+
+
     }
 
     .vacancyBox {
@@ -172,6 +178,7 @@
             transition: all 0.2s;
             color: white;
             text-decoration: none;
+
             &:hover {
               background-color: #02cec8;
             }

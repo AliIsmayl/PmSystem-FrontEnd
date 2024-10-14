@@ -122,7 +122,6 @@ function SendCvPage() {
                       <RxUpload />
                     </div>
                     <p>{fileName || t("UploadFile")}</p>{" "}
-                    {/* Show file name or default text */}
                   </div>
                   <input
                     type="file"

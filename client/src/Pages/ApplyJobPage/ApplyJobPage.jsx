@@ -1,54 +1,81 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./ApplyJobPage.scss";
-import { IoIosArrowForward, IoIosArrowRoundForward } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
 import { RxUpload } from "react-icons/rx";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import BackImage from "../../Image/CareerDetailBack.webp";
 import CardBackImage from "../../Image/ApplyJobCardBack.png";
+import toast from "react-hot-toast";
 
 function ApplyJobPage() {
   const { t } = useTranslation();
   const { id } = useParams();
   const [detail, setDetail] = useState(null);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+  const [fileName, setFileName] = useState("");
+
   const languageKey = localStorage.getItem("language")
     ? JSON.parse(localStorage.getItem("language"))
     : "EN";
 
   const initialValues = {
-    name: "",
-    surname: "",
+    first_name: "",
+    last_name: "",
     email: "",
     phone: "",
-    file: null,
+    cv: null,
   };
 
   const validationSchema = Yup.object({
-    name: Yup.string().required(t("Name is required")),
-    surname: Yup.string().required(t("Surname is required")),
+    first_name: Yup.string().required(t("Name is required")),
+    last_name: Yup.string().required(t("Surname is required")),
     email: Yup.string()
       .email(t("Invalid email address"))
       .required(t("Email is required")),
     phone: Yup.string().required(t("Phone number is required")),
-    file: Yup.mixed().required(t("File upload is required")),
+    cv: Yup.mixed().required(t("File upload is required")),
   });
 
-  const handleSubmit = (values, { setSubmitting, resetForm }) => {
-    console.log(values);
-    setSubmitting(false);
-    resetForm();
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    const formData = new FormData();
+    Object.keys(values).forEach((key) => {
+      formData.append(key, values[key]);
+    });
+
+    try {
+      const res = await axios.post(
+        `https://pmsystems.az/qrcode/api/v1/jobs/${id}/apply/`,
+        formData
+      );
+      toast.success("Göndərildi...");
+      navigate("/career");
+    } catch (error) {
+      console.error("Error creating order:", error);
+      if (error.response) {
+        toast.error(error.response.data.message || error.message);
+      } else {
+        toast.error(error.message);
+      }
+    } finally {
+      setSubmitting(false);
+      resetForm();
+      setFileName("");
+    }
   };
 
-  async function getDetail() {
+  async function getDetail(id) {
     try {
       const res = await axios.get(
         `https://pmsystems.az/qrcode/api/v1/jobs/${id}`
       );
       setDetail(res.data);
+      console.log('Vacancy:', detail[EN].Position)
+
     } catch (error) {
       console.error("Error fetching job details:", error);
     } finally {
@@ -56,12 +83,18 @@ function ApplyJobPage() {
     }
   }
 
+  // useEffect(() => {
+  //   if (detail && detail[languageKey]) {
+  //     console.log('Vacancy:', detail[languageKey].Position);
+  //   }
+  // }, [detail, languageKey]);
+
   useEffect(() => {
-    getDetail();
+    getDetail(id);
   }, [id]);
 
   if (!detail || !detail[languageKey]) {
-    return;
+    return null;
   }
 
   return (
@@ -100,17 +133,13 @@ function ApplyJobPage() {
           >
             {({ setFieldValue, values, isSubmitting }) => (
               <Form>
-                <label htmlFor="name">{t("Name")}</label>
-                <Field type="text" name="name" />
-                <ErrorMessage name="name" component="div" className="error" />
+                <label htmlFor="first_name">{t("Name")}</label>
+                <Field type="text" name="first_name" />
+                <ErrorMessage name="first_name" component="div" className="error" />
 
-                <label htmlFor="surname">{t("Surname")}</label>
-                <Field type="text" name="surname" />
-                <ErrorMessage
-                  name="surname"
-                  component="div"
-                  className="error"
-                />
+                <label htmlFor="last_name">{t("Surname")}</label>
+                <Field type="text" name="last_name" />
+                <ErrorMessage name="last_name" component="div" className="error" />
 
                 <label htmlFor="email">{t("Email")}</label>
                 <Field type="email" name="email" />
@@ -125,23 +154,22 @@ function ApplyJobPage() {
                     <div className="icon">
                       <RxUpload />
                     </div>
-                    <p>{values.file ? values.file.name : t("UploadFile")}</p>
+                    <p>{fileName || t("UploadFile")}</p>
                   </div>
                   <input
                     type="file"
-                    name="file"
+                    name="cv"
                     className="fileInput"
                     onChange={(event) => {
-                      const file = event.currentTarget.files[0];
-                      setFieldValue("file", file || null);
+                      const cv = event.currentTarget.files[0];
+                      setFieldValue("cv", cv || null);
+                      setFileName(cv ? cv.name : "");
                     }}
                   />
                 </div>
-                {!values.file && (
-                  <ErrorMessage name="file" component="div" className="error" />
-                )}
-
+                <ErrorMessage name="cv" component="div" className="error" />
                 <p>{t("UploadFileSize")}</p>
+
                 <button
                   type="submit"
                   className="sendBtn"
