@@ -121,7 +121,7 @@ function ServiceAllPackets() {
                       <div className="arrowBox">
                         <IoIosArrowRoundForward />
                       </div>
-                      <h1 style={{ maxWidth: "70%" }}>
+                    <h1 style={{ maxWidth: "70%" }}>
                         {currentItem.LargeHeadName}
                       </h1>
                       <p>{currentItem.LittleTextInfo}</p>
