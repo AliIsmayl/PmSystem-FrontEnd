@@ -29,6 +29,7 @@ function ApplyJobPage() {
     email: "",
     phone: "",
     cv: null,
+    job:null
   };
 
   const validationSchema = Yup.object({
@@ -43,10 +44,13 @@ function ApplyJobPage() {
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     const formData = new FormData();
+    
     Object.keys(values).forEach((key) => {
       formData.append(key, values[key]);
     });
-
+  
+    formData.append("job", detail[languageKey].Position);
+  
     try {
       const res = await axios.post(
         `https://pmsystems.az/qrcode/api/v1/jobs/${id}/apply/`,
@@ -67,6 +71,7 @@ function ApplyJobPage() {
       setFileName("");
     }
   };
+  
 
   async function getDetail(id) {
     try {
