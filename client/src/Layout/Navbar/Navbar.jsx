@@ -127,35 +127,35 @@ function Navbar() {
             to={"/"}
             className={({ isActive }) => (isActive ? "active" : "link")}
           >
-            <li>{t("Home")}</li>
+            <li onClick={handleOpenNavbar}>{t("Home")}</li>
             <div className="line"></div>
           </NavLink>
           <NavLink
             to={"/about"}
             className={({ isActive }) => (isActive ? "active" : "link")}
           >
-            <li>{t("About")}</li>
+            <li onClick={handleOpenNavbar}>{t("About")}</li>
             <div className="line"></div>
           </NavLink>
           <NavLink
             to={"/service"}
             className={({ isActive }) => (isActive ? "active" : "link")}
           >
-            <li>{t("Service")}</li>
+            <li onClick={handleOpenNavbar}>{t("Service")}</li>
             <div className="line"></div>
           </NavLink>
           <NavLink
             to={"/career"}
             className={({ isActive }) => (isActive ? "active" : "link")}
           >
-            <li>{t("Career")}</li>
+            <li onClick={handleOpenNavbar}>{t("Career")}</li>
             <div className="line"></div>
           </NavLink>
           <NavLink
             to={"/contact"}
             className={({ isActive }) => (isActive ? "active" : "link")}
           >
-            <li>{t("Contact")}</li>
+            <li onClick={handleOpenNavbar}>{t("Contact")}</li>
             <div className="line"></div>
           </NavLink>
         </ul>
