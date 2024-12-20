@@ -26,7 +26,7 @@ function ContactComponents() {
   async function getData() {
     try {
       const res = await axios.get(
-        "https://pmsystems.az/qrcode/service_details/"
+        "https://api.pmsystems.az/service_details/"
       );
       setService(res.data);
     } catch (error) {

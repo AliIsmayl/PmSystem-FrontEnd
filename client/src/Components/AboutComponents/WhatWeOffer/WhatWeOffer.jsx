@@ -14,7 +14,7 @@ function WhatWeOffer() {
 
     async function getData() {
         try {
-            const res = await axios.get('https://pmsystems.az/qrcode/service_details/');
+            const res = await axios.get('https://api.pmsystems.az/qrcode/service_details/');
             setService(res.data);
         } catch (error) {
             console.error('Error fetching data:', error);

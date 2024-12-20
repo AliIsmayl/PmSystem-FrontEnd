@@ -13,13 +13,13 @@ function CurentlySection() {
 
   async function getCategory() {
     const res = await axios.get(
-      "https://pmsystems.az/qrcode/api/v1/categories/"
+      "https://api.pmsystems.az/qrcode/api/v1/categories/"
     );
     setCategory(res.data);
   }
 
   async function getVacancy() {
-    const res = await axios.get("https://pmsystems.az/qrcode/api/v1/jobs/");
+    const res = await axios.get("https://api.pmsystems.az/qrcode/api/v1/jobs/");
     setVacancy(res.data);
   }
 
@@ -77,7 +77,7 @@ function CurentlySection() {
             filteredVacancies.length > 0 ?
               (filteredVacancies.map((item) => (
                 <div className="vacancyCard" key={item.id}>
-                  <p>{item[i18n.language.toUpperCase()].Position}</p>
+                  <p>{item[i18n.languawge.toUpperCase()].Position}</p>
                   <div className="btnsBox">
                     <div className="btn">
                       {item[i18n.language.toUpperCase()].Category}

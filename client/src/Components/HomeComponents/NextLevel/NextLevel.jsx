@@ -35,8 +35,8 @@ function NextLevel() {
 
   useEffect(() => {
     if (isVisible) {
-      const projectsTarget = 500;
-      const loremTarget = 120;
+      const projectsTarget = 120;
+      const loremTarget = 500;
       const clientsTarget = 98;
 
       const incrementValue = (setFunction, target, duration) => {
@@ -54,7 +54,7 @@ function NextLevel() {
       };
 
       incrementValue(setProjectsCount, projectsTarget, 2000);
-      incrementValue(setLoremCount, loremTarget, 2000);
+      incrementValue(setLoremCount, loremTarget, 1800);
       incrementValue(setClientsCount, clientsTarget, 2000);
     }
   }, [isVisible]);
@@ -69,7 +69,7 @@ function NextLevel() {
           {t("NextLevel")}
         </h5>
         <div className="normalBox">
-          <div className="counBox" style={{ width: "130px" }}>
+          <div className="counBox" >
             <p>{projectsCount}+</p>
             <h6> {t("AllProjects")} </h6>
           </div>

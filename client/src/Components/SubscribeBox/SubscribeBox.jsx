@@ -24,7 +24,7 @@ function SubscribeBox() {
 
         setIsSending(true);
 
-        fetch('https://pmsystems.az/qrcode/api/subscribe/', {
+        fetch('https://api.pmsystems.az/qrcode/api/subscribe/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

@@ -53,7 +53,7 @@ function ApplyJobPage() {
   
     try {
       const res = await axios.post(
-        `https://pmsystems.az/qrcode/api/v1/jobs/${id}/apply/`,
+        `https://api.pmsystems.az/qrcode/api/v1/jobs/${id}/apply/`,
         formData
       );
       toast.success("Göndərildi...");
@@ -76,7 +76,7 @@ function ApplyJobPage() {
   async function getDetail(id) {
     try {
       const res = await axios.get(
-        `https://pmsystems.az/qrcode/api/v1/jobs/${id}`
+        `https://api.pmsystems.az/qrcode/api/v1/jobs/${id}`
       );
       setDetail(res.data);
       console.log('Vacancy:', detail[EN].Position)

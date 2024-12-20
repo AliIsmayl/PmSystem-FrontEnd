@@ -15,7 +15,7 @@ function QrCode() {
   async function getData() {
     try {
       const res = await axios.get(
-        `https://pmsystems.az/qrcode/list/all/${name}/`
+        `https://api.pmsystems.az/qrcode/list/all/${name}/`
       );
       // console.log("dataaaaaa", res.data);
       setQrCode(res.data);
@@ -50,7 +50,7 @@ function QrCode() {
           >
             Linkedin
           </Link>
-          <Link className="link" to={"https://pmsystems.az/"}>
+          <Link className="link" to={"https://api.pmsystems.az/"}>
             Website
           </Link>
         </>

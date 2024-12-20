@@ -16,7 +16,7 @@ function ServiceAllPackets() {
   async function getData() {
     try {
       const res = await axios.get(
-        "https://pmsystems.az/qrcode/service_details/"
+        "https://api.pmsystems.az/qrcode/service_details/"
       );
       setService(res.data);
       setLoading(false);

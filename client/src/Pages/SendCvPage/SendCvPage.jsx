@@ -14,7 +14,7 @@ import toast from "react-hot-toast";
 function SendCvPage() {
   const { t } = useTranslation();
   const [fileName, setFileName] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const initialValues = {
     first_name: "",
     last_name: "",
@@ -43,10 +43,10 @@ function SendCvPage() {
 
     try {
       const res = await axios.post(
-        "https://pmsystems.az/qrcode/api/v1/jobs/general/apply/",
+        "https://api.pmsystems.az/qrcode/api/v1/jobs/general/apply/",
         formData
       );
-      toast.success("Göndərildi...");
+      toast.success(t("Sender"));
       navigate("/career");
     } catch (error) {
       console.error("Error creating order:", error);
@@ -62,7 +62,6 @@ function SendCvPage() {
       setFileName("");
     }
   };
-
 
   return (
     <div id="sendCvPage" style={{ backgroundImage: `url(${BackImage})` }}>
@@ -90,7 +89,11 @@ function SendCvPage() {
               <Form>
                 <label htmlFor="first_name">{t("Name")}</label>
                 <Field type="text" name="first_name" />
-                <ErrorMessage name="first_name" component="div" className="error" />
+                <ErrorMessage
+                  name="first_name"
+                  component="div"
+                  className="error"
+                />
 
                 <label htmlFor="last_name">{t("Surname")}</label>
                 <Field type="text" name="last_name" />

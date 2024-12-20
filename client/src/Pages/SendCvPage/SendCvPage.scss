@@ -163,7 +163,7 @@
           @include MyFlex();
           border-radius: 210px;
           font-family: "Gilroy-Semibold";
-          border: 2px solid #3aaca8;
+          border: 2px solid transparent;
           transition: all 0.2s;
           &:hover {
             background-color: #3aaca8;

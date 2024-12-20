@@ -1,139 +1,128 @@
 @mixin MyFlex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // @include MyFlex();
 
 @font-face {
-    font-family: 'Gilroy-Bold';
-    src: url('../../../Font/Gilroy-Bold.otf');
-
+  font-family: "Gilroy-Bold";
+  src: url("../../../Font/Gilroy-Bold.otf");
 }
 
 @font-face {
-    font-family: 'Gilroy-Medium';
-    src: url('../../../Font/Gilroy-Medium.ttf');
-
-
+  font-family: "Gilroy-Medium";
+  src: url("../../../Font/Gilroy-Medium.ttf");
 }
 
 @font-face {
-    font-family: 'Gilroy-Regular';
-    src: url('../../../Font/Gilroy-Regular.otf');
-
-
+  font-family: "Gilroy-Regular";
+  src: url("../../../Font/Gilroy-Regular.otf");
 }
 
 @font-face {
-    font-family: 'Gilroy-Light';
-    src: url('../../../Font/Gilroy-Light.otf');
-
-
+  font-family: "Gilroy-Light";
+  src: url("../../../Font/Gilroy-Light.otf");
 }
 
 @font-face {
-    font-family: 'Gilroy-Semibold';
-    src: url('../../../Font/Gilroy-Semibold.otf');
-
+  font-family: "Gilroy-Semibold";
+  src: url("../../../Font/Gilroy-Semibold.otf");
 }
 
 #whyWork {
-    // background: red;
-    padding: 20px 20px 70px 20px;
-    @include MyFlex();
-    flex-direction: column;
-    background: rgb(9, 13, 15);
-    background: linear-gradient(180deg, rgba(9, 13, 15, 1) 0%, rgba(23, 62, 75, 1) 99%);
-    color: white;
+  // background: red;
+  padding: 20px 20px 70px 20px;
+  @include MyFlex();
+  flex-direction: column;
+  background: rgb(9, 13, 15);
+  background: linear-gradient(
+    180deg,
+    rgba(9, 13, 15, 1) 0%,
+    rgba(23, 62, 75, 1) 99%
+  );
+  color: white;
 
-    h2 {
-        font-size: 44px;
-        font-family: 'Gilroy-Bold';
-        margin-bottom: 80px;
+  h2 {
+    font-size: 44px;
+    font-family: "Gilroy-Bold";
+    margin-bottom: 80px;
+  }
 
+  .downBox {
+    // background: orange;
+    gap: 50px;
+    flex-wrap: wrap;
+
+    // @include MyFlex();
+    display: flex;
+
+    .card {
+      // @include MyFlex();
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      // background: green;
+      gap: 10px;
+      width: 400px;
+
+      .imgBox {
+        height: 80px;
+        width: 80px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        background: rgb(9, 13, 15);
+        background: linear-gradient(
+          180deg,
+          rgba(9, 13, 15, 1) 0%,
+          rgba(6, 13, 14, 0.722) 99%
+        );
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      p {
+        font-family: "Gilroy-Regular";
+        font-size: 25px;
+        text-align: center;
+        max-width: 260px;
+        line-height: 1.5;
+        min-height: 10px;
+        // background: red;
+        min-height: 150px;
+      }
+
+      span {
+        margin-top: 20px;
+        font-family: "Gilroy-Regular";
+        text-align: center;
+        line-height: 1.8;
+        font-size: 17px;
+      }
     }
-
-    .downBox {
-        // background: orange;
-        gap: 50px;
-        flex-wrap: wrap;
-
-        // @include MyFlex();
-        display: flex;
-
-        .card {
-            // @include MyFlex();
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            // background: green;
-            gap: 10px;
-            width: 400px;
-
-            .imgBox {
-                height: 80px;
-                width: 80px;
-                border-radius: 10px;
-                margin-bottom: 30px;
-                background: rgb(9, 13, 15);
-                background: linear-gradient(180deg, rgba(9, 13, 15, 1) 0%, rgba(6, 13, 14, 0.722) 99%);
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: contain;
-            }
-
-            p {
-                font-family: 'Gilroy-Medium';
-                font-size: 25px;
-                text-align: center;
-                max-width: 250px;
-                line-height: 1.5;
-                min-height: 10px;
-                // background: red;
-                min-height: 150px;
-            }
-
-            span {
-                margin-top: 20px;
-                font-family: 'Gilroy-Regular';
-                text-align: center;
-                line-height: 1.8;
-                font-size: 17px;
-
-            }
-        }
-
-    }
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    #whyWork {
-
-        h2 {
-            font-size: 40px;
-
-        }
-
-        .downBox {
-
-            .card {
-
-                width: 100%;
-
-
-                p {
-                    font-size: 22px;
-
-                }
-
-                span {
-                    font-size: 15px;
-
-                }
-            }
-
-        }
+  #whyWork {
+    h2 {
+      font-size: 40px;
     }
+
+    .downBox {
+      .card {
+        width: 100%;
+
+        p {
+          font-size: 22px;
+        }
+
+        span {
+          font-size: 15px;
+        }
+      }
+    }
+  }
 }

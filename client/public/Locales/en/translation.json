@@ -108,7 +108,7 @@
   "MessageFalse": "Please fill out the form...",
   "AboutUSLittle": "About Us",
 
-  "SubscribeHead": "Subcsribe to our Newsletter",
+  "SubscribeHead": "Subscribe to our Newsletter",
   "SubscribeText": "Subscribe to our IT solutions to gain access to premium support, advanced security, and cutting-edge cloud services. Stay ahead with regular software updates and exclusive training resources designed to elevate your business.",
   "EnterEmail": "Enter your email...",
   "Subscribe": "Subscribe",
@@ -140,11 +140,12 @@
   "CurentlyDesc": "We are always seeking talented people. In case you cannot find your desired position here, please send us your CV and your contact information. We will be in touch.",
   "ShareCv": "Share CV",
   "ApplyJob": "Apply job",
-  "Apply":"Apply",
+  "Apply": "Apply",
   "OverviewText": "Overview",
   "RespText": "Responsibilities",
   "QualiText": "Qualifications",
   "UploadFile": "Upload additional file",
   "UploadFileSize": "Attach file. File size of your documents should not exceed 5MB",
-  "PhoneNumber": "Phone number"
+  "PhoneNumber": "Phone number",
+  "Sender": "Sent..."
 }

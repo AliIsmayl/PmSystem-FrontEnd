@@ -17,7 +17,7 @@ function MeetOurTeam() {
 
     async function getData() {
         try {
-            const res = await axios.get(`https://pmsystems.az/qrcode/list/all/`);
+            const res = await axios.get(`https://api.pmsystems.az/qrcode/list/all/`);
             const sortedData = res.data.sort((a, b) => a.order - b.order);
             setTeam(sortedData);
         } catch (error) {

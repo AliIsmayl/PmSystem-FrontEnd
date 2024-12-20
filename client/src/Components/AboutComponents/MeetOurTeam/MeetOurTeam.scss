@@ -1,262 +1,260 @@
 @mixin MyFlex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @font-face {
-    font-family: 'Gilroy-Bold';
-    src: url('../../../Font/Gilroy-Bold.otf');
+  font-family: "Gilroy-Bold";
+  src: url("../../../Font/Gilroy-Bold.otf");
 }
 
 @font-face {
-    font-family: 'Gilroy-Semibold';
-    src: url('../../../Font/Gilroy-Semibold.otf');
+  font-family: "Gilroy-Semibold";
+  src: url("../../../Font/Gilroy-Semibold.otf");
 }
 
 #meetOurTeam {
-    padding: 50px 0px 50px 100px;
-    display: flex;
-    color: white;
-    width: 100%;
-    background: rgb(18, 17, 19);
-    background: linear-gradient(180deg, rgba(18, 17, 19, 1) 37%, rgba(17, 16, 18, 1) 59%);
-    position: relative;
+  padding: 50px 0px 50px 100px;
+  display: flex;
+  color: white;
+  width: 100%;
+  background: rgb(18, 17, 19);
+  background: linear-gradient(
+    180deg,
+    rgba(18, 17, 19, 1) 37%,
+    rgba(17, 16, 18, 1) 59%
+  );
+  position: relative;
 
-    h1 {
-        font-family: 'Gilroy-Bold';
-        font-size: 50px;
-        max-width: 300px;
+  h1 {
+    font-family: "Gilroy-Bold";
+    font-size: 50px;
+    max-width: 300px;
+  }
+
+  .buttons {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 84.5%;
+    right: 0px;
+    z-index: 2;
+    pointer-events: none;
+
+    .scrollButton {
+      pointer-events: auto;
+      background-color: #04040485;
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+      @include MyFlex();
+
+      &:hover {
+        background-color: #0db5b1;
+      }
+    }
+
+    .leftButton {
+      position: absolute;
+      left: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .rightButton {
+      position: absolute;
+      right: 10px;
+    }
+  }
+
+  .ourTeamBox {
+    gap: 50px;
+    display: flex;
+    padding: 0 50px 50px 50px;
+    width: 100%;
+    overflow: hidden;
+    scroll-behavior: smooth; 
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    .card {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 450px;
+      width: 120px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      cursor: pointer;
+      transition: all 0.7s;
+      position: relative;
+      flex-shrink: 0;
+      overflow: hidden;
+
+      .imgBox {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include MyFlex();
+        overflow: hidden;
+        border-radius: 20px;
+
+        img {
+          visibility: hidden;
+          opacity: 0;
+          transition: 0.2s;
+          margin-bottom: -110px;
+          aspect-ratio: 1/1.4;
+          width: 320px;
+          object-fit: cover;
+        }
+      }
+
+      .textBox {
+        position: absolute;
+        bottom: 40px;
+        left: 30px;
+      }
+
+      p {
+        font-family: "Gilroy-Semibold";
+        transform: rotate(270deg);
+        color: white;
+        font-size: 25px;
+        transition: 0.7s;
+        width: 250px;
+        position: absolute;
+        bottom: 100px;
+        left: -80px;
+      }
+
+      h5 {
+        font-family: "Gilroy-Semibold";
+        font-size: 16px;
+        color: white;
+        visibility: hidden;
+        font-size: 25px;
+        transition: 0.2s;
+        margin-bottom: 30px;
+        opacity: 0;
+      }
+
+      h4 {
+        font-family: "Gilroy-Semibold";
+        font-size: 16px;
+        color: white;
+        visibility: hidden;
+        font-size: 20px;
+        transition: 0.2s;
+
+        .link {
+          color: #ffffff;
+          text-decoration: none;
+        }
+
+        margin-bottom: 30px;
+        opacity: 0;
+      }
+
+      span {
+        font-family: "Gilroy-Semibold";
+        font-size: 16px;
+        visibility: hidden;
+        transition: 0.2s;
+        opacity: 0;
+
+        .link {
+          color: white;
+          text-decoration: none;
+        }
+      }
+
+      &:hover {
+        width: 320px !important;
+
+        p {
+          transition: 0.5s !important;
+          font-size: 17px !important;
+          transform: rotate(360deg) !important;
+          bottom: 23px !important;
+          left: 0px !important;
+          color: rgba(255, 255, 255, 0.849) !important;
+        }
+
+        img {
+          visibility: visible !important;
+          transition: 2.5s !important;
+          opacity: 1 !important;
+        }
+
+        h5 {
+          visibility: visible !important;
+          transition: 2.5s !important;
+          opacity: 1 !important;
+        }
+
+        h4 {
+          visibility: visible !important;
+          transition: 2.5s !important;
+          opacity: 1 !important;
+        }
+
+        span {
+          visibility: visible !important;
+          transition: 2.5s !important;
+          opacity: 1 !important;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 967px) {
+    flex-direction: column;
+
+    .ourTeamBox {
+      padding: 50px 50px 50px 0px;
     }
 
     .buttons {
-        position: absolute;
-        top: 45%;
-        transform: translateY(-50%);
-        width: 84.5%;
-        right: 0px;
-        z-index: 2;
-        pointer-events: none;
+      top: inherit;
+      width: 89%;
+      bottom: 50px;
+    }
+  }
 
-        .scrollButton {
-            pointer-events: auto;
-            background-color: #04040485;
-            border: none;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-            height: 60px;
-            width: 60px;
-            border-radius: 50%;
-            transition: background-color 0.3s ease;
-            @include MyFlex();
+  @media only screen and (max-width: 625px) {
+    flex-direction: column;
+    padding: 50px 15px;
 
-            &:hover {
-                background-color: #0DB5B1;
-            }
-        }
+    h1 {
+      font-size: 45px;
+    }
 
-        .leftButton {
-            position: absolute;
-            left: 10px;
-            opacity: 0;
-            /* Başlangıçta görünmez */
-            transition: opacity 0.3s ease;
-        }
-
-        .rightButton {
-            position: absolute;
-            right: 10px;
-        }
+    .buttons {
+      display: none;
     }
 
     .ourTeamBox {
-        gap: 50px;
-        display: flex;
-        padding: 0 50px 50px 50px;
-        width: 100%;
-        // overflow-x: auto;
-        overflow: hidden;
-        // white-space: nowrap;
-        // scroll-behavior: smooth;
-        scroll-behavior: smooth; // Yumuşak kaydırma için scroll-behavior ekleniyor
-        overflow-x: auto;
-        white-space: nowrap;
-        display: flex;
-        transition: transform 0.3s ease-in-out;
-
-        ::-webkit-scrollbar {
-            display: none;
-        }
-
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-
-        .card {
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 450px;
-            width: 120px;
-            border-radius: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: end;
-            cursor: pointer;
-            transition: all 0.7s;
-            position: relative;
-            flex-shrink: 0;
-            overflow: hidden;
-
-            .imgBox {
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                @include MyFlex();
-                overflow: hidden;
-                border-radius: 20px;
-
-                img {
-                    visibility: hidden;
-                    opacity: 0;
-                    transition: 0.2s;
-                    margin-bottom: -110px;
-                    aspect-ratio: 1/1.4;
-                    width: 320px;
-                    object-fit: cover;
-                }
-            }
-
-            .textBox {
-                position: absolute;
-                bottom: 40px;
-                left: 30px;
-            }
-
-            p {
-                font-family: 'Gilroy-Semibold';
-                transform: rotate(270deg);
-                color: white;
-                font-size: 25px;
-                transition: 0.7s;
-                width: 250px;
-                position: absolute;
-                bottom: 100px;
-                left: -80px;
-            }
-
-            h5 {
-                font-family: 'Gilroy-Semibold';
-                font-size: 16px;
-                color: white;
-                visibility: hidden;
-                font-size: 25px;
-                transition: 0.2s;
-                margin-bottom: 30px;
-                opacity: 0;
-            }
-
-            h4 {
-                font-family: 'Gilroy-Semibold';
-                font-size: 16px;
-                color: white;
-                visibility: hidden;
-                font-size: 20px;
-                transition: 0.2s;
-
-                .link {
-                    color: #ffffff;
-                    text-decoration: none;
-                }
-
-                margin-bottom: 30px;
-                opacity: 0;
-            }
-
-            span {
-                font-family: 'Gilroy-Semibold';
-                font-size: 16px;
-                visibility: hidden;
-                transition: 0.2s;
-                opacity: 0;
-
-                .link {
-                    color: white;
-                    text-decoration: none;
-                }
-            }
-
-            &:hover {
-                width: 320px !important;
-
-                p {
-                    transition: 0.5s !important;
-                    font-size: 17px !important;
-                    transform: rotate(360deg) !important;
-                    bottom: 23px !important;
-                    left: 0px !important;
-                    color: rgba(255, 255, 255, 0.849) !important;
-                }
-
-                img {
-                    visibility: visible !important;
-                    transition: 2.5s !important;
-                    opacity: 1 !important;
-                }
-
-                h5 {
-                    visibility: visible !important;
-                    transition: 2.5s !important;
-                    opacity: 1 !important;
-                }
-
-                h4 {
-                    visibility: visible !important;
-                    transition: 2.5s !important;
-                    opacity: 1 !important;
-                }
-
-                span {
-                    visibility: visible !important;
-                    transition: 2.5s !important;
-                    opacity: 1 !important;
-                }
-            }
-        }
+      padding: 50px 50px 50px 0px;
     }
-
-
-
-    @media only screen and (max-width: 967px) {
-        flex-direction: column;
-
-        .ourTeamBox {
-            padding: 50px 50px 50px 0px;
-        }
-
-        .buttons {
-            top: inherit;
-            width: 89%;
-            bottom: 50px;
-        }
-    }
-
-    @media only screen and (max-width: 625px) {
-        flex-direction: column;
-        padding: 50px 15px;
-
-        h1 {
-            font-size: 45px;
-        }
-
-        .buttons {
-            display: none;
-        }
-
-        .ourTeamBox {
-            padding: 50px 50px 50px 0px;
-        }
-    }
+  }
 }

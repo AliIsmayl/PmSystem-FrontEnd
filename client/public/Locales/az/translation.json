@@ -105,7 +105,7 @@
   "Services": "Xidmətlər",
   "Partners": "Müştərilər",
   "OurTeam": "Komandamız",
-  "FAQ": "Faq",
+  "FAQ": "FAQ",
   "Address": "Ünvan",
   "MessageTrue": "Mesaj Göndərildi",
   "MessageFalse": "Formu doldurun...",
@@ -140,7 +140,7 @@
   "AllPosition": "Bütün vəzifələr",
   "ViewPos": "İşə baxın",
   "CurentlyDesc": "Biz həmişə istedadlı insanları axtarırıq. İstədiyiniz işi burada tapa bilmirsinizsə, cv-i və əlaqə məlumatlarınızı bizə göndərin. Sizinlə əlaqə saxlayacağıq.",
-  "ShareCv": "CV-I bölüşün",
+  "ShareCv": "CV-nizi bölüşün",
   "ApplyJob": "İşə müraciət",
     "Apply":"Müraciət et",
   "OverviewText": "Ümumi baxış",
@@ -148,5 +148,6 @@
   "QualiText": "Tələb olunan şərtlər",
   "UploadFile": "Əlavə sənədləri yükləyin",
   "UploadFileSize": "Fayl əlavə edin. Sənədlərinizin fayl ölçüsü 5 MB-dan çox olmamalıdır",
-  "PhoneNumber": "Əlaqə nömrəsi"
+  "PhoneNumber": "Əlaqə nömrəsi",
+  "Sender":"Göndərildi..."
 }

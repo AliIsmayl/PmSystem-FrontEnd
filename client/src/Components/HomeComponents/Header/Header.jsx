@@ -33,14 +33,14 @@ function Header() {
 
   return (
     <header id="homeHeader" style={{ backgroundImage: `url(${Video})` }}>
-      <video
-        ref={videoRef}
-        autoPlay
-        muted
-        loop
-        playsInline
-        src={Video}
-      />
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          src={Video}
+        />
       <div className="normalBox">
         <h1>{t("BstIt")}</h1>
         <h2>{t("TogetherWith")}</h2>

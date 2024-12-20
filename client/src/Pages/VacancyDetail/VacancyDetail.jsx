@@ -23,7 +23,7 @@ function VacancyDetail() {
     setLoading(true);
     const getDetail = async () => {
       try {
-        const res = await axios.get(`https://pmsystems.az/qrcode/api/v1/jobs/${id}`);
+        const res = await axios.get(`https://api.pmsystems.az/qrcode/api/v1/jobs/${id}`);
         console.log("API Response:", res.data);
         setDetail(res.data);
       } catch (error) {

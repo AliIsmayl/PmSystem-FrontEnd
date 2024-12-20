@@ -87,19 +87,20 @@ footer {
         .link,
         .littleLink {
           text-decoration: none;
+          font-family: "Gilroy-Regular";
           color: white;
         }
 
         .link {
           text-decoration: underline;
           margin-bottom: 20px;
-          font-family: "Gilroy-Semibold";
+          font-family: "Gilroy-Semibold" !important;
         }
 
         .littleLink {
-          font-family: "Gilroy-Medium";
           font-size: 18px;
           transition: all 0.1s;
+          font-family: "Gilroy-Semibold" !important;
 
           &:hover {
             color: #34a29f;

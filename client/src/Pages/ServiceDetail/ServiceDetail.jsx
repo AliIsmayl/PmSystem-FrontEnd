@@ -21,7 +21,7 @@ function ServiceDetail() {
     try {
       setTimeout(async () => {
         const res = await axios.get(
-          `https://pmsystems.az/qrcode/service_details/${id}`
+          `https://api.pmsystems.az/qrcode/service_details/${id}`
         );
         setDetail(res.data);
         setLoading(false);
